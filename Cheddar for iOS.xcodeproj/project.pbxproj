@@ -141,6 +141,7 @@
 		B208C1FA15BF64630080705D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B208C1F215BF64630080705D /* SystemConfiguration.framework */; };
 		B208C1FB15BF64630080705D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B208C1F315BF64630080705D /* UIKit.framework */; };
 		B208C5FC15BF658D0080705D /* libCheddarKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B208C5BF15BF654B0080705D /* libCheddarKit.a */; };
+		B23261AA15C207FF00D455EF /* CDIWebSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B23261A915C207FF00D455EF /* CDIWebSignInViewController.m */; };
 		B28FD2BE15BF730100365CD6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FD2BD15BF730100365CD6 /* CFNetwork.framework */; };
 		B28FD2C015BF731100365CD6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FD2BF15BF731000365CD6 /* CoreGraphics.framework */; };
 		B28FD2C215BF731B00365CD6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FD2C115BF731B00365CD6 /* MessageUI.framework */; };
@@ -395,6 +396,8 @@
 		B208C1F215BF64630080705D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B208C1F315BF64630080705D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B208C21215BF65490080705D /* CheddarKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CheddarKit.xcodeproj; sourceTree = "<group>"; };
+		B23261A815C207FF00D455EF /* CDIWebSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIWebSignInViewController.h; sourceTree = "<group>"; };
+		B23261A915C207FF00D455EF /* CDIWebSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIWebSignInViewController.m; sourceTree = "<group>"; };
 		B23FA755151FE0710069A0D1 /* Cheddar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheddar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28FD2BD15BF730100365CD6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B28FD2BF15BF731000365CD6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -754,6 +757,8 @@
 				B208BBB715BF63A80080705D /* CDISignInViewController.m */,
 				B208BBB815BF63A80080705D /* CDISignUpViewController.h */,
 				B208BBB915BF63A80080705D /* CDISignUpViewController.m */,
+				B23261A815C207FF00D455EF /* CDIWebSignInViewController.h */,
+				B23261A915C207FF00D455EF /* CDIWebSignInViewController.m */,
 			);
 			name = Sessions;
 			sourceTree = "<group>";
@@ -1157,6 +1162,7 @@
 				B28FD2E215BF755600365CD6 /* Cheddar.xcdatamodeld in Sources */,
 				B28FD2E815BF774D00365CD6 /* CDIDefines.m in Sources */,
 				B2A2B07B15C0BE7300772CF6 /* CDKTask+CheddariOSAdditions.m in Sources */,
+				B23261AA15C207FF00D455EF /* CDIWebSignInViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

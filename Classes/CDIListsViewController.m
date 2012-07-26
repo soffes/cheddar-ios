@@ -7,7 +7,6 @@
 //
 
 #import "CDIListsViewController.h"
-#import "CDISignUpViewController.h"
 #import "CDIListTableViewCell.h"
 #import "CDIListViewController.h"
 #import "CDICreateListViewController.h"
@@ -18,6 +17,12 @@
 #import "CDINoListsView.h"
 #import "CDIAddListTableViewCell.h"
 #import <SSToolkit/UIScrollView+SSToolkitAdditions.h>
+
+#ifdef CHEDDAR_USE_PASSWORD_FLOW
+	#import "CDISignUpViewController.h"
+#else
+	#import "CDIWebSignInViewController.h"
+#endif
 
 @interface CDIListsViewController ()
 - (void)_listUpdated:(NSNotification *)notification;
@@ -311,7 +316,11 @@
 
 - (void)_checkUser {
 	if (![CDKUser currentUser]) {
+#ifdef CHEDDAR_USE_PASSWORD_FLOW
 		UIViewController *viewController = [[CDISignUpViewController alloc] init];
+#else
+		UIViewController *viewController = [[CDIWebSignInViewController alloc] init];
+#endif
 		UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
 		navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
 		
