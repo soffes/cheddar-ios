@@ -1,0 +1,15 @@
+[submodule "Vendor/CheddarKit"]
+	path = Vendor/CheddarKit
+	url = https://github.com/nothingmagical/cheddarkit.git
+[submodule "Vendor/Localytics"]
+	path = Vendor/Localytics
+	url = https://github.com/samsoffes/localytics-ios.git
+[submodule "Vendor/SSToolkit"]
+	path = Vendor/SSToolkit
+	url = https://github.com/samsoffes/sstoolkit.git
+[submodule "Vendor/TTTAttributedLabel"]
+	path = Vendor/TTTAttributedLabel
+	url = https://github.com/mattt/TTTAttributedLabel.git
+[submodule "Vendor/SSPullToRefresh"]
+	path = Vendor/SSPullToRefresh
+	url = https://github.com/samsoffes/sspulltorefresh.git

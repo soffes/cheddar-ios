@@ -1,0 +1,11 @@
+.DS_Store
+*xcuserdata/
+*build/
+*.mode1v3
+*.pbxuser
+*.xcworkspace
+*.moved-aside/
+DerivedData
+
+Resources/Fonts/*
+Other Sources/CDIDefines.*
