@@ -1,16 +1,16 @@
 //
-//  UIButton+Cheddar.m
+//  UIButton+CheddariOSAdditions.m
 //  Cheddar for iOS
 //
 //  Created by Sam Soffes on 5/16/12.
 //  Copyright (c) 2012 Nothing Magical. All rights reserved.
 //
 
-#import "UIButton+Cheddar.h"
-#import "UIFont+Cheddar.h"
-#import "UIColor+Cheddar.h"
+#import "UIButton+CheddariOSAdditions.h"
+#import "UIFont+CheddariOSAdditions.h"
+#import "UIColor+CheddariOSAdditions.h"
 
-@implementation UIButton (Cheddar)
+@implementation UIButton (CheddariOSAdditions)
 
 + (UIButton *)cheddarBigButton {
 	UIButton *button = [[self alloc] initWithFrame:CGRectZero];

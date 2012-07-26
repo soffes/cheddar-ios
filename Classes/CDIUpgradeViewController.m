@@ -7,9 +7,9 @@
 //
 
 #import "CDIUpgradeViewController.h"
-#import "UIColor+Cheddar.h"
-#import "UIFont+Cheddar.h"
-#import "UIButton+Cheddar.h"
+#import "UIColor+CheddariOSAdditions.h"
+#import "UIFont+CheddariOSAdditions.h"
+#import "UIButton+CheddariOSAdditions.h"
 #import "TTTAttributedLabel.h"
 #import <QuartzCore/QuartzCore.h>
 #import <StoreKit/StoreKit.h>

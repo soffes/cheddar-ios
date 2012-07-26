@@ -7,7 +7,7 @@
 //
 
 #import "CDINoListsView.h"
-#import "UIFont+Cheddar.h"
+#import "UIFont+CheddariOSAdditions.h"
 
 @implementation CDINoListsView
 

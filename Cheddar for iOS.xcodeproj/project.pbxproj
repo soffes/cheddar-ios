@@ -34,10 +34,10 @@
 		B208BC4115BF63A80080705D /* CDITaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBC315BF63A80080705D /* CDITaskTableViewCell.m */; };
 		B208BC4215BF63A80080705D /* CDITransactionObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBC515BF63A80080705D /* CDITransactionObserver.m */; };
 		B208BC4315BF63A80080705D /* CDIUpgradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBC715BF63A80080705D /* CDIUpgradeViewController.m */; };
-		B208BC4415BF63A80080705D /* SKPaymentTransaction+Cheddar.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBC915BF63A80080705D /* SKPaymentTransaction+Cheddar.m */; };
-		B208BC4515BF63A80080705D /* UIButton+Cheddar.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBCB15BF63A80080705D /* UIButton+Cheddar.m */; };
-		B208BC4615BF63A80080705D /* UIColor+Cheddar.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBCD15BF63A80080705D /* UIColor+Cheddar.m */; };
-		B208BC4715BF63A80080705D /* UIFont+Cheddar.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBCF15BF63A80080705D /* UIFont+Cheddar.m */; };
+		B208BC4415BF63A80080705D /* SKPaymentTransaction+CheddariOSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBC915BF63A80080705D /* SKPaymentTransaction+CheddariOSAdditions.m */; };
+		B208BC4515BF63A80080705D /* UIButton+CheddariOSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBCB15BF63A80080705D /* UIButton+CheddariOSAdditions.m */; };
+		B208BC4615BF63A80080705D /* UIColor+CheddariOSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBCD15BF63A80080705D /* UIColor+CheddariOSAdditions.m */; };
+		B208BC4715BF63A80080705D /* UIFont+CheddariOSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBCF15BF63A80080705D /* UIFont+CheddariOSAdditions.m */; };
 		B208BC4815BF63A80080705D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBD215BF63A80080705D /* main.m */; };
 		B208BC4B15BF63A80080705D /* add-list-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B208BBD715BF63A80080705D /* add-list-arrow.png */; };
 		B208BC4C15BF63A80080705D /* add-list-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B208BBD815BF63A80080705D /* add-list-arrow@2x.png */; };
@@ -272,14 +272,14 @@
 		B208BBC515BF63A80080705D /* CDITransactionObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDITransactionObserver.m; sourceTree = "<group>"; };
 		B208BBC615BF63A80080705D /* CDIUpgradeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIUpgradeViewController.h; sourceTree = "<group>"; };
 		B208BBC715BF63A80080705D /* CDIUpgradeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIUpgradeViewController.m; sourceTree = "<group>"; };
-		B208BBC815BF63A80080705D /* SKPaymentTransaction+Cheddar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKPaymentTransaction+Cheddar.h"; sourceTree = "<group>"; };
-		B208BBC915BF63A80080705D /* SKPaymentTransaction+Cheddar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKPaymentTransaction+Cheddar.m"; sourceTree = "<group>"; };
-		B208BBCA15BF63A80080705D /* UIButton+Cheddar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Cheddar.h"; sourceTree = "<group>"; };
-		B208BBCB15BF63A80080705D /* UIButton+Cheddar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Cheddar.m"; sourceTree = "<group>"; };
-		B208BBCC15BF63A80080705D /* UIColor+Cheddar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Cheddar.h"; sourceTree = "<group>"; };
-		B208BBCD15BF63A80080705D /* UIColor+Cheddar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Cheddar.m"; sourceTree = "<group>"; };
-		B208BBCE15BF63A80080705D /* UIFont+Cheddar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Cheddar.h"; sourceTree = "<group>"; };
-		B208BBCF15BF63A80080705D /* UIFont+Cheddar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Cheddar.m"; sourceTree = "<group>"; };
+		B208BBC815BF63A80080705D /* SKPaymentTransaction+CheddariOSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKPaymentTransaction+CheddariOSAdditions.h"; sourceTree = "<group>"; };
+		B208BBC915BF63A80080705D /* SKPaymentTransaction+CheddariOSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKPaymentTransaction+CheddariOSAdditions.m"; sourceTree = "<group>"; };
+		B208BBCA15BF63A80080705D /* UIButton+CheddariOSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CheddariOSAdditions.h"; sourceTree = "<group>"; };
+		B208BBCB15BF63A80080705D /* UIButton+CheddariOSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CheddariOSAdditions.m"; sourceTree = "<group>"; };
+		B208BBCC15BF63A80080705D /* UIColor+CheddariOSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CheddariOSAdditions.h"; sourceTree = "<group>"; };
+		B208BBCD15BF63A80080705D /* UIColor+CheddariOSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CheddariOSAdditions.m"; sourceTree = "<group>"; };
+		B208BBCE15BF63A80080705D /* UIFont+CheddariOSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+CheddariOSAdditions.h"; sourceTree = "<group>"; };
+		B208BBCF15BF63A80080705D /* UIFont+CheddariOSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+CheddariOSAdditions.m"; sourceTree = "<group>"; };
 		B208BBD115BF63A80080705D /* Cheddar-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cheddar-Prefix.pch"; sourceTree = "<group>"; };
 		B208BBD215BF63A80080705D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B208BBD415BF63A80080705D /* Cheddar-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Cheddar-Info.plist"; sourceTree = "<group>"; };
@@ -448,70 +448,11 @@
 		B208BB9115BF63A80080705D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B208BB9215BF63A80080705D /* CDIAddListTableViewCell.h */,
-				B208BB9315BF63A80080705D /* CDIAddListTableViewCell.m */,
-				B208BB9415BF63A80080705D /* CDIAddTaskAnimationView.h */,
-				B208BB9515BF63A80080705D /* CDIAddTaskAnimationView.m */,
-				B208BB9615BF63A80080705D /* CDIAddTaskView.h */,
-				B208BB9715BF63A80080705D /* CDIAddTaskView.m */,
-				B208BB9815BF63A80080705D /* CDIAppDelegate.h */,
-				B208BB9915BF63A80080705D /* CDIAppDelegate.m */,
-				B208BB9A15BF63A80080705D /* CDIAttributedLabel.h */,
-				B208BB9B15BF63A80080705D /* CDIAttributedLabel.m */,
-				B208BB9C15BF63A80080705D /* CDICreateListViewController.h */,
-				B208BB9D15BF63A80080705D /* CDICreateListViewController.m */,
-				B208BB9E15BF63A80080705D /* CDIListsViewController.h */,
-				B208BB9F15BF63A80080705D /* CDIListsViewController.m */,
-				B208BBA015BF63A80080705D /* CDIListTableViewCell.h */,
-				B208BBA115BF63A80080705D /* CDIListTableViewCell.m */,
-				B208BBA215BF63A80080705D /* CDIListViewController.h */,
-				B208BBA315BF63A80080705D /* CDIListViewController.m */,
-				B208BBA415BF63A80080705D /* CDILoadingView.h */,
-				B208BBA515BF63A80080705D /* CDILoadingView.m */,
-				B208BBA615BF63A80080705D /* CDIManagedTableViewController.h */,
-				B208BBA715BF63A80080705D /* CDIManagedTableViewController.m */,
-				B208BBA815BF63A80080705D /* CDINoListsView.h */,
-				B208BBA915BF63A80080705D /* CDINoListsView.m */,
-				B208BBAA15BF63A80080705D /* CDINoTasksView.h */,
-				B208BBAB15BF63A80080705D /* CDINoTasksView.m */,
-				B208BBAC15BF63A80080705D /* CDIPullToRefreshContentView.h */,
-				B208BBAD15BF63A80080705D /* CDIPullToRefreshContentView.m */,
-				B208BBAE15BF63A80080705D /* CDIPullToRefreshView.h */,
-				B208BBAF15BF63A80080705D /* CDIPullToRefreshView.m */,
-				B208BBB015BF63A80080705D /* CDIRenameTaskViewController.h */,
-				B208BBB115BF63A80080705D /* CDIRenameTaskViewController.m */,
-				B208BBB215BF63A80080705D /* CDISessionsViewController.h */,
-				B208BBB315BF63A80080705D /* CDISessionsViewController.m */,
-				B208BBB415BF63A80080705D /* CDISettingsViewController.h */,
-				B208BBB515BF63A80080705D /* CDISettingsViewController.m */,
-				B208BBB615BF63A80080705D /* CDISignInViewController.h */,
-				B208BBB715BF63A80080705D /* CDISignInViewController.m */,
-				B208BBB815BF63A80080705D /* CDISignUpViewController.h */,
-				B208BBB915BF63A80080705D /* CDISignUpViewController.m */,
-				B208BBBA15BF63A80080705D /* CDISplitViewController.h */,
-				B208BBBB15BF63A80080705D /* CDISplitViewController.m */,
-				B208BBBC15BF63A80080705D /* CDITableViewCell.h */,
-				B208BBBD15BF63A80080705D /* CDITableViewCell.m */,
-				B208BBBE15BF63A80080705D /* CDITableViewCellDeleteConfirmationControl.h */,
-				B208BBBF15BF63A80080705D /* CDITableViewCellDeleteConfirmationControl.m */,
-				B208BBC015BF63A80080705D /* CDITagView.h */,
-				B208BBC115BF63A80080705D /* CDITagView.m */,
-				B208BBC215BF63A80080705D /* CDITaskTableViewCell.h */,
-				B208BBC315BF63A80080705D /* CDITaskTableViewCell.m */,
-				B208BBC415BF63A80080705D /* CDITransactionObserver.h */,
-				B208BBC515BF63A80080705D /* CDITransactionObserver.m */,
-				B208BBC615BF63A80080705D /* CDIUpgradeViewController.h */,
-				B208BBC715BF63A80080705D /* CDIUpgradeViewController.m */,
-				B208BBC815BF63A80080705D /* SKPaymentTransaction+Cheddar.h */,
-				B208BBC915BF63A80080705D /* SKPaymentTransaction+Cheddar.m */,
-				B208BBCA15BF63A80080705D /* UIButton+Cheddar.h */,
-				B208BBCB15BF63A80080705D /* UIButton+Cheddar.m */,
-				B208BBCC15BF63A80080705D /* UIColor+Cheddar.h */,
-				B208BBCD15BF63A80080705D /* UIColor+Cheddar.m */,
-				B208BBCE15BF63A80080705D /* UIFont+Cheddar.h */,
-				B208BBCF15BF63A80080705D /* UIFont+Cheddar.m */,
-				B2A2B07915C0BE7300772CF6 /* CDKTask+CheddariOSAdditions.h */,
-				B2A2B07A15C0BE7300772CF6 /* CDKTask+CheddariOSAdditions.m */,
+				B2D1241F15C1FC3C00ED1218 /* Application */,
+				B2D1242115C1FC7000ED1218 /* View Controllers */,
+				B2D1242015C1FC5D00ED1218 /* Views */,
+				B2D1242215C1FC8B00ED1218 /* Categories */,
+				B232619F15C206B700D455EF /* Misc */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -738,6 +679,103 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B232619F15C206B700D455EF /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				B208BBC415BF63A80080705D /* CDITransactionObserver.h */,
+				B208BBC515BF63A80080705D /* CDITransactionObserver.m */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		B23261A015C206C700D455EF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B208BB9215BF63A80080705D /* CDIAddListTableViewCell.h */,
+				B208BB9315BF63A80080705D /* CDIAddListTableViewCell.m */,
+				B208BBA015BF63A80080705D /* CDIListTableViewCell.h */,
+				B208BBA115BF63A80080705D /* CDIListTableViewCell.m */,
+				B208BBBC15BF63A80080705D /* CDITableViewCell.h */,
+				B208BBBD15BF63A80080705D /* CDITableViewCell.m */,
+				B208BBC215BF63A80080705D /* CDITaskTableViewCell.h */,
+				B208BBC315BF63A80080705D /* CDITaskTableViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		B23261A115C206D000D455EF /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				B208BB9415BF63A80080705D /* CDIAddTaskAnimationView.h */,
+				B208BB9515BF63A80080705D /* CDIAddTaskAnimationView.m */,
+			);
+			name = Animations;
+			sourceTree = "<group>";
+		};
+		B23261A215C206EC00D455EF /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				B208BB9C15BF63A80080705D /* CDICreateListViewController.h */,
+				B208BB9D15BF63A80080705D /* CDICreateListViewController.m */,
+				B208BB9E15BF63A80080705D /* CDIListsViewController.h */,
+				B208BB9F15BF63A80080705D /* CDIListsViewController.m */,
+			);
+			name = Lists;
+			sourceTree = "<group>";
+		};
+		B23261A315C206F200D455EF /* List */ = {
+			isa = PBXGroup;
+			children = (
+				B208BBA215BF63A80080705D /* CDIListViewController.h */,
+				B208BBA315BF63A80080705D /* CDIListViewController.m */,
+				B208BBB015BF63A80080705D /* CDIRenameTaskViewController.h */,
+				B208BBB115BF63A80080705D /* CDIRenameTaskViewController.m */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		B23261A415C206FF00D455EF /* Upgrade */ = {
+			isa = PBXGroup;
+			children = (
+				B208BBB415BF63A80080705D /* CDISettingsViewController.h */,
+				B208BBB515BF63A80080705D /* CDISettingsViewController.m */,
+				B208BBC615BF63A80080705D /* CDIUpgradeViewController.h */,
+				B208BBC715BF63A80080705D /* CDIUpgradeViewController.m */,
+			);
+			name = Upgrade;
+			sourceTree = "<group>";
+		};
+		B23261A515C2070600D455EF /* Sessions */ = {
+			isa = PBXGroup;
+			children = (
+				B208BBB215BF63A80080705D /* CDISessionsViewController.h */,
+				B208BBB315BF63A80080705D /* CDISessionsViewController.m */,
+				B208BBB615BF63A80080705D /* CDISignInViewController.h */,
+				B208BBB715BF63A80080705D /* CDISignInViewController.m */,
+				B208BBB815BF63A80080705D /* CDISignUpViewController.h */,
+				B208BBB915BF63A80080705D /* CDISignUpViewController.m */,
+			);
+			name = Sessions;
+			sourceTree = "<group>";
+		};
+		B23261A615C2070D00D455EF /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				B208BBA615BF63A80080705D /* CDIManagedTableViewController.h */,
+				B208BBA715BF63A80080705D /* CDIManagedTableViewController.m */,
+			);
+			name = Abstract;
+			sourceTree = "<group>";
+		};
+		B23261A715C2071300D455EF /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				B208BBBA15BF63A80080705D /* CDISplitViewController.h */,
+				B208BBBB15BF63A80080705D /* CDISplitViewController.m */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
 		B23FA74A151FE0710069A0D1 = {
 			isa = PBXGroup;
 			children = (
@@ -775,6 +813,72 @@
 				B28FD2E015BF755600365CD6 /* Cheddar.xcdatamodeld */,
 			);
 			path = "Other Sources";
+			sourceTree = "<group>";
+		};
+		B2D1241F15C1FC3C00ED1218 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B208BB9815BF63A80080705D /* CDIAppDelegate.h */,
+				B208BB9915BF63A80080705D /* CDIAppDelegate.m */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		B2D1242015C1FC5D00ED1218 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B23261A015C206C700D455EF /* Cells */,
+				B23261A115C206D000D455EF /* Animations */,
+				B208BB9615BF63A80080705D /* CDIAddTaskView.h */,
+				B208BB9715BF63A80080705D /* CDIAddTaskView.m */,
+				B208BB9A15BF63A80080705D /* CDIAttributedLabel.h */,
+				B208BB9B15BF63A80080705D /* CDIAttributedLabel.m */,
+				B208BBA415BF63A80080705D /* CDILoadingView.h */,
+				B208BBA515BF63A80080705D /* CDILoadingView.m */,
+				B208BBA815BF63A80080705D /* CDINoListsView.h */,
+				B208BBA915BF63A80080705D /* CDINoListsView.m */,
+				B208BBAA15BF63A80080705D /* CDINoTasksView.h */,
+				B208BBAB15BF63A80080705D /* CDINoTasksView.m */,
+				B208BBAC15BF63A80080705D /* CDIPullToRefreshContentView.h */,
+				B208BBAD15BF63A80080705D /* CDIPullToRefreshContentView.m */,
+				B208BBAE15BF63A80080705D /* CDIPullToRefreshView.h */,
+				B208BBAF15BF63A80080705D /* CDIPullToRefreshView.m */,
+				B208BBBE15BF63A80080705D /* CDITableViewCellDeleteConfirmationControl.h */,
+				B208BBBF15BF63A80080705D /* CDITableViewCellDeleteConfirmationControl.m */,
+				B208BBC015BF63A80080705D /* CDITagView.h */,
+				B208BBC115BF63A80080705D /* CDITagView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B2D1242115C1FC7000ED1218 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B23261A215C206EC00D455EF /* Lists */,
+				B23261A315C206F200D455EF /* List */,
+				B23261A615C2070D00D455EF /* Abstract */,
+				B23261A515C2070600D455EF /* Sessions */,
+				B23261A415C206FF00D455EF /* Upgrade */,
+				B23261A715C2071300D455EF /* iPad */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B2D1242215C1FC8B00ED1218 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B208BBC815BF63A80080705D /* SKPaymentTransaction+CheddariOSAdditions.h */,
+				B208BBC915BF63A80080705D /* SKPaymentTransaction+CheddariOSAdditions.m */,
+				B208BBCA15BF63A80080705D /* UIButton+CheddariOSAdditions.h */,
+				B208BBCB15BF63A80080705D /* UIButton+CheddariOSAdditions.m */,
+				B208BBCC15BF63A80080705D /* UIColor+CheddariOSAdditions.h */,
+				B208BBCD15BF63A80080705D /* UIColor+CheddariOSAdditions.m */,
+				B208BBCE15BF63A80080705D /* UIFont+CheddariOSAdditions.h */,
+				B208BBCF15BF63A80080705D /* UIFont+CheddariOSAdditions.m */,
+				B2A2B07915C0BE7300772CF6 /* CDKTask+CheddariOSAdditions.h */,
+				B2A2B07A15C0BE7300772CF6 /* CDKTask+CheddariOSAdditions.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1037,10 +1141,10 @@
 				B208BC4115BF63A80080705D /* CDITaskTableViewCell.m in Sources */,
 				B208BC4215BF63A80080705D /* CDITransactionObserver.m in Sources */,
 				B208BC4315BF63A80080705D /* CDIUpgradeViewController.m in Sources */,
-				B208BC4415BF63A80080705D /* SKPaymentTransaction+Cheddar.m in Sources */,
-				B208BC4515BF63A80080705D /* UIButton+Cheddar.m in Sources */,
-				B208BC4615BF63A80080705D /* UIColor+Cheddar.m in Sources */,
-				B208BC4715BF63A80080705D /* UIFont+Cheddar.m in Sources */,
+				B208BC4415BF63A80080705D /* SKPaymentTransaction+CheddariOSAdditions.m in Sources */,
+				B208BC4515BF63A80080705D /* UIButton+CheddariOSAdditions.m in Sources */,
+				B208BC4615BF63A80080705D /* UIColor+CheddariOSAdditions.m in Sources */,
+				B208BC4715BF63A80080705D /* UIFont+CheddariOSAdditions.m in Sources */,
 				B208BC4815BF63A80080705D /* main.m in Sources */,
 				B208C10F15BF63E20080705D /* LocalyticsDatabase.m in Sources */,
 				B208C11015BF63E20080705D /* LocalyticsSession.m in Sources */,

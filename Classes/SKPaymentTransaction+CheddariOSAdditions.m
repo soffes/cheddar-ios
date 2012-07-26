@@ -1,14 +1,14 @@
 //
-//  SKPaymentTransaction+Cheddar.m
+//  SKPaymentTransaction+CheddariOSAdditions.m
 //  Cheddar for iOS
 //
 //  Created by Sam Soffes on 5/15/12.
 //  Copyright (c) 2012 Nothing Magical. All rights reserved.
 //
 
-#import "SKPaymentTransaction+Cheddar.h"
+#import "SKPaymentTransaction+CheddariOSAdditions.h"
 
-@implementation SKPaymentTransaction (Cheddar)
+@implementation SKPaymentTransaction (CheddariOSAdditions)
 
 // From http://stackoverflow.com/a/1314501/118631
 - (NSString *)transactionReceiptString {

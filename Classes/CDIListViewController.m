@@ -10,12 +10,12 @@
 #import "CDITaskTableViewCell.h"
 #import "CDIAddTaskView.h"
 #import "CDIAddTaskAnimationView.h"
-#import "UIColor+Cheddar.h"
-#import "UIFont+Cheddar.h"
 #import "CDIAttributedLabel.h"
 #import "CDICreateListViewController.h"
 #import "CDINoTasksView.h"
 #import "CDIRenameTaskViewController.h"
+#import "UIColor+CheddariOSAdditions.h"
+#import "UIFont+CheddariOSAdditions.h"
 
 @interface CDIListViewController () <CDIAddTaskViewDelegate, TTTAttributedLabelDelegate, UITextFieldDelegate, UIActionSheetDelegate, UIAlertViewDelegate>
 @property (nonatomic, strong) CDIAddTaskView *addTaskView;

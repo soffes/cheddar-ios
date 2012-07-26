@@ -1,14 +1,14 @@
 //
-//  UIFont+Cheddar.m
+//  UIFont+CheddariOSAdditions.m
 //  Cheddar for iOS
 //
 //  Created by Sam Soffes on 4/23/12.
 //  Copyright (c) 2012 Nothing Magical. All rights reserved.
 //
 
-#import "UIFont+Cheddar.h"
+#import "UIFont+CheddariOSAdditions.h"
 
-@implementation UIFont (Cheddar)
+@implementation UIFont (CheddariOSAdditions)
 
 + (UIFont *)cheddarFontOfSize:(CGFloat)fontSize {
 	return [self fontWithName:kCDIRegularFontName size:fontSize];

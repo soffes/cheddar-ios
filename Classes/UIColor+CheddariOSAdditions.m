@@ -1,14 +1,14 @@
 //
-//  UIColor+Cheddar.m
+//  UIColor+CheddariOSAdditions.m
 //  Cheddar for iOS
 //
 //  Created by Sam Soffes on 4/8/12.
 //  Copyright (c) 2012 Nothing Magical. All rights reserved.
 //
 
-#import "UIColor+Cheddar.h"
+#import "UIColor+CheddariOSAdditions.h"
 
-@implementation UIColor (Cheddar)
+@implementation UIColor (CheddariOSAdditions)
 
 + (UIColor *)cheddarArchesColor {
 	return [self colorWithPatternImage:[UIImage imageNamed:@"arches.png"]];

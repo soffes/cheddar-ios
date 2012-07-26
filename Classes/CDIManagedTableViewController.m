@@ -8,7 +8,7 @@
 
 #import "CDIManagedTableViewController.h"
 #import "CDITableViewCell.h"
-#import "UIColor+Cheddar.h"
+#import "UIColor+CheddariOSAdditions.h"
 #import "CDILoadingView.h"
 
 @implementation CDIManagedTableViewController {

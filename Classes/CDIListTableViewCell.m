@@ -7,7 +7,7 @@
 //
 
 #import "CDIListTableViewCell.h"
-#import "UIColor+Cheddar.h"
+#import "UIColor+CheddariOSAdditions.h"
 
 @implementation CDIListTableViewCell
 

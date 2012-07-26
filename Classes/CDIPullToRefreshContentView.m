@@ -7,8 +7,8 @@
 //
 
 #import "CDIPullToRefreshContentView.h"
-#import "UIColor+Cheddar.h"
-#import "UIFont+Cheddar.h"
+#import "UIColor+CheddariOSAdditions.h"
+#import "UIFont+CheddariOSAdditions.h"
 
 @implementation CDIPullToRefreshContentView
 

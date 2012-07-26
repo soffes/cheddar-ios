@@ -7,7 +7,7 @@
 //
 
 #import "CDITransactionObserver.h"
-#import "SKPaymentTransaction+Cheddar.h"
+#import "SKPaymentTransaction+CheddariOSAdditions.h"
 
 NSString *const kCDITransactionObserverDidUpdateProductsNotificationName = @"CDITransactionObserverDidUpdateProductsNotification";
 NSString *const kCDIPaymentTransactionDidCompleteNotificationName = @"CDIPaymentTransactionDidCompleteNotification";

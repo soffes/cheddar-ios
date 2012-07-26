@@ -7,7 +7,7 @@
 //
 
 #import "CDITagView.h"
-#import "UIFont+Cheddar.h"
+#import "UIFont+CheddariOSAdditions.h"
 
 @implementation CDITagView
 

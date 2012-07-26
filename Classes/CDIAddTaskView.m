@@ -9,9 +9,9 @@
 #import "CDIAddTaskView.h"
 #import "CDITableViewCell.h"
 #import "CDITagView.h"
-#import "UIColor+Cheddar.h"
-#import "UIFont+Cheddar.h"
-#import "UIButton+Cheddar.h"
+#import "UIColor+CheddariOSAdditions.h"
+#import "UIFont+CheddariOSAdditions.h"
+#import "UIButton+CheddariOSAdditions.h"
 
 @interface CDIAddTaskView () <UITextFieldDelegate>
 - (void)_closeTag;

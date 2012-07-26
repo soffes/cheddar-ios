@@ -13,7 +13,7 @@
 #import "CDICreateListViewController.h"
 #import "CDISettingsViewController.h"
 #import "CDISplitViewController.h"
-#import "UIColor+Cheddar.h"
+#import "UIColor+CheddariOSAdditions.h"
 #import "CDIUpgradeViewController.h"
 #import "CDINoListsView.h"
 #import "CDIAddListTableViewCell.h"

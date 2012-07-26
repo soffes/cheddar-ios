@@ -7,8 +7,8 @@
 //
 
 #import "CDIRenameTaskViewController.h"
-#import "UIColor+Cheddar.h"
-#import "UIFont+Cheddar.h"
+#import "UIColor+CheddariOSAdditions.h"
+#import "UIFont+CheddariOSAdditions.h"
 
 @interface CDIRenameTaskViewController () <UITextViewDelegate>
 - (void)_keyboardDidShow:(NSNotification *)notification;

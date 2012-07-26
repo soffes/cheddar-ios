@@ -11,7 +11,7 @@
 #import "CDIListsViewController.h"
 #import "CDITransactionObserver.h"
 #import "CDIDefines.h"
-#import "UIFont+Cheddar.h"
+#import "UIFont+CheddariOSAdditions.h"
 #import "LocalyticsUtilities.h"
 #import <Crashlytics/Crashlytics.h>
 #import <StoreKit/StoreKit.h>
