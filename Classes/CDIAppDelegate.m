@@ -40,8 +40,8 @@
 	
 	// Optionally enable development mode
 #ifdef CHEDDAR_API_DEVELOPMENT_MODE
-	[CDKHTTPClient setDevelopmentMode:YES];
-	[CDKPushController setDevelopmentMode:YES];
+	[CDKHTTPClient setDevelopmentModeEnabled:YES];
+	[CDKPushController setDevelopmentModeEnabled:YES];
 #endif
 	
 	// Initialize the window
