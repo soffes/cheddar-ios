@@ -11,7 +11,7 @@
 		B208BC2A15BF63A80080705D /* CDIAddTaskAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BB9515BF63A80080705D /* CDIAddTaskAnimationView.m */; };
 		B208BC2B15BF63A80080705D /* CDIAddTaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BB9715BF63A80080705D /* CDIAddTaskView.m */; };
 		B208BC2C15BF63A80080705D /* CDIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BB9915BF63A80080705D /* CDIAppDelegate.m */; };
-		B208BC2D15BF63A80080705D /* CDIAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BB9B15BF63A80080705D /* CDIAttributedLabel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B208BC2D15BF63A80080705D /* CDIAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BB9B15BF63A80080705D /* CDIAttributedLabel.m */; };
 		B208BC2E15BF63A80080705D /* CDICreateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BB9D15BF63A80080705D /* CDICreateListViewController.m */; };
 		B208BC2F15BF63A80080705D /* CDIListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BB9F15BF63A80080705D /* CDIListsViewController.m */; };
 		B208BC3015BF63A80080705D /* CDIListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBA115BF63A80080705D /* CDIListTableViewCell.m */; };
@@ -130,7 +130,7 @@
 		B208C14015BF63E20080705D /* SSPullToRefreshDefaultContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BEC515BF63E00080705D /* SSPullToRefreshDefaultContentView.m */; };
 		B208C14115BF63E20080705D /* SSPullToRefreshSimpleContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BEC715BF63E00080705D /* SSPullToRefreshSimpleContentView.m */; };
 		B208C14215BF63E20080705D /* SSPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BEC915BF63E00080705D /* SSPullToRefreshView.m */; };
-		B208C1A515BF63E20080705D /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BF7E15BF63E00080705D /* TTTAttributedLabel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B208C1A515BF63E20080705D /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BF7E15BF63E00080705D /* TTTAttributedLabel.m */; };
 		B208C1EB15BF64630080705D /* libSSToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B208C1DF15BF63E30080705D /* libSSToolkit.a */; };
 		B208C1F415BF64630080705D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B208C1EC15BF64630080705D /* CoreData.framework */; };
 		B208C1F515BF64630080705D /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B208C1ED15BF64630080705D /* CoreText.framework */; };
