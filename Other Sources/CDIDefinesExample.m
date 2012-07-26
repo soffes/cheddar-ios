@@ -10,7 +10,15 @@
 
 #pragma mark - API
 
-// Remove the next line after you have filled in your API credentials
+//
+// Remove the line that starts with `#error` after you have filled
+// in your API credentials.
+//
+// If you don't have API credentials yet, you can register an app
+// at https://cheddarapp.com/developer/apps
+//
+// You must set the redirect URI to `cheddar://oauth`
+//
 #error You need to fill in CDIDefines.m with your API credentials
 
 NSString *const kCDIAPIClientID = @"YOUR_API_KEY";
