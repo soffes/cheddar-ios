@@ -735,7 +735,7 @@
 			name = List;
 			sourceTree = "<group>";
 		};
-		B23261A415C206FF00D455EF /* Upgrade */ = {
+		B23261A415C206FF00D455EF /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				B208BBB415BF63A80080705D /* CDISettingsViewController.h */,
@@ -743,7 +743,7 @@
 				B208BBC615BF63A80080705D /* CDIUpgradeViewController.h */,
 				B208BBC715BF63A80080705D /* CDIUpgradeViewController.m */,
 			);
-			name = Upgrade;
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		B23261A515C2070600D455EF /* Sessions */ = {
@@ -861,7 +861,7 @@
 				B23261A315C206F200D455EF /* List */,
 				B23261A615C2070D00D455EF /* Abstract */,
 				B23261A515C2070600D455EF /* Sessions */,
-				B23261A415C206FF00D455EF /* Upgrade */,
+				B23261A415C206FF00D455EF /* Settings */,
 				B23261A715C2071300D455EF /* iPad */,
 			);
 			name = "View Controllers";
