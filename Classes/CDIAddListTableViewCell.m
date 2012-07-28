@@ -36,7 +36,7 @@
 		_textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
 		[self.contentView addSubview:_textField];
 
-		_closeButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 15.0f, 15.0f)];
+		_closeButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 40.0f, 51.0f)];
 		[_closeButton setImage:[UIImage imageNamed:@"x.png"] forState:UIControlStateNormal];
 		self.accessoryView = _closeButton;
 	}
