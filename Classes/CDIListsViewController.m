@@ -98,8 +98,6 @@
 		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"plus.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(createList:)];
 	}
 
-	self.navigationItem.leftBarButtonItem.enabled = [self hasContent];
-	
 	if (!editing && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		[self.tableView selectRowAtIndexPath:[self.fetchedResultsController indexPathForObject:_selectedList] animated:YES scrollPosition:UITableViewScrollPositionNone];
 	}
@@ -474,8 +472,6 @@
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
 	[super controllerDidChangeContent:controller];
 	
-	self.navigationItem.leftBarButtonItem.enabled = [self hasContent];
-
 	if (_checkForOneList) {
 		if (self.fetchedResultsController.fetchedObjects.count == 1) {
 			[self _selectListAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] newList:NO];

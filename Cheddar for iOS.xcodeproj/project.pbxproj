@@ -126,7 +126,6 @@
 		B208C11015BF63E20080705D /* LocalyticsSession.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BE6215BF63E00080705D /* LocalyticsSession.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B208C11115BF63E20080705D /* LocalyticsUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BE6415BF63E00080705D /* LocalyticsUploader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B208C11215BF63E20080705D /* LocalyticsUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BE6615BF63E00080705D /* LocalyticsUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B208C11315BF63E20080705D /* Readme.markdown in Resources */ = {isa = PBXBuildFile; fileRef = B208BE6715BF63E00080705D /* Readme.markdown */; };
 		B208C14015BF63E20080705D /* SSPullToRefreshDefaultContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BEC515BF63E00080705D /* SSPullToRefreshDefaultContentView.m */; };
 		B208C14115BF63E20080705D /* SSPullToRefreshSimpleContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BEC715BF63E00080705D /* SSPullToRefreshSimpleContentView.m */; };
 		B208C14215BF63E20080705D /* SSPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BEC915BF63E00080705D /* SSPullToRefreshView.m */; };
@@ -142,6 +141,7 @@
 		B208C1FB15BF64630080705D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B208C1F315BF64630080705D /* UIKit.framework */; };
 		B208C5FC15BF658D0080705D /* libCheddarKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B208C5BF15BF654B0080705D /* libCheddarKit.a */; };
 		B23261AA15C207FF00D455EF /* CDIWebSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B23261A915C207FF00D455EF /* CDIWebSignInViewController.m */; };
+		B28F84DB15C37E1D003E4595 /* SSToolkitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B208C1E315BF63E30080705D /* SSToolkitResources.bundle */; };
 		B28FD2BE15BF730100365CD6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FD2BD15BF730100365CD6 /* CFNetwork.framework */; };
 		B28FD2C015BF731100365CD6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FD2BF15BF731000365CD6 /* CoreGraphics.framework */; };
 		B28FD2C215BF731B00365CD6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FD2C115BF731B00365CD6 /* MessageUI.framework */; };
@@ -375,7 +375,6 @@
 		B208BE6415BF63E00080705D /* LocalyticsUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalyticsUploader.m; sourceTree = "<group>"; };
 		B208BE6515BF63E00080705D /* LocalyticsUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalyticsUtilities.h; sourceTree = "<group>"; };
 		B208BE6615BF63E00080705D /* LocalyticsUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalyticsUtilities.m; sourceTree = "<group>"; };
-		B208BE6715BF63E00080705D /* Readme.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.markdown; sourceTree = "<group>"; };
 		B208BE6815BF63E00080705D /* WebserviceConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebserviceConstants.h; sourceTree = "<group>"; };
 		B208BEC215BF63E00080705D /* SSPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSPullToRefresh.h; sourceTree = "<group>"; };
 		B208BEC415BF63E00080705D /* SSPullToRefreshDefaultContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSPullToRefreshDefaultContentView.h; sourceTree = "<group>"; };
@@ -595,7 +594,6 @@
 				B208BE6415BF63E00080705D /* LocalyticsUploader.m */,
 				B208BE6515BF63E00080705D /* LocalyticsUtilities.h */,
 				B208BE6615BF63E00080705D /* LocalyticsUtilities.m */,
-				B208BE6715BF63E00080705D /* Readme.markdown */,
 				B208BE6815BF63E00080705D /* WebserviceConstants.h */,
 			);
 			path = Localytics;
@@ -1087,12 +1085,12 @@
 				B208BC9A15BF63A80080705D /* textfield@2x.png in Resources */,
 				B208BC9B15BF63A80080705D /* x.png in Resources */,
 				B208BC9C15BF63A80080705D /* x@2x.png in Resources */,
-				B208C11315BF63E20080705D /* Readme.markdown in Resources */,
 				B28FD2D915BF742D00365CD6 /* Cheddar.entitlements in Resources */,
 				B28FD2DB15BF742D00365CD6 /* Gotham-Bold.otf in Resources */,
 				B28FD2DC15BF742D00365CD6 /* Gotham-BoldItalic.otf in Resources */,
 				B28FD2DD15BF742D00365CD6 /* Gotham-Book.otf in Resources */,
 				B28FD2DE15BF742D00365CD6 /* Gotham-BookItalic.otf in Resources */,
+				B28F84DB15C37E1D003E4595 /* SSToolkitResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -178,7 +178,7 @@
 		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStyleBordered target:self action:@selector(toggleEditMode:)];
 	}
 	self.navigationItem.rightBarButtonItem.title = editing ? @"Done" : @"Edit";
-	self.navigationItem.rightBarButtonItem.enabled = !self.currentTag && self.list && self.fetchedResultsController.fetchedObjects.count > 0;
+	self.navigationItem.rightBarButtonItem.enabled = !self.currentTag && self.list;
 	[self.addTaskView setEditing:editing animated:animated];
 
 //	NSMutableArray *rows = [[NSMutableArray alloc] init];
@@ -547,14 +547,6 @@
 			[self.navigationController popToRootViewControllerAnimated:YES];
 		}
 	}
-}
-
-
-#pragma mark - NSFetchedResultsController
-
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-	[super controllerDidChangeContent:controller];
-	self.navigationItem.rightBarButtonItem.enabled = [self hasContent];
 }
 
 @end
