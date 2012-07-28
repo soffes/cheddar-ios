@@ -167,6 +167,8 @@
 		B2AD02EE15C475B100D9B909 /* nav-button-mini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2AD02EA15C475B100D9B909 /* nav-button-mini@2x.png */; };
 		B2AD02F015C47BF000D9B909 /* nav-background-mini.png in Resources */ = {isa = PBXBuildFile; fileRef = B2AD02EF15C47BF000D9B909 /* nav-background-mini.png */; };
 		B2AD02F215C47E4300D9B909 /* nav-background-mini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2AD02F115C47E4300D9B909 /* nav-background-mini@2x.png */; };
+		B2AD02F415C482B200D9B909 /* TextExpander.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2AD02F315C482B200D9B909 /* TextExpander.framework */; };
+		B2AD031915C4896E00D9B909 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2AD031815C4896E00D9B909 /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -436,6 +438,8 @@
 		B2AD02EA15C475B100D9B909 /* nav-button-mini@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-button-mini@2x.png"; sourceTree = "<group>"; };
 		B2AD02EF15C47BF000D9B909 /* nav-background-mini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-background-mini.png"; sourceTree = "<group>"; };
 		B2AD02F115C47E4300D9B909 /* nav-background-mini@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-background-mini@2x.png"; sourceTree = "<group>"; };
+		B2AD02F315C482B200D9B909 /* TextExpander.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TextExpander.framework; sourceTree = "<group>"; };
+		B2AD031815C4896E00D9B909 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -443,6 +447,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2AD031915C4896E00D9B909 /* AudioToolbox.framework in Frameworks */,
 				B28FD2D115BF739300365CD6 /* libicucore.dylib in Frameworks */,
 				B208C1F715BF64630080705D /* MobileCoreServices.framework in Frameworks */,
 				B28FD2C815BF732F00365CD6 /* libsqlite3.dylib in Frameworks */,
@@ -461,6 +466,7 @@
 				B208C1FB15BF64630080705D /* UIKit.framework in Frameworks */,
 				B208C1EB15BF64630080705D /* libSSToolkit.a in Frameworks */,
 				B208C10115BF63E20080705D /* Crashlytics.framework in Frameworks */,
+				B2AD02F415C482B200D9B909 /* TextExpander.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +615,7 @@
 				B208BECA15BF63E00080705D /* SSToolkit */,
 				B208BF7915BF63E00080705D /* TTTAttributedLabel */,
 				B208BE4315BF63E00080705D /* Crashlytics.framework */,
+				B2AD02F315C482B200D9B909 /* TextExpander.framework */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -673,6 +680,7 @@
 		B208C1FC15BF64690080705D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B2AD031815C4896E00D9B909 /* AudioToolbox.framework */,
 				B28FD2D015BF739300365CD6 /* libicucore.dylib */,
 				B28FD2C715BF732F00365CD6 /* libsqlite3.dylib */,
 				B28FD2C515BF732800365CD6 /* StoreKit.framework */,
@@ -1282,7 +1290,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Vendor\"",
-					"\"$(SRCROOT)/Vendor/SSToolkit/Tests\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Cheddar-Prefix.pch";
@@ -1290,6 +1297,7 @@
 					"\"$(SRCROOT)/Vendor/SSToolkit\"",
 					"\"$(SRCROOT)/Vendor/Bully\"",
 					"\"$(SRCROOT)/Vendor/CheddarKit\"/**",
+					"\"$(SRCROOT)/Vendor/TextExpander.framework/Versions/A/Headers\"",
 				);
 				INFOPLIST_FILE = "Resources/Cheddar-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -1316,7 +1324,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Vendor\"",
-					"\"$(SRCROOT)/Vendor/SSToolkit/Tests\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Cheddar-Prefix.pch";
@@ -1324,6 +1331,7 @@
 					"\"$(SRCROOT)/Vendor/SSToolkit\"",
 					"\"$(SRCROOT)/Vendor/Bully\"",
 					"\"$(SRCROOT)/Vendor/CheddarKit\"/**",
+					"\"$(SRCROOT)/Vendor/TextExpander.framework/Versions/A/Headers\"",
 				);
 				INFOPLIST_FILE = "Resources/Cheddar-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;

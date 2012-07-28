@@ -16,6 +16,7 @@
 #import "CDIUpgradeViewController.h"
 #import "CDINoListsView.h"
 #import "CDIAddListTableViewCell.h"
+#import "SMTEDelegateController.h"
 #import <SSToolkit/UIScrollView+SSToolkitAdditions.h>
 
 #ifdef CHEDDAR_USE_PASSWORD_FLOW
@@ -25,6 +26,7 @@
 #endif
 
 @interface CDIListsViewController ()
+@property (nonatomic, strong) SMTEDelegateController *textExpander;
 - (void)_listUpdated:(NSNotification *)notification;
 - (void)_currentUserDidChange:(NSNotification *)notification;
 - (void)_createList:(id)sender;
@@ -37,6 +39,18 @@
 	CDKList *_selectedList;
 	BOOL _adding;
 	BOOL _checkForOneList;
+}
+
+
+@synthesize textExpander = _textExpander;
+
+
+#pragma mark - NSObject
+
+- (void)dealloc {
+	if (self.textExpander) {
+		[[NSNotificationCenter defaultCenter] removeObserver:self.textExpander];
+	}
 }
 
 
@@ -60,6 +74,12 @@
 
 	_checkForOneList = YES;
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_currentUserDidChange:) name:kCDKCurrentUserChangedNotificationName object:nil];
+	
+	if ([SMTEDelegateController isTextExpanderTouchInstalled]) {
+		self.textExpander = [[SMTEDelegateController alloc] init];
+		self.textExpander.nextDelegate = self;
+		[[NSNotificationCenter defaultCenter] addObserver:self.textExpander selector:@selector(willEnterForeground) name:UIApplicationWillEnterForegroundNotification object:nil];
+	}
 }
 
 
@@ -348,7 +368,13 @@
 		CDIAddListTableViewCell *cell = (CDIAddListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:addCellIdentifier];
 		if (!cell) {
 			cell = [[CDIAddListTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:addCellIdentifier];
-			cell.textField.delegate = self;
+			
+			if (self.textExpander) {
+				cell.textField.delegate = self.textExpander;
+			} else {
+				cell.textField.delegate = self;
+			}
+			
 			[cell.closeButton addTarget:self action:@selector(_cancelAddingList:) forControlEvents:UIControlEventTouchUpInside];
 		}
 		[cell.textField becomeFirstResponder];
