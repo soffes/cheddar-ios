@@ -53,11 +53,6 @@
 }
 
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-	return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? YES : toInterfaceOrientation == UIInterfaceOrientationPortrait;
-}
-
-
 #pragma mark - Private
 
 - (void)_authorizeWithCode:(NSString *)code {

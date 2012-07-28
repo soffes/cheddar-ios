@@ -81,9 +81,4 @@
 	[self.usernameTextField becomeFirstResponder];
 }
 
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-	return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? YES : toInterfaceOrientation == UIInterfaceOrientationPortrait;
-}
-
 @end
