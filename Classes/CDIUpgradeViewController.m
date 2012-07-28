@@ -150,7 +150,9 @@
 	
 	NSTimeInterval step = 0.1;
 	CGFloat displacement = x + 280.0f;
-	CGFloat cancelDisplacement = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 70.0f : 68.0f;
+	CGFloat extraDisplacement = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 7.0f : 5.0f;
+	CGFloat cancelDisplacement = cancelButton.frame.size.width + extraDisplacement;
+	CGFloat restoreDisplacement = _restoreButton.frame.size.width + extraDisplacement;
 	
 	[self _animateView:_laterButton xDisplacement:displacement delay:0.0];
 	[self _animateView:_upgradeButton xDisplacement:displacement delay:step];
@@ -158,7 +160,7 @@
 	[self _animateView:sixMonthsButton xDisplacement:displacement delay:(step * 3.0)];
 	[self _animateView:yearButton xDisplacement:displacement delay:(step * 4.0)];
 	[self _animateView:cancelButton xDisplacement:cancelDisplacement delay:(step * 4.0)];
-	[self _animateView:_restoreButton xDisplacement:cancelDisplacement delay:0.0];
+	[self _animateView:_restoreButton xDisplacement:restoreDisplacement delay:0.0];
 }
 
 
