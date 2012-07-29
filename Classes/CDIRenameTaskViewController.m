@@ -23,6 +23,14 @@
 @synthesize task = _task;
 @synthesize textView = _textView;
 
+
+#pragma mark - NSObject
+
+- (void)dealloc {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
 #pragma mark - UIViewController
 
 - (void)viewDidLoad {
@@ -48,12 +56,6 @@
 
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
-}
-
-
-- (void)viewDidUnload {
-	[super viewDidUnload];
-	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 

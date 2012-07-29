@@ -88,16 +88,6 @@
 }
 
 
-- (void)viewDidUnload {
-	[super viewDidUnload];
-	_tableViewTapGestureRecognizer = nil;
-
-	_pullToRefreshView.delegate = nil;
-	[_pullToRefreshView removeFromSuperview];
-	_pullToRefreshView = nil;
-}
-
-
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
 	[super setEditing:editing animated:animated];
 	_tableViewTapGestureRecognizer.enabled = editing;

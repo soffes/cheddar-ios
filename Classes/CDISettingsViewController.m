@@ -8,6 +8,7 @@
 
 #import "CDISettingsViewController.h"
 #import "CDIUpgradeViewController.h"
+#import "CDISettingsTableViewCell.h"
 #import "TTTAttributedLabel.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIButton+CheddariOSAdditions.h"
@@ -25,6 +26,14 @@
 	UIButton *_upgradeButton;
 	UIButton *_supportButton;
 	UIButton *_signOutButton;
+	NSCache *_headerCache;
+}
+
+
+#pragma mark - NSObject
+
+- (id)init {
+	return (self = [super initWithStyle:UITableViewStyleGrouped]);
 }
 
 
@@ -33,67 +42,65 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	self.title = @"Settings";
-	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(done:)];
-	self.view.backgroundColor = [UIColor cheddarArchesColor];
+	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(close:)];
+	
+	UIView *background = [[UIView alloc] initWithFrame:CGRectZero];
+	background.backgroundColor = [UIColor cheddarArchesColor];
+	self.tableView.backgroundView = background;
+	
+	SSLabel *footer = [[SSLabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.width, 33.0f)];
+	footer.backgroundColor = [UIColor clearColor];
+	footer.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+	footer.textAlignment = UITextAlignmentCenter;
+	footer.textColor = [UIColor cheddarLightTextColor];
+	footer.font = [UIFont cheddarFontOfSize:14.0f];
+	footer.text = [NSString stringWithFormat:@"Version %@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
+	footer.shadowColor = [UIColor whiteColor];
+	footer.shadowOffset = CGSizeMake(0.0f, 1.0f);
+	footer.verticalTextAlignment = SSLabelVerticalTextAlignmentTop;
+	self.tableView.tableFooterView = footer;
 
-	CGFloat width = self.view.bounds.size.width;
-	_label = [[TTTAttributedLabel alloc] initWithFrame:CGRectMake(20.0f, 10.0f, width - 40.0f, 240.0f)];
-	_label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-	_label.backgroundColor = [UIColor clearColor];
-	_label.font = [UIFont cheddarFontOfSize:18.0f];
-	_label.numberOfLines = 0;
-	_label.textColor = [UIColor cheddarTextColor];
-	_label.verticalAlignment = TTTAttributedLabelVerticalAlignmentTop;
-	_label.userInteractionEnabled = YES;
-	[self.view addSubview:_label];
-
-	_upgradeButton = [UIButton cheddarBigOrangeButton];
-	_upgradeButton.frame = CGRectMake(roundf((width - 280.0f) / 2.0f), 238.0f, 280.0f, 45.0f);
-	_upgradeButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-	[_upgradeButton setTitle:@"Upgrade to Cheddar Plus" forState:UIControlStateNormal];
-	[_upgradeButton addTarget:self action:@selector(upgrade:) forControlEvents:UIControlEventTouchUpInside];
-	_upgradeButton.alpha = 0.0f;
-	[self.view addSubview:_upgradeButton];
-
-	_supportButton = [UIButton cheddarBigGrayButton];
-	_supportButton.frame = CGRectMake(roundf((width - 280.0f) / 2.0f), 292.0f, 280.0f, 45.0f);
-	_supportButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-	[_supportButton setTitle:@"Support" forState:UIControlStateNormal];
-	[_supportButton addTarget:self action:@selector(support:) forControlEvents:UIControlEventTouchUpInside];
-	[self.view addSubview:_supportButton];
-
-	_signOutButton = [UIButton cheddarBigGrayButton];
-	_signOutButton.frame = CGRectMake(roundf((width - 280.0f) / 2.0f), 346.0f, 280.0f, 45.0f);
-	_signOutButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-	[_signOutButton setTitle:@"Sign Out" forState:UIControlStateNormal];
-	[_signOutButton addTarget:self action:@selector(signOut:) forControlEvents:UIControlEventTouchUpInside];
-	[self.view addSubview:_signOutButton];
+//	CGFloat width = self.view.bounds.size.width;
+//	_label = [[TTTAttributedLabel alloc] initWithFrame:CGRectMake(20.0f, 10.0f, width - 40.0f, 240.0f)];
+//	_label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+//	_label.backgroundColor = [UIColor clearColor];
+//	_label.font = [UIFont cheddarFontOfSize:18.0f];
+//	_label.numberOfLines = 0;
+//	_label.textColor = [UIColor cheddarTextColor];
+//	_label.verticalAlignment = TTTAttributedLabelVerticalAlignmentTop;
+//	_label.userInteractionEnabled = YES;
+//	[self.view addSubview:_label];
+//
+//	_upgradeButton = [UIButton cheddarBigOrangeButton];
+//	_upgradeButton.frame = CGRectMake(roundf((width - 280.0f) / 2.0f), 238.0f, 280.0f, 45.0f);
+//	_upgradeButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+//	[_upgradeButton setTitle:@"Upgrade to Cheddar Plus" forState:UIControlStateNormal];
+//	[_upgradeButton addTarget:self action:@selector(upgrade:) forControlEvents:UIControlEventTouchUpInside];
+//	_upgradeButton.alpha = 0.0f;
+//	[self.view addSubview:_upgradeButton];
+//
+//	_supportButton = [UIButton cheddarBigGrayButton];
+//	_supportButton.frame = CGRectMake(roundf((width - 280.0f) / 2.0f), 292.0f, 280.0f, 45.0f);
+//	_supportButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+//	[_supportButton setTitle:@"Support" forState:UIControlStateNormal];
+//	[_supportButton addTarget:self action:@selector(support:) forControlEvents:UIControlEventTouchUpInside];
+//	[self.view addSubview:_supportButton];
+//
+//	_signOutButton = [UIButton cheddarBigGrayButton];
+//	_signOutButton.frame = CGRectMake(roundf((width - 280.0f) / 2.0f), 346.0f, 280.0f, 45.0f);
+//	_signOutButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+//	[_signOutButton setTitle:@"Sign Out" forState:UIControlStateNormal];
+//	[_signOutButton addTarget:self action:@selector(signOut:) forControlEvents:UIControlEventTouchUpInside];
+//	[self.view addSubview:_signOutButton];
 
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_updateUI) name:kCDKPlusDidChangeNotificationName object:nil];
 	[self _updateUI];
 }
 
 
-- (void)viewDidUnload {
-	[super viewDidUnload];
-
-	[_label removeFromSuperview];
-	_label = nil;
-
-	[_upgradeButton removeFromSuperview];
-	_upgradeButton = nil;
-
-	[_supportButton removeFromSuperview];
-	_supportButton = nil;
-
-	[_signOutButton removeFromSuperview];
-	_signOutButton = nil;
-}
-
-
 #pragma mark - Actions
 
-- (void)done:(id)sender {
+- (void)close:(id)sender {
 	[self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
@@ -201,6 +208,111 @@
 	if ([keyPath isEqualToString:@"hasPlus"]) {
 		[self _updateUI];
 	}
+}
+
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+	return 3;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	if (section == 0) {
+		return 2;
+	} else if (section == 1) {
+		return 1;
+	} else if (section == 2) {
+		return 3;
+	}
+	
+	return 0;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	static NSString *cellIdentifier = @"cellIdentifier";
+	
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+	if (!cell) {
+		cell = [[CDISettingsTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
+	}
+	
+	// Display
+	if (indexPath.section == 0) {
+		if (indexPath.row == 0) {
+			cell.textLabel.text = @"Text Size";
+			cell.detailTextLabel.text = @"Large";
+		} else if (indexPath.row == 1) {
+			cell.textLabel.text = @"Font";
+			cell.detailTextLabel.text = @"Gotham";
+		}
+	}
+	
+	// Tasks
+	if (indexPath.section == 1) {
+		if (indexPath.row == 0) {
+			cell.textLabel.text = @"Tap Action";
+			cell.detailTextLabel.text = @"Complete";
+		}
+	}
+	
+	// Other
+	if (indexPath.section == 2) {
+		if (indexPath.row == 0) {
+			cell.textLabel.text = @"About";
+			cell.detailTextLabel.text = nil;
+		} else if (indexPath.row == 1) {
+			cell.textLabel.text = @"Support";
+			cell.detailTextLabel.text = nil;
+		} else if (indexPath.row == 2) {
+			cell.textLabel.text = @"Sign Out";
+			cell.detailTextLabel.text = nil;
+		}
+	}
+	
+	return cell;
+}
+
+
+#pragma mark - UITableViewDelegate
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	if (section == 0) {
+		return @"Display";
+	} else if (section == 1) {
+		return @"Tasks";
+	}
+	return nil;
+}
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+	if (section == 2) {
+		return nil;
+	}
+	
+	if (!_headerCache) {
+		_headerCache = [[NSCache alloc] init];
+	}
+	
+	NSNumber *key = [NSNumber numberWithInteger:section];
+	SSLabel *label = [_headerCache objectForKey:key];
+	if (!label) {
+		CGFloat x = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 40.0f : 20.0f;
+		label = [[SSLabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.width, 44.0f)];
+		label.textEdgeInsets = UIEdgeInsetsMake(10.0f, x, 0.0f, 0.0f);
+		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+		label.backgroundColor = [UIColor clearColor];
+		label.textColor = [UIColor cheddarTextColor];
+		label.font = [UIFont boldCheddarFontOfSize:17.0f];
+		label.shadowColor = [UIColor whiteColor];
+		label.shadowOffset = CGSizeMake(0.0f, 1.0f);		
+		[_headerCache setObject:label forKey:key];
+	}
+	
+	label.text = [self tableView:tableView titleForHeaderInSection:section];
+	return label;
 }
 
 @end

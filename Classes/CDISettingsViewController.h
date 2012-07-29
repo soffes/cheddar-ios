@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Nothing Magical. All rights reserved.
 //
 
-@interface CDISettingsViewController : UIViewController
+@interface CDISettingsViewController : UITableViewController
 
-- (void)done:(id)sender;
+- (void)close:(id)sender;
 - (void)upgrade:(id)sender;
 - (void)support:(id)sender;
 - (void)signOut:(id)sender;
