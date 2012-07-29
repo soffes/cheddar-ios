@@ -8,6 +8,8 @@
 
 #import "CDIManagedTableViewController.h"
 
+extern NSString *const kCDISelectedListKey;
+
 @interface CDIListsViewController : CDIManagedTableViewController
 
 - (void)showSettings:(id)sender;

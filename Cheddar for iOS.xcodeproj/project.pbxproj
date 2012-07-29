@@ -841,10 +841,10 @@
 		B23261A215C206EC00D455EF /* Lists */ = {
 			isa = PBXGroup;
 			children = (
-				B208BB9C15BF63A80080705D /* CDICreateListViewController.h */,
-				B208BB9D15BF63A80080705D /* CDICreateListViewController.m */,
 				B208BB9E15BF63A80080705D /* CDIListsViewController.h */,
 				B208BB9F15BF63A80080705D /* CDIListsViewController.m */,
+				B208BB9C15BF63A80080705D /* CDICreateListViewController.h */,
+				B208BB9D15BF63A80080705D /* CDICreateListViewController.m */,
 			);
 			name = Lists;
 			sourceTree = "<group>";

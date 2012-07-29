@@ -25,6 +25,8 @@
 	#import "CDIWebSignInViewController.h"
 #endif
 
+NSString *const kCDISelectedListKey = @"CDISelectedListKey";
+
 @interface CDIListsViewController ()
 @property (nonatomic, strong) SMTEDelegateController *textExpander;
 - (void)_listUpdated:(NSNotification *)notification;
@@ -314,6 +316,9 @@
 	}
 	
 	CDKList *list = [self objectForViewIndexPath:indexPath];
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	[userDefaults setObject:list.remoteID forKey:kCDISelectedListKey];
+	[userDefaults synchronize];
 	
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		[CDISplitViewController sharedSplitViewController].listViewController.managedObject = list;
@@ -494,6 +499,19 @@
 	[super controllerDidChangeContent:controller];
 	
 	if (_checkForOneList) {
+		NSNumber *selectedList = [[NSUserDefaults standardUserDefaults] objectForKey:kCDISelectedListKey];
+		if (selectedList) {
+			CDKList *list = [CDKList objectWithRemoteID:selectedList];
+			NSIndexPath *fIndexPath = [self.fetchedResultsController indexPathForObject:list];
+			if (!fIndexPath) {
+				_checkForOneList = NO;
+				return;
+			}
+			
+			NSIndexPath *selectedIndexPath = [self viewIndexPathForFetchedIndexPath:fIndexPath];
+			[self _selectListAtIndexPath:selectedIndexPath newList:NO];
+		}
+		
 		if (self.fetchedResultsController.fetchedObjects.count == 1) {
 			[self _selectListAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] newList:NO];
 		}
