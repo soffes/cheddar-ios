@@ -250,6 +250,7 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 	CDIAddListTableViewCell *cell = (CDIAddListTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
 	UITextField *textField = cell.textField;
 	if (textField.text.length == 0) {
+		[self _cancelAddingList:nil];
 		return;
 	}
 

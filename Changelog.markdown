@@ -14,6 +14,8 @@
 
 ✔ Remembers selected list across launches
 
+✔ Finish adding tasks by pressing Go with an empty task
+
 ☂ Bug fixes
 
 

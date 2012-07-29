@@ -302,6 +302,7 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 	if (textField.text.length == 0) {
+		[textField resignFirstResponder];
 		return NO;
 	}
 	
