@@ -107,8 +107,7 @@
 
 
 - (void)support:(id)sender {
-	// For now, send them to the website if they are on iOS 6, since there is a bug preventing the modal to work
-	if ([MFMailComposeViewController canSendMail] == NO || [[[UIDevice currentDevice] systemVersion] isEqualToString:@"6.0"]) {
+	if ([MFMailComposeViewController canSendMail] == NO) {
 		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://cheddarapp.com/support"]];
 		return;
 	}

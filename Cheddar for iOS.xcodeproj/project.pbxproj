@@ -184,7 +184,6 @@
 		B29011BE15C4D247008FC626 /* safari-button-mini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29011B215C4D247008FC626 /* safari-button-mini@2x.png */; };
 		B29011BF15C4D247008FC626 /* stop-button-mini.png in Resources */ = {isa = PBXBuildFile; fileRef = B29011B315C4D247008FC626 /* stop-button-mini.png */; };
 		B29011C015C4D247008FC626 /* stop-button-mini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29011B415C4D247008FC626 /* stop-button-mini@2x.png */; };
-		B29011C315C4D42A008FC626 /* CDIToolbarBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B29011C215C4D42A008FC626 /* CDIToolbarBarButtonItem.m */; };
 		B2A2B07B15C0BE7300772CF6 /* CDKTask+CheddariOSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A2B07A15C0BE7300772CF6 /* CDKTask+CheddariOSAdditions.m */; };
 		B2AD02E315C46F7300D9B909 /* nav-back-mini-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = B2AD02DF15C46F7300D9B909 /* nav-back-mini-highlighted.png */; };
 		B2AD02E415C46F7300D9B909 /* nav-back-mini.png in Resources */ = {isa = PBXBuildFile; fileRef = B2AD02E015C46F7300D9B909 /* nav-back-mini.png */; };
@@ -484,8 +483,6 @@
 		B29011B215C4D247008FC626 /* safari-button-mini@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "safari-button-mini@2x.png"; sourceTree = "<group>"; };
 		B29011B315C4D247008FC626 /* stop-button-mini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop-button-mini.png"; sourceTree = "<group>"; };
 		B29011B415C4D247008FC626 /* stop-button-mini@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop-button-mini@2x.png"; sourceTree = "<group>"; };
-		B29011C115C4D42A008FC626 /* CDIToolbarBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIToolbarBarButtonItem.h; sourceTree = "<group>"; };
-		B29011C215C4D42A008FC626 /* CDIToolbarBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIToolbarBarButtonItem.m; sourceTree = "<group>"; };
 		B2A2B07915C0BE7300772CF6 /* CDKTask+CheddariOSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CDKTask+CheddariOSAdditions.h"; sourceTree = "<group>"; };
 		B2A2B07A15C0BE7300772CF6 /* CDKTask+CheddariOSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CDKTask+CheddariOSAdditions.m"; sourceTree = "<group>"; };
 		B2AD02DF15C46F7300D9B909 /* nav-back-mini-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-back-mini-highlighted.png"; sourceTree = "<group>"; };
@@ -980,8 +977,6 @@
 				B208BBBF15BF63A80080705D /* CDITableViewCellDeleteConfirmationControl.m */,
 				B208BBC015BF63A80080705D /* CDITagView.h */,
 				B208BBC115BF63A80080705D /* CDITagView.m */,
-				B29011C115C4D42A008FC626 /* CDIToolbarBarButtonItem.h */,
-				B29011C215C4D42A008FC626 /* CDIToolbarBarButtonItem.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1332,7 +1327,6 @@
 				B2A2B07B15C0BE7300772CF6 /* CDKTask+CheddariOSAdditions.m in Sources */,
 				B23261AA15C207FF00D455EF /* CDIWebSignInViewController.m in Sources */,
 				B2AD032115C493C200D9B909 /* CDIWebViewController.m in Sources */,
-				B29011C315C4D42A008FC626 /* CDIToolbarBarButtonItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

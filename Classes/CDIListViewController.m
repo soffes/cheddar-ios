@@ -125,7 +125,7 @@
 		_createTaskSemaphore = dispatch_semaphore_create(0);
 		dispatch_semaphore_signal(_createTaskSemaphore);
 		
-		self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"List" style:UIBarButtonItemStyleBordered target:nil action:nil];
+		self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Tasks" style:UIBarButtonItemStyleBordered target:nil action:nil];
 	}
 	return self;
 }

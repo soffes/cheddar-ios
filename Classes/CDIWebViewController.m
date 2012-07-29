@@ -7,7 +7,6 @@
 //
 
 #import "CDIWebViewController.h"
-#import "CDIToolbarBarButtonItem.h"
 #import "UIColor+CheddariOSAdditions.h"
 
 @interface CDIWebViewController ()
@@ -19,7 +18,6 @@
 	UIActivityIndicatorView *_indicator;
 	UIBarButtonItem *_backBarButton;
 	UIBarButtonItem *_forwardBarButton;
-	UIBarButtonItem *_reloadBarButton;
 }
 
 @synthesize webView = _webView;
@@ -41,9 +39,8 @@
 	[_webView loadURL:_url];
 	[self.view addSubview:_webView];
 	
-	_backBarButton = [[CDIToolbarBarButtonItem alloc] initWithCustomImage:[UIImage imageNamed:@"back-button"] landscapeImagePhone:[UIImage imageNamed:@"back-button-mini"] target:_webView action:@selector(goBack)];
-	_forwardBarButton = [[CDIToolbarBarButtonItem alloc] initWithCustomImage:[UIImage imageNamed:@"forward-button"] landscapeImagePhone:[UIImage imageNamed:@"forward-button-mini"] target:_webView action:@selector(goForward)];
-	_reloadBarButton = [[CDIToolbarBarButtonItem alloc] initWithCustomImage:[UIImage imageNamed:@"reload-button"] landscapeImagePhone:[UIImage imageNamed:@"reload-button-mini"] target:_webView action:@selector(reload)];
+	_backBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back-button"] landscapeImagePhone:[UIImage imageNamed:@"back-button-mini"] style:UIBarButtonItemStylePlain target:_webView action:@selector(goBack)];
+	_forwardBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"forward-button"] landscapeImagePhone:[UIImage imageNamed:@"forward-button-mini"] style:UIBarButtonItemStylePlain target:_webView action:@selector(goForward)];
 	
 	UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 	
@@ -52,12 +49,16 @@
 						 flexibleSpace,
 						 _forwardBarButton,
 						 flexibleSpace,
-						 _reloadBarButton,
+						 [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reload-button"] landscapeImagePhone:[UIImage imageNamed:@"reload-button-mini"] style:UIBarButtonItemStylePlain target:_webView action:@selector(reload)],
 						 flexibleSpace,
-						 [[CDIToolbarBarButtonItem alloc] initWithCustomImage:[UIImage imageNamed:@"safari-button"] landscapeImagePhone:[UIImage imageNamed:@"safari-button-mini"] target:self action:@selector(openSafari:)],
+						 [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"safari-button"] landscapeImagePhone:[UIImage imageNamed:@"safari-button-mini"] style:UIBarButtonItemStylePlain target:self action:@selector(openSafari:)],
 						 flexibleSpace,
-						 [[CDIToolbarBarButtonItem alloc] initWithCustomImage:[UIImage imageNamed:@"action-button"] landscapeImagePhone:[UIImage imageNamed:@"action-button-mini"] target:self action:@selector(openActionSheet:)],
+						 [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"action-button"] landscapeImagePhone:[UIImage imageNamed:@"action-button-mini"] style:UIBarButtonItemStylePlain target:self action:@selector(openActionSheet:)],
 						 nil];
+	
+	for (UIBarButtonItem *button in self.toolbarItems) {
+		button.imageInsets = UIEdgeInsetsMake(3.0f, 0.0f, 0.0f, 0.0f);
+	}
 	
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleBordered target:self action:@selector(close:)];
@@ -106,7 +107,14 @@
 
 
 - (void)openActionSheet:(id)sender {
-	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Copy URL", @"Email URL", nil];
+	UIActionSheet *actionSheet = nil;
+	
+	if ([MFMailComposeViewController canSendMail] == NO) {
+		actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Copy URL", nil];
+	} else {
+		actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Copy URL", @"Email URL", nil];
+	}
+	
 	actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
 	[actionSheet showInView:self.navigationController.view];
 }
@@ -118,7 +126,15 @@
 
 
 - (void)emailURL:(id)sender {
+	if ([MFMailComposeViewController canSendMail] == NO) {
+		return;
+	}
 	
+	MFMailComposeViewController *viewController = [[MFMailComposeViewController alloc] init];
+	viewController.subject = self.title;
+	viewController.mailComposeDelegate = self;
+	[viewController setMessageBody:_webView.lastRequest.mainDocumentURL.absoluteString isHTML:NO];
+	[self.navigationController presentModalViewController:viewController animated:YES];
 }
 
 
@@ -127,7 +143,21 @@
 - (void)_updateBrowserUI {
 	_backBarButton.enabled = [_webView canGoBack];
 	_forwardBarButton.enabled = [_webView canGoForward];
-	[_webView isLoadingPage] ? [_indicator startAnimating] : [_indicator stopAnimating];
+
+	UIBarButtonItem *reloadButton = nil;
+	
+	if ([_webView isLoadingPage]) {
+		[_indicator startAnimating];
+		reloadButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"stop-button"] landscapeImagePhone:[UIImage imageNamed:@"stop-button-mini"] style:UIBarButtonItemStylePlain target:_webView action:@selector(stopLoading)];
+	} else {
+		[_indicator stopAnimating];
+		reloadButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reload-button"] landscapeImagePhone:[UIImage imageNamed:@"reload-button-mini"] style:UIBarButtonItemStylePlain target:_webView action:@selector(reload)];
+	}
+	reloadButton.imageInsets = UIEdgeInsetsMake(3.0f, 0.0f, 0.0f, 0.0f);
+	
+	NSMutableArray *items = [self.toolbarItems mutableCopy];
+	[items replaceObjectAtIndex:4 withObject:reloadButton];
+	self.toolbarItems = items;
 }
 
 
@@ -152,13 +182,25 @@
 }
 
 
-#pragma mark - UIActionSheet
+#pragma mark - UIActionSheetDelegate
 
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
 	if (buttonIndex == 0) {
 		[self copyURL:actionSheet];
-	} else if (buttonIndex == 1) {
+	} else if (buttonIndex == 1 && [MFMailComposeViewController canSendMail]) {
 		[self emailURL:actionSheet];
+	}
+}
+
+
+#pragma mark - MFMailComposeViewControllerDelegate
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+	[controller dismissModalViewControllerAnimated:YES];
+	
+	if (result == MFMailComposeResultSent) {
+		SSHUDView *hud = [[SSHUDView alloc] init];
+		[hud completeQuicklyWithTitle:@"Sent!"];
 	}
 }
 

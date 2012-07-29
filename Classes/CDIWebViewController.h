@@ -6,7 +6,9 @@
 //  Copyright (c) 2012 Nothing Magical. All rights reserved.
 //
 
-@interface CDIWebViewController : UIViewController <SSWebViewDelegate, UIActionSheetDelegate>
+#import <MessageUI/MessageUI.h>
+
+@interface CDIWebViewController : UIViewController <SSWebViewDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, strong) SSWebView *webView;
 
