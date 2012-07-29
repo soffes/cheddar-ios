@@ -28,6 +28,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Configure analytics
+	// If you don't work at Nothing Magical, you shouldn't turn these on.
 #if CHEDDAR_PRODUCTION_MODE
 	#ifdef CHEDDAR_CRASHLYTICS_KEY
 	[Crashlytics startWithAPIKey:CHEDDAR_CRASHLYTICS_KEY];
@@ -39,6 +40,7 @@
 #endif
 	
 	// Optionally enable development mode
+	// If you don't work at Nothing Magical, you shouldn't turn this on.
 #ifdef CHEDDAR_API_DEVELOPMENT_MODE
 	[CDKHTTPClient setDevelopmentModeEnabled:YES];
 	[CDKPushController setDevelopmentModeEnabled:YES];
@@ -52,12 +54,13 @@
 	
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		self.window.rootViewController = [[CDISplitViewController alloc] init];
-		[self.window makeKeyAndVisible];
 	} else {
-		UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[[CDIListsViewController alloc] init]];
+		UIViewController *viewController = [[CDIListsViewController alloc] init];
+		UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
 		self.window.rootViewController = navigationController;
-		[self.window makeKeyAndVisible];
 	}
+	
+	[self.window makeKeyAndVisible];
 	
 	// Defer some stuff to make launching faster
 	dispatch_async(dispatch_get_main_queue(), ^{
