@@ -14,6 +14,7 @@
 #import "CDICreateListViewController.h"
 #import "CDINoTasksView.h"
 #import "CDIRenameTaskViewController.h"
+#import "CDIWebViewController.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIFont+CheddariOSAdditions.h"
 
@@ -123,6 +124,8 @@
 	if ((self = [super init])) {
 		_createTaskSemaphore = dispatch_semaphore_create(0);
 		dispatch_semaphore_signal(_createTaskSemaphore);
+		
+		self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"List" style:UIBarButtonItemStyleBordered target:nil action:nil];
 	}
 	return self;
 }
@@ -175,12 +178,6 @@
 	self.navigationItem.rightBarButtonItem.title = editing ? @"Done" : @"Edit";
 	self.navigationItem.rightBarButtonItem.enabled = !self.currentTag && self.list;
 	[self.addTaskView setEditing:editing animated:animated];
-
-//	NSMutableArray *rows = [[NSMutableArray alloc] init];
-//	for (NSInteger i = 0; i < [self.tableView numberOfRowsInSection:0]; i++) {
-//		[rows addObject:[NSIndexPath indexPathForRow:i inSection:0]];
-//	}
-//	[self.tableView reloadRowsAtIndexPaths:rows withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 
@@ -285,7 +282,7 @@
 		[actionSheet showFromRect:[sender frame] inView:self.view animated:YES];
 	} else {
 		UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Archive Completed", @"Archive All", nil];
-		actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+		actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
 		[actionSheet showInView:self.navigationController.view];
 	}
 }
@@ -471,12 +468,28 @@
 #pragma mark - TTTAttributedLabelDelegate
 
 - (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithURL:(NSURL *)url {
+	// Open tag
 	if ([url.scheme isEqualToString:@"x-cheddar-tag"]) {
 		CDKTag *tag = [CDKTag existingTagWithName:url.host];
 		self.currentTag = tag;
 		return;
 	}
 	
+	// Open browser
+	if ([url.scheme.lowercaseString isEqualToString:@"http"] || [url.scheme.lowercaseString isEqualToString:@"https"]) {
+		CDIWebViewController *viewController = [[CDIWebViewController alloc] init];
+		[viewController loadURL:url];
+		
+		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+			[self.splitViewController presentModalViewController:navigationController animated:YES];
+		} else {
+			[self.navigationController pushViewController:viewController animated:YES];
+		}
+		return;
+	}
+	
+	// Open other URLs
 	[[UIApplication sharedApplication] openURL:url];
 }
 

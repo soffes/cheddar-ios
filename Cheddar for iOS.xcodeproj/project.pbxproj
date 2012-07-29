@@ -156,6 +156,35 @@
 		B28FD2DE15BF742D00365CD6 /* Gotham-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B28FD2D815BF742D00365CD6 /* Gotham-BookItalic.otf */; };
 		B28FD2E215BF755600365CD6 /* Cheddar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B28FD2E015BF755600365CD6 /* Cheddar.xcdatamodeld */; };
 		B28FD2E815BF774D00365CD6 /* CDIDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = B28FD2E715BF774D00365CD6 /* CDIDefines.m */; };
+		B290118A15C49B07008FC626 /* toolbar-background-mini.png in Resources */ = {isa = PBXBuildFile; fileRef = B290118615C49B07008FC626 /* toolbar-background-mini.png */; };
+		B290118B15C49B07008FC626 /* toolbar-background-mini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B290118715C49B07008FC626 /* toolbar-background-mini@2x.png */; };
+		B290118C15C49B07008FC626 /* toolbar-background.png in Resources */ = {isa = PBXBuildFile; fileRef = B290118815C49B07008FC626 /* toolbar-background.png */; };
+		B290118D15C49B07008FC626 /* toolbar-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B290118915C49B07008FC626 /* toolbar-background@2x.png */; };
+		B290119A15C4A9EC008FC626 /* action-button.png in Resources */ = {isa = PBXBuildFile; fileRef = B290118E15C4A9EC008FC626 /* action-button.png */; };
+		B290119B15C4A9EC008FC626 /* action-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B290118F15C4A9EC008FC626 /* action-button@2x.png */; };
+		B290119C15C4A9EC008FC626 /* back-button.png in Resources */ = {isa = PBXBuildFile; fileRef = B290119015C4A9EC008FC626 /* back-button.png */; };
+		B290119D15C4A9EC008FC626 /* back-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B290119115C4A9EC008FC626 /* back-button@2x.png */; };
+		B290119E15C4A9EC008FC626 /* forward-button.png in Resources */ = {isa = PBXBuildFile; fileRef = B290119215C4A9EC008FC626 /* forward-button.png */; };
+		B290119F15C4A9EC008FC626 /* forward-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B290119315C4A9EC008FC626 /* forward-button@2x.png */; };
+		B29011A015C4A9EC008FC626 /* reload-button.png in Resources */ = {isa = PBXBuildFile; fileRef = B290119415C4A9EC008FC626 /* reload-button.png */; };
+		B29011A115C4A9EC008FC626 /* reload-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B290119515C4A9EC008FC626 /* reload-button@2x.png */; };
+		B29011A215C4A9EC008FC626 /* safari-button.png in Resources */ = {isa = PBXBuildFile; fileRef = B290119615C4A9EC008FC626 /* safari-button.png */; };
+		B29011A315C4A9EC008FC626 /* safari-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B290119715C4A9EC008FC626 /* safari-button@2x.png */; };
+		B29011A415C4A9EC008FC626 /* stop-button.png in Resources */ = {isa = PBXBuildFile; fileRef = B290119815C4A9EC008FC626 /* stop-button.png */; };
+		B29011A515C4A9EC008FC626 /* stop-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B290119915C4A9EC008FC626 /* stop-button@2x.png */; };
+		B29011B515C4D247008FC626 /* action-button-mini.png in Resources */ = {isa = PBXBuildFile; fileRef = B29011A915C4D247008FC626 /* action-button-mini.png */; };
+		B29011B615C4D247008FC626 /* action-button-mini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29011AA15C4D247008FC626 /* action-button-mini@2x.png */; };
+		B29011B715C4D247008FC626 /* back-button-mini.png in Resources */ = {isa = PBXBuildFile; fileRef = B29011AB15C4D247008FC626 /* back-button-mini.png */; };
+		B29011B815C4D247008FC626 /* back-button-mini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29011AC15C4D247008FC626 /* back-button-mini@2x.png */; };
+		B29011B915C4D247008FC626 /* forward-button-mini.png in Resources */ = {isa = PBXBuildFile; fileRef = B29011AD15C4D247008FC626 /* forward-button-mini.png */; };
+		B29011BA15C4D247008FC626 /* forward-button-mini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29011AE15C4D247008FC626 /* forward-button-mini@2x.png */; };
+		B29011BB15C4D247008FC626 /* reload-button-mini.png in Resources */ = {isa = PBXBuildFile; fileRef = B29011AF15C4D247008FC626 /* reload-button-mini.png */; };
+		B29011BC15C4D247008FC626 /* reload-button-mini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29011B015C4D247008FC626 /* reload-button-mini@2x.png */; };
+		B29011BD15C4D247008FC626 /* safari-button-mini.png in Resources */ = {isa = PBXBuildFile; fileRef = B29011B115C4D247008FC626 /* safari-button-mini.png */; };
+		B29011BE15C4D247008FC626 /* safari-button-mini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29011B215C4D247008FC626 /* safari-button-mini@2x.png */; };
+		B29011BF15C4D247008FC626 /* stop-button-mini.png in Resources */ = {isa = PBXBuildFile; fileRef = B29011B315C4D247008FC626 /* stop-button-mini.png */; };
+		B29011C015C4D247008FC626 /* stop-button-mini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29011B415C4D247008FC626 /* stop-button-mini@2x.png */; };
+		B29011C315C4D42A008FC626 /* CDIToolbarBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B29011C215C4D42A008FC626 /* CDIToolbarBarButtonItem.m */; };
 		B2A2B07B15C0BE7300772CF6 /* CDKTask+CheddariOSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A2B07A15C0BE7300772CF6 /* CDKTask+CheddariOSAdditions.m */; };
 		B2AD02E315C46F7300D9B909 /* nav-back-mini-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = B2AD02DF15C46F7300D9B909 /* nav-back-mini-highlighted.png */; };
 		B2AD02E415C46F7300D9B909 /* nav-back-mini.png in Resources */ = {isa = PBXBuildFile; fileRef = B2AD02E015C46F7300D9B909 /* nav-back-mini.png */; };
@@ -169,6 +198,7 @@
 		B2AD02F215C47E4300D9B909 /* nav-background-mini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2AD02F115C47E4300D9B909 /* nav-background-mini@2x.png */; };
 		B2AD02F415C482B200D9B909 /* TextExpander.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2AD02F315C482B200D9B909 /* TextExpander.framework */; };
 		B2AD031915C4896E00D9B909 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2AD031815C4896E00D9B909 /* AudioToolbox.framework */; };
+		B2AD032115C493C200D9B909 /* CDIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD032015C493C100D9B909 /* CDIWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -426,6 +456,36 @@
 		B28FD2E315BF756800365CD6 /* Cheddar 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Cheddar 2.xcdatamodel"; sourceTree = "<group>"; };
 		B28FD2E415BF761C00365CD6 /* CDIDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIDefines.h; sourceTree = "<group>"; };
 		B28FD2E715BF774D00365CD6 /* CDIDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIDefines.m; sourceTree = "<group>"; };
+		B290118615C49B07008FC626 /* toolbar-background-mini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-background-mini.png"; sourceTree = "<group>"; };
+		B290118715C49B07008FC626 /* toolbar-background-mini@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-background-mini@2x.png"; sourceTree = "<group>"; };
+		B290118815C49B07008FC626 /* toolbar-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-background.png"; sourceTree = "<group>"; };
+		B290118915C49B07008FC626 /* toolbar-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-background@2x.png"; sourceTree = "<group>"; };
+		B290118E15C4A9EC008FC626 /* action-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-button.png"; sourceTree = "<group>"; };
+		B290118F15C4A9EC008FC626 /* action-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-button@2x.png"; sourceTree = "<group>"; };
+		B290119015C4A9EC008FC626 /* back-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button.png"; sourceTree = "<group>"; };
+		B290119115C4A9EC008FC626 /* back-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button@2x.png"; sourceTree = "<group>"; };
+		B290119215C4A9EC008FC626 /* forward-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forward-button.png"; sourceTree = "<group>"; };
+		B290119315C4A9EC008FC626 /* forward-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forward-button@2x.png"; sourceTree = "<group>"; };
+		B290119415C4A9EC008FC626 /* reload-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reload-button.png"; sourceTree = "<group>"; };
+		B290119515C4A9EC008FC626 /* reload-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reload-button@2x.png"; sourceTree = "<group>"; };
+		B290119615C4A9EC008FC626 /* safari-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "safari-button.png"; sourceTree = "<group>"; };
+		B290119715C4A9EC008FC626 /* safari-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "safari-button@2x.png"; sourceTree = "<group>"; };
+		B290119815C4A9EC008FC626 /* stop-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop-button.png"; sourceTree = "<group>"; };
+		B290119915C4A9EC008FC626 /* stop-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop-button@2x.png"; sourceTree = "<group>"; };
+		B29011A915C4D247008FC626 /* action-button-mini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-button-mini.png"; sourceTree = "<group>"; };
+		B29011AA15C4D247008FC626 /* action-button-mini@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-button-mini@2x.png"; sourceTree = "<group>"; };
+		B29011AB15C4D247008FC626 /* back-button-mini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button-mini.png"; sourceTree = "<group>"; };
+		B29011AC15C4D247008FC626 /* back-button-mini@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button-mini@2x.png"; sourceTree = "<group>"; };
+		B29011AD15C4D247008FC626 /* forward-button-mini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forward-button-mini.png"; sourceTree = "<group>"; };
+		B29011AE15C4D247008FC626 /* forward-button-mini@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forward-button-mini@2x.png"; sourceTree = "<group>"; };
+		B29011AF15C4D247008FC626 /* reload-button-mini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reload-button-mini.png"; sourceTree = "<group>"; };
+		B29011B015C4D247008FC626 /* reload-button-mini@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reload-button-mini@2x.png"; sourceTree = "<group>"; };
+		B29011B115C4D247008FC626 /* safari-button-mini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "safari-button-mini.png"; sourceTree = "<group>"; };
+		B29011B215C4D247008FC626 /* safari-button-mini@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "safari-button-mini@2x.png"; sourceTree = "<group>"; };
+		B29011B315C4D247008FC626 /* stop-button-mini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop-button-mini.png"; sourceTree = "<group>"; };
+		B29011B415C4D247008FC626 /* stop-button-mini@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop-button-mini@2x.png"; sourceTree = "<group>"; };
+		B29011C115C4D42A008FC626 /* CDIToolbarBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIToolbarBarButtonItem.h; sourceTree = "<group>"; };
+		B29011C215C4D42A008FC626 /* CDIToolbarBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIToolbarBarButtonItem.m; sourceTree = "<group>"; };
 		B2A2B07915C0BE7300772CF6 /* CDKTask+CheddariOSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CDKTask+CheddariOSAdditions.h"; sourceTree = "<group>"; };
 		B2A2B07A15C0BE7300772CF6 /* CDKTask+CheddariOSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CDKTask+CheddariOSAdditions.m"; sourceTree = "<group>"; };
 		B2AD02DF15C46F7300D9B909 /* nav-back-mini-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-back-mini-highlighted.png"; sourceTree = "<group>"; };
@@ -440,6 +500,8 @@
 		B2AD02F115C47E4300D9B909 /* nav-background-mini@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-background-mini@2x.png"; sourceTree = "<group>"; };
 		B2AD02F315C482B200D9B909 /* TextExpander.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TextExpander.framework; sourceTree = "<group>"; };
 		B2AD031815C4896E00D9B909 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B2AD031F15C493C100D9B909 /* CDIWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIWebViewController.h; sourceTree = "<group>"; };
+		B2AD032015C493C100D9B909 /* CDIWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -510,6 +572,34 @@
 		B208BBD615BF63A80080705D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B29011A915C4D247008FC626 /* action-button-mini.png */,
+				B29011AA15C4D247008FC626 /* action-button-mini@2x.png */,
+				B29011AB15C4D247008FC626 /* back-button-mini.png */,
+				B29011AC15C4D247008FC626 /* back-button-mini@2x.png */,
+				B29011AD15C4D247008FC626 /* forward-button-mini.png */,
+				B29011AE15C4D247008FC626 /* forward-button-mini@2x.png */,
+				B29011AF15C4D247008FC626 /* reload-button-mini.png */,
+				B29011B015C4D247008FC626 /* reload-button-mini@2x.png */,
+				B29011B115C4D247008FC626 /* safari-button-mini.png */,
+				B29011B215C4D247008FC626 /* safari-button-mini@2x.png */,
+				B29011B315C4D247008FC626 /* stop-button-mini.png */,
+				B29011B415C4D247008FC626 /* stop-button-mini@2x.png */,
+				B290118E15C4A9EC008FC626 /* action-button.png */,
+				B290118F15C4A9EC008FC626 /* action-button@2x.png */,
+				B290119015C4A9EC008FC626 /* back-button.png */,
+				B290119115C4A9EC008FC626 /* back-button@2x.png */,
+				B290119215C4A9EC008FC626 /* forward-button.png */,
+				B290119315C4A9EC008FC626 /* forward-button@2x.png */,
+				B290119415C4A9EC008FC626 /* reload-button.png */,
+				B290119515C4A9EC008FC626 /* reload-button@2x.png */,
+				B290119615C4A9EC008FC626 /* safari-button.png */,
+				B290119715C4A9EC008FC626 /* safari-button@2x.png */,
+				B290119815C4A9EC008FC626 /* stop-button.png */,
+				B290119915C4A9EC008FC626 /* stop-button@2x.png */,
+				B290118615C49B07008FC626 /* toolbar-background-mini.png */,
+				B290118715C49B07008FC626 /* toolbar-background-mini@2x.png */,
+				B290118815C49B07008FC626 /* toolbar-background.png */,
+				B290118915C49B07008FC626 /* toolbar-background@2x.png */,
 				B2AD02EF15C47BF000D9B909 /* nav-background-mini.png */,
 				B2AD02F115C47E4300D9B909 /* nav-background-mini@2x.png */,
 				B2AD02E715C475B100D9B909 /* nav-back-mini-highlighted@2x.png */,
@@ -769,6 +859,8 @@
 				B208BBA315BF63A80080705D /* CDIListViewController.m */,
 				B208BBB015BF63A80080705D /* CDIRenameTaskViewController.h */,
 				B208BBB115BF63A80080705D /* CDIRenameTaskViewController.m */,
+				B2AD031F15C493C100D9B909 /* CDIWebViewController.h */,
+				B2AD032015C493C100D9B909 /* CDIWebViewController.m */,
 			);
 			name = List;
 			sourceTree = "<group>";
@@ -888,6 +980,8 @@
 				B208BBBF15BF63A80080705D /* CDITableViewCellDeleteConfirmationControl.m */,
 				B208BBC015BF63A80080705D /* CDITagView.h */,
 				B208BBC115BF63A80080705D /* CDITagView.m */,
+				B29011C115C4D42A008FC626 /* CDIToolbarBarButtonItem.h */,
+				B29011C215C4D42A008FC626 /* CDIToolbarBarButtonItem.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1139,6 +1233,34 @@
 				B2AD02EE15C475B100D9B909 /* nav-button-mini@2x.png in Resources */,
 				B2AD02F015C47BF000D9B909 /* nav-background-mini.png in Resources */,
 				B2AD02F215C47E4300D9B909 /* nav-background-mini@2x.png in Resources */,
+				B290118A15C49B07008FC626 /* toolbar-background-mini.png in Resources */,
+				B290118B15C49B07008FC626 /* toolbar-background-mini@2x.png in Resources */,
+				B290118C15C49B07008FC626 /* toolbar-background.png in Resources */,
+				B290118D15C49B07008FC626 /* toolbar-background@2x.png in Resources */,
+				B290119A15C4A9EC008FC626 /* action-button.png in Resources */,
+				B290119B15C4A9EC008FC626 /* action-button@2x.png in Resources */,
+				B290119C15C4A9EC008FC626 /* back-button.png in Resources */,
+				B290119D15C4A9EC008FC626 /* back-button@2x.png in Resources */,
+				B290119E15C4A9EC008FC626 /* forward-button.png in Resources */,
+				B290119F15C4A9EC008FC626 /* forward-button@2x.png in Resources */,
+				B29011A015C4A9EC008FC626 /* reload-button.png in Resources */,
+				B29011A115C4A9EC008FC626 /* reload-button@2x.png in Resources */,
+				B29011A215C4A9EC008FC626 /* safari-button.png in Resources */,
+				B29011A315C4A9EC008FC626 /* safari-button@2x.png in Resources */,
+				B29011A415C4A9EC008FC626 /* stop-button.png in Resources */,
+				B29011A515C4A9EC008FC626 /* stop-button@2x.png in Resources */,
+				B29011B515C4D247008FC626 /* action-button-mini.png in Resources */,
+				B29011B615C4D247008FC626 /* action-button-mini@2x.png in Resources */,
+				B29011B715C4D247008FC626 /* back-button-mini.png in Resources */,
+				B29011B815C4D247008FC626 /* back-button-mini@2x.png in Resources */,
+				B29011B915C4D247008FC626 /* forward-button-mini.png in Resources */,
+				B29011BA15C4D247008FC626 /* forward-button-mini@2x.png in Resources */,
+				B29011BB15C4D247008FC626 /* reload-button-mini.png in Resources */,
+				B29011BC15C4D247008FC626 /* reload-button-mini@2x.png in Resources */,
+				B29011BD15C4D247008FC626 /* safari-button-mini.png in Resources */,
+				B29011BE15C4D247008FC626 /* safari-button-mini@2x.png in Resources */,
+				B29011BF15C4D247008FC626 /* stop-button-mini.png in Resources */,
+				B29011C015C4D247008FC626 /* stop-button-mini@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1209,6 +1331,8 @@
 				B28FD2E815BF774D00365CD6 /* CDIDefines.m in Sources */,
 				B2A2B07B15C0BE7300772CF6 /* CDKTask+CheddariOSAdditions.m in Sources */,
 				B23261AA15C207FF00D455EF /* CDIWebSignInViewController.m in Sources */,
+				B2AD032115C493C200D9B909 /* CDIWebViewController.m in Sources */,
+				B29011C315C4D42A008FC626 /* CDIToolbarBarButtonItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
