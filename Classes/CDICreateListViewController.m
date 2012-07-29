@@ -72,6 +72,15 @@
 }
 
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		return YES;
+	}
+	
+	return toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown;
+}
+
+
 #pragma mark - Actions
 
 - (void)create:(id)sender {

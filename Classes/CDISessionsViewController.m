@@ -81,4 +81,13 @@
 	[self.usernameTextField becomeFirstResponder];
 }
 
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		return YES;
+	}
+	
+	return toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown;
+}
+
 @end
