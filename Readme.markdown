@@ -15,8 +15,6 @@ Run the following commands to get start:
 
 Now open the Xcode project and build. You will see one error telling you to fill in your API credentials. If you don't already have API credentials, head over to the [Cheddar developer site](http://cheddarapp.com/developer).
 
-**Note:** Crashlytics 
-
 Upon building for the first time, the run will fail and you will be sent to Crashlytics website. Sign up, download the Mac app, and then follow the instructions to get the project to build properly. 
 
 
