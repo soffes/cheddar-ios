@@ -6,7 +6,9 @@
 //  Copyright (c) 2012 Nothing Magical. All rights reserved.
 //
 
-@interface CDISettingsViewController : UITableViewController
+#import "CDIGroupedTableViewController.h"
+
+@interface CDISettingsViewController : CDIGroupedTableViewController
 
 - (void)close:(id)sender;
 - (void)upgrade:(id)sender;

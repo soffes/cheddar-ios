@@ -17,6 +17,9 @@
 #import "CDIAppDelegate.h"
 #import "CDISplitViewController.h"
 #import "CDIListsViewController.h"
+#import "CDISettingsTextSizePickerViewController.h"
+#import "CDISettingsFontPickerViewController.h"
+#import "CDISettingsTapPickerViewController.h"
 
 @interface CDISettingsViewController () <MFMailComposeViewControllerDelegate>
 @end
@@ -26,14 +29,6 @@
 	UIButton *_upgradeButton;
 	UIButton *_supportButton;
 	UIButton *_signOutButton;
-	NSCache *_headerCache;
-}
-
-
-#pragma mark - NSObject
-
-- (id)init {
-	return (self = [super initWithStyle:UITableViewStyleGrouped]);
 }
 
 
@@ -43,10 +38,6 @@
 	[super viewDidLoad];
 	self.title = @"Settings";
 	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(close:)];
-	
-	UIView *background = [[UIView alloc] initWithFrame:CGRectZero];
-	background.backgroundColor = [UIColor cheddarArchesColor];
-	self.tableView.backgroundView = background;
 	
 	SSLabel *footer = [[SSLabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.width, 33.0f)];
 	footer.backgroundColor = [UIColor clearColor];
@@ -95,15 +86,6 @@
 
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_updateUI) name:kCDKPlusDidChangeNotificationName object:nil];
 	[self _updateUI];
-}
-
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		return YES;
-	}
-	
-	return toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown;
 }
 
 
@@ -296,32 +278,47 @@
 }
 
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-	if (section == 2) {
-		return nil;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	UIViewController *viewController = nil;
+	
+	// Display
+	if (indexPath.section == 0) {
+		// Text Size
+		if (indexPath.row == 0) {
+			viewController = [[CDISettingsTextSizePickerViewController alloc] init];
+		}
+		
+		// Font
+		else if (indexPath.row == 1) {
+			viewController = [[CDISettingsFontPickerViewController alloc] init];
+		}
 	}
 	
-	if (!_headerCache) {
-		_headerCache = [[NSCache alloc] init];
+	// Tasks
+	if (indexPath.section == 1) {
+		// Tap Action
+		if (indexPath.row == 0) {
+			viewController = [[CDISettingsTapPickerViewController alloc] init];
+		}
 	}
 	
-	NSNumber *key = [NSNumber numberWithInteger:section];
-	SSLabel *label = [_headerCache objectForKey:key];
-	if (!label) {
-		CGFloat x = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 40.0f : 20.0f;
-		label = [[SSLabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.width, 44.0f)];
-		label.textEdgeInsets = UIEdgeInsetsMake(10.0f, x, 0.0f, 0.0f);
-		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-		label.backgroundColor = [UIColor clearColor];
-		label.textColor = [UIColor cheddarTextColor];
-		label.font = [UIFont boldCheddarFontOfSize:17.0f];
-		label.shadowColor = [UIColor whiteColor];
-		label.shadowOffset = CGSizeMake(0.0f, 1.0f);		
-		[_headerCache setObject:label forKey:key];
-	}
+	// Other
+//	if (indexPath.section == 2) {
+//		if (indexPath.row == 0) {
+//			cell.textLabel.text = @"About";
+//			cell.detailTextLabel.text = nil;
+//		} else if (indexPath.row == 1) {
+//			cell.textLabel.text = @"Support";
+//			cell.detailTextLabel.text = nil;
+//		} else if (indexPath.row == 2) {
+//			cell.textLabel.text = @"Sign Out";
+//			cell.detailTextLabel.text = nil;
+//		}
+//	}
 	
-	label.text = [self tableView:tableView titleForHeaderInSection:section];
-	return label;
+	if (viewController) {
+		[self.navigationController pushViewController:viewController animated:YES];
+	}
 }
 
 @end

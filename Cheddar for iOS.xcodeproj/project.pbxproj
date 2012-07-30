@@ -133,6 +133,11 @@
 		B208C1FB15BF64630080705D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B208C1F315BF64630080705D /* UIKit.framework */; };
 		B208C5FC15BF658D0080705D /* libCheddarKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B208C5BF15BF654B0080705D /* libCheddarKit.a */; };
 		B23261AA15C207FF00D455EF /* CDIWebSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B23261A915C207FF00D455EF /* CDIWebSignInViewController.m */; };
+		B26AE9B415C5CF2B0008AB1F /* CDISettingsTapPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26AE9B315C5CF2B0008AB1F /* CDISettingsTapPickerViewController.m */; };
+		B26AE9B715C5D0040008AB1F /* CDISettingsTextSizePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26AE9B615C5D0040008AB1F /* CDISettingsTextSizePickerViewController.m */; };
+		B26AE9BA15C5D0100008AB1F /* CDISettingsFontPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26AE9B915C5D0100008AB1F /* CDISettingsFontPickerViewController.m */; };
+		B26AE9BD15C5D25E0008AB1F /* CDIGroupedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26AE9BC15C5D25E0008AB1F /* CDIGroupedTableViewController.m */; };
+		B26AE9C015C5D52D0008AB1F /* CDIPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26AE9BF15C5D52D0008AB1F /* CDIPickerViewController.m */; };
 		B28F84DB15C37E1D003E4595 /* SSToolkitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B208C1E315BF63E30080705D /* SSToolkitResources.bundle */; };
 		B28FD2BE15BF730100365CD6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FD2BD15BF730100365CD6 /* CFNetwork.framework */; };
 		B28FD2C015BF731100365CD6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FD2BF15BF731000365CD6 /* CoreGraphics.framework */; };
@@ -424,6 +429,16 @@
 		B23261A815C207FF00D455EF /* CDIWebSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIWebSignInViewController.h; sourceTree = "<group>"; };
 		B23261A915C207FF00D455EF /* CDIWebSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIWebSignInViewController.m; sourceTree = "<group>"; };
 		B23FA755151FE0710069A0D1 /* Cheddar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheddar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B26AE9B215C5CF2B0008AB1F /* CDISettingsTapPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDISettingsTapPickerViewController.h; sourceTree = "<group>"; };
+		B26AE9B315C5CF2B0008AB1F /* CDISettingsTapPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDISettingsTapPickerViewController.m; sourceTree = "<group>"; };
+		B26AE9B515C5D0040008AB1F /* CDISettingsTextSizePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDISettingsTextSizePickerViewController.h; sourceTree = "<group>"; };
+		B26AE9B615C5D0040008AB1F /* CDISettingsTextSizePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDISettingsTextSizePickerViewController.m; sourceTree = "<group>"; };
+		B26AE9B815C5D0100008AB1F /* CDISettingsFontPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDISettingsFontPickerViewController.h; sourceTree = "<group>"; };
+		B26AE9B915C5D0100008AB1F /* CDISettingsFontPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDISettingsFontPickerViewController.m; sourceTree = "<group>"; };
+		B26AE9BB15C5D25E0008AB1F /* CDIGroupedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIGroupedTableViewController.h; sourceTree = "<group>"; };
+		B26AE9BC15C5D25E0008AB1F /* CDIGroupedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIGroupedTableViewController.m; sourceTree = "<group>"; };
+		B26AE9BE15C5D52D0008AB1F /* CDIPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIPickerViewController.h; sourceTree = "<group>"; };
+		B26AE9BF15C5D52D0008AB1F /* CDIPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIPickerViewController.m; sourceTree = "<group>"; };
 		B28FD2BD15BF730100365CD6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B28FD2BF15BF731000365CD6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B28FD2C115BF731B00365CD6 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -850,6 +865,12 @@
 				B208BBB515BF63A80080705D /* CDISettingsViewController.m */,
 				B208BBC615BF63A80080705D /* CDIUpgradeViewController.h */,
 				B208BBC715BF63A80080705D /* CDIUpgradeViewController.m */,
+				B26AE9B215C5CF2B0008AB1F /* CDISettingsTapPickerViewController.h */,
+				B26AE9B315C5CF2B0008AB1F /* CDISettingsTapPickerViewController.m */,
+				B26AE9B515C5D0040008AB1F /* CDISettingsTextSizePickerViewController.h */,
+				B26AE9B615C5D0040008AB1F /* CDISettingsTextSizePickerViewController.m */,
+				B26AE9B815C5D0100008AB1F /* CDISettingsFontPickerViewController.h */,
+				B26AE9B915C5D0100008AB1F /* CDISettingsFontPickerViewController.m */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -874,6 +895,10 @@
 			children = (
 				B208BBA615BF63A80080705D /* CDIManagedTableViewController.h */,
 				B208BBA715BF63A80080705D /* CDIManagedTableViewController.m */,
+				B26AE9BB15C5D25E0008AB1F /* CDIGroupedTableViewController.h */,
+				B26AE9BC15C5D25E0008AB1F /* CDIGroupedTableViewController.m */,
+				B26AE9BE15C5D52D0008AB1F /* CDIPickerViewController.h */,
+				B26AE9BF15C5D52D0008AB1F /* CDIPickerViewController.m */,
 			);
 			name = Abstract;
 			sourceTree = "<group>";
@@ -1301,6 +1326,11 @@
 				B23261AA15C207FF00D455EF /* CDIWebSignInViewController.m in Sources */,
 				B2AD032115C493C200D9B909 /* CDIWebViewController.m in Sources */,
 				B29011CE15C505DA008FC626 /* CDISettingsTableViewCell.m in Sources */,
+				B26AE9B415C5CF2B0008AB1F /* CDISettingsTapPickerViewController.m in Sources */,
+				B26AE9B715C5D0040008AB1F /* CDISettingsTextSizePickerViewController.m in Sources */,
+				B26AE9BA15C5D0100008AB1F /* CDISettingsFontPickerViewController.m in Sources */,
+				B26AE9BD15C5D25E0008AB1F /* CDIGroupedTableViewController.m in Sources */,
+				B26AE9C015C5D52D0008AB1F /* CDIPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
