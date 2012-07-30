@@ -27,7 +27,7 @@ Also, if you want to help out and fix some bugs, I'll love you forever. Maybe yo
 
 Cheddar for iOS is released under the [Simplified BSD License](https://github.com/nothingmagical/cheddar-ios/blob/master/LICENSE).
 
-While it is not strictly forbidden by the license, I would greatly appreciate it if you didn't redistribute this app exactly the way it is in the App Store. There's nothing stopping you, but don't please be a jerk.
+While it is not strictly forbidden by the license, I would greatly appreciate it if you didn't redistribute this app exactly the way it is in the App Store. There's nothing stopping you, but please don't be a jerk.
 
 
 ## Contributing
