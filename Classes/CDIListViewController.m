@@ -420,7 +420,6 @@
 			self.ignoreChange = YES;
 			
 			NSInteger numberOfRows = [self.tableView numberOfRowsInSection:0];
-			NSIndexPath *indexPath = [NSIndexPath indexPathForRow:numberOfRows inSection:0];
 			
 			CDKTask *task = [[CDKTask alloc] init];
 			task.text = title;
@@ -438,7 +437,7 @@
 			}
 			
 			[animation animationToPoint:point height:self.tableView.bounds.size.height insertTask:^{
-				[self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
+				[self.tableView reloadData];
 				self.ignoreChange = NO;
 			} completion:^{		
 				[animation removeFromSuperview];
