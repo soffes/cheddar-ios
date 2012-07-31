@@ -222,8 +222,8 @@
 
 #pragma mark - CDIManagedTableViewController
 
-- (void)editRow:(UITapGestureRecognizer *)editingTapGestureRecognizer {
-	NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *)editingTapGestureRecognizer.view];
+- (void)editRow:(UIGestureRecognizer *)editingGestureRecognizer {
+	NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *)editingGestureRecognizer.view];
 	if (!indexPath) {
 		return;
 	}
@@ -322,6 +322,7 @@
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		cell.attributedLabel.delegate = self;
 		[cell.editingTapGestureRecognizer addTarget:self action:@selector(editRow:)];
+		[cell.editingPressGestureRecognizer addTarget:self action:@selector(editRow:)];
 	}
 	
 	[self configureCell:cell atIndexPath:indexPath];

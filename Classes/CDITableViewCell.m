@@ -19,6 +19,7 @@
 @synthesize editingText = _editingText;
 @synthesize textField = _textField;
 @synthesize editingTapGestureRecognizer = _editingTapGestureRecognizer;
+@synthesize editingPressGestureRecognizer = _editingPressGestureRecognizer;
 
 - (UITextField *)textField {
 	if (!_textField) {
@@ -94,6 +95,10 @@
 		_editingTapGestureRecognizer = [[UITapGestureRecognizer alloc] init];
 		_editingTapGestureRecognizer.delegate = self;
 		[self addGestureRecognizer:_editingTapGestureRecognizer];
+		
+		_editingPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] init];
+		_editingPressGestureRecognizer.delegate = self;
+		[self addGestureRecognizer:_editingPressGestureRecognizer];
 	}
 	return self;
 }
@@ -110,6 +115,7 @@
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
 	[super setEditing:editing animated:animated];
 	_editingTapGestureRecognizer.enabled = editing;
+	_editingPressGestureRecognizer.enabled = !editing;
 }
 
 

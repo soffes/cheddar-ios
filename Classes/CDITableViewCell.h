@@ -11,6 +11,7 @@
 @property (nonatomic, strong, readonly) SSTextField *textField;
 @property (nonatomic, assign) BOOL editingText;
 @property (nonatomic, strong, readonly) UITapGestureRecognizer *editingTapGestureRecognizer;
+@property (nonatomic, strong, readonly) UILongPressGestureRecognizer *editingPressGestureRecognizer;
 
 + (CGFloat)cellHeight;
 
