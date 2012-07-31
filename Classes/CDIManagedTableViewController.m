@@ -183,12 +183,12 @@
 }
 
 
-- (void)editRow:(UITapGestureRecognizer *)editingTapGestureRecognizer {
+- (void)editRow:(UIGestureRecognizer *)editingGestureRecognizer {
 	CDITableViewCell *cell = (CDITableViewCell *)[self.tableView cellForRowAtIndexPath:_editingIndexPath];
 	cell.editingText = NO;
 	cell.textField.delegate = nil;
 	
-	cell = (CDITableViewCell *)editingTapGestureRecognizer.view;
+	cell = (CDITableViewCell *)editingGestureRecognizer.view;
 	cell.editingText = YES;
 	cell.textField.delegate = self;
 
