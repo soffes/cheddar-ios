@@ -10,11 +10,16 @@
 
 @interface CDIPickerViewController : CDIGroupedTableViewController
 
-@property (nonatomic, strong) NSArray *keys;
-@property (nonatomic, strong) id selectedKey;
 @property (nonatomic, strong) NSIndexPath *currentIndexPath;
 
-- (void)loadKeys;
++ (NSString *)defaultsKey;
++ (NSString *)selectedKey;
++ (void)setSelectedKey:(NSString *)key;
++ (NSDictionary *)valueMap;
++ (NSString *)textForKey:(NSString *)key;
++ (NSString *)textForSelectedKey;
+
+- (NSArray *)keys;
 - (NSString *)cellTextForKey:(id)key;
 - (UIImage *)cellImageForKey:(id)key;
 

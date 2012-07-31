@@ -89,6 +89,12 @@
 }
 
 
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	[self.tableView reloadData];
+}
+
+
 #pragma mark - Actions
 
 - (void)close:(id)sender {
@@ -245,7 +251,7 @@
 	if (indexPath.section == 1) {
 		if (indexPath.row == 0) {
 			cell.textLabel.text = @"Tap Action";
-			cell.detailTextLabel.text = @"Complete";
+			cell.detailTextLabel.text = [CDISettingsTapPickerViewController textForSelectedKey];
 		}
 	}
 	

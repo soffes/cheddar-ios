@@ -8,11 +8,13 @@
 
 #import "CDIPickerViewController.h"
 
+extern NSString *const kCDITapActionDefaultsKey;
+extern NSString *const kCDITapActionNothingKey;
+extern NSString *const kCDITapActionCompleteKey;
+extern NSString *const kCDITapActionEditKey;
+
 @interface CDISettingsTapPickerViewController : CDIPickerViewController
 
-+ (NSString *)defaultsKey;
-+ (NSString *)selectedKey;
-+ (void)setSelectedKey:(NSString *)key;
 + (NSDictionary *)valueMap;
 + (NSString *)textForKey:(NSString *)key;
 
