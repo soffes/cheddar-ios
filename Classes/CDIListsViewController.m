@@ -131,7 +131,7 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 	return toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown;
 }
 
-#pragma mark - gesture support
+#pragma mark - Gestures
 
 - (BOOL)_shouldEditRowForGesture:(UIGestureRecognizer *)gestureRecognizer {
     BOOL didLongPressGestureSucceed = [gestureRecognizer isKindOfClass:[UITapGestureRecognizer class]] && gestureRecognizer.state == UIGestureRecognizerStateEnded;
@@ -149,6 +149,7 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
         [self editRow:gestureRecognizer];
     }
 }
+
 
 #pragma mark - SSManagedViewController
 

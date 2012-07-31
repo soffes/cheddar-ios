@@ -9,7 +9,6 @@
 #import "CDITableViewCell.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIFont+CheddariOSAdditions.h"
-#import <objc/runtime.h>
 
 @interface CDITableViewCell () <UIGestureRecognizerDelegate>
 
@@ -17,6 +16,7 @@
 @property (nonatomic, strong, readonly) UILongPressGestureRecognizer *editingLongPressGestureRecognizer;
 
 @end
+
 
 @implementation CDITableViewCell
 
@@ -137,11 +137,9 @@
 
 #pragma mark - Gesture Actions
 
-- (void)setEditingAction:(SEL)editAction forTarget:(id)target
-{
+- (void)setEditingAction:(SEL)editAction forTarget:(id)target {
     [_editingTapGestureRecognizer addTarget:target action:editAction];
     [_editingLongPressGestureRecognizer addTarget:target action:editAction];
 }
-
 
 @end
