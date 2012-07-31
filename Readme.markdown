@@ -7,7 +7,7 @@
 
 ## Getting Started
 
-Run the following commands to get start:
+Run the following commands to get started:
 
     $ git clone https://github.com/nothingmagical/cheddar-ios.git
     $ cd cheddar-ios
