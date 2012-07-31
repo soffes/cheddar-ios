@@ -23,8 +23,8 @@
 + (CGFloat)margin;
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated;
 
-- (void)showTag:(NSString *)tagName;
-- (void)hideTag;
+- (void)showTags:(NSArray *)tags;
+- (void)closeTags;
 
 @end
 
@@ -39,6 +39,6 @@
 
 - (void)addTaskViewDidBeginEditing:(CDIAddTaskView *)addTaskView;
 - (void)addTaskViewDidEndEditing:(CDIAddTaskView *)addTaskView;
-- (void)addTaskViewShouldCloseTag:(CDIAddTaskView *)addTaskView;
+- (void)addTaskViewShouldCloseTags:(CDIAddTaskView *)addTaskView;
 
 @end

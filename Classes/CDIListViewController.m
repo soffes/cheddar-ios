@@ -20,6 +20,7 @@
 
 @interface CDIListViewController () <CDIAddTaskViewDelegate, TTTAttributedLabelDelegate, UITextFieldDelegate, UIActionSheetDelegate, UIAlertViewDelegate>
 @property (nonatomic, strong) CDIAddTaskView *addTaskView;
+@property (nonatomic, strong) NSMutableArray *currentTags;
 - (void)_renameList:(id)sender;
 - (void)_archiveTasks:(id)sender;
 - (void)_archiveAllTasks:(id)sender;
@@ -32,7 +33,7 @@
 }
 
 @synthesize addTaskView = _addTaskView;
-@synthesize currentTag = _currentTag;
+@synthesize currentTags = _currentTags;
 @synthesize focusKeyboard = _focusKeyboard;
 
 - (void)setManagedObject:(SSManagedObject *)managedObject {
@@ -58,7 +59,7 @@
 	[list addObserver:self forKeyPath:@"archivedAt" options:NSKeyValueObservingOptionNew context:context];
 
 	self.ignoreChange = YES;
-	self.currentTag = nil;
+	[self closeTags];
 	
 	self.fetchedResultsController.fetchRequest.predicate = self.predicate;
 	[self.fetchedResultsController performFetch:nil];
@@ -89,32 +90,6 @@
 		[_addTaskView.archiveCompletedTasksButton addTarget:self action:@selector(_archiveCompletedTasks:) forControlEvents:UIControlEventTouchUpInside];
 	}
 	return _addTaskView;
-}
-
-
-- (void)setCurrentTag:(CDKTag *)tag {
-	if ((!_currentTag && !tag) || [_currentTag isEqual:tag]) {
-		return;
-	}
-	
-	_currentTag = tag;
-	
-	SSFilterableFetchedResultsController *controller = (SSFilterableFetchedResultsController *)self.fetchedResultsController;
-	
-	if (_currentTag) {
-		NSString *filterName = [NSString stringWithFormat:@"tag-%@", tag.name];
-		[self.addTaskView showTag:_currentTag.name];		
-		[controller addFilterPredicate:^BOOL(id obj) {
-			return [(CDKTask *)obj hasTag:_currentTag];
-		} forKey:filterName];
-		[controller setActiveFilterByKey:filterName];
-		self.navigationItem.rightBarButtonItem.enabled = NO;
-		[self setEditing:NO animated:YES];
-	} else {
-		[self.addTaskView hideTag];
-		[controller removeCurrentFilter];
-		self.navigationItem.rightBarButtonItem.enabled = YES;
-	}
 }
 
 
@@ -176,7 +151,7 @@
 		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStyleBordered target:self action:@selector(toggleEditMode:)];
 	}
 	self.navigationItem.rightBarButtonItem.title = editing ? @"Done" : @"Edit";
-	self.navigationItem.rightBarButtonItem.enabled = !self.currentTag && self.list;
+	self.navigationItem.rightBarButtonItem.enabled = self.currentTags.count == 0 && self.list;
 	[self.addTaskView setEditing:editing animated:animated];
 }
 
@@ -203,9 +178,9 @@
 
 
 - (NSPredicate *)predicate {
-	if (self.currentTag) {
-		return [NSPredicate predicateWithFormat:@"list = %@ AND archivedAt = nil AND ANY taggings.tag = %@", self.list, self.currentTag];
-	}
+//	if (self.currentTags.count > 0) {
+//		return [NSPredicate predicateWithFormat:@"list = %@ AND archivedAt = nil AND ANY taggings.tag IN %@", self.list, self.currentTags];
+//	}
 	
 	return [NSPredicate predicateWithFormat:@"list = %@ AND archivedAt = nil", self.list];
 }
@@ -260,6 +235,45 @@
 			self.loading = NO;
 		});
 	}];
+}
+
+
+#pragma mark - Tags
+
+- (void)addTag:(CDKTag *)tag {
+	if (!tag || [_currentTags containsObject:tag]) {
+		return;
+	}
+	
+	if (!_currentTags) {
+		_currentTags = [[NSMutableArray alloc] init];
+	}
+	
+	[_currentTags addObject:tag];
+	
+	SSFilterableFetchedResultsController *controller = (SSFilterableFetchedResultsController *)self.fetchedResultsController;
+	
+	NSString *filterName = [_currentTags componentsJoinedByString:@","];
+	[self.addTaskView showTags:_currentTags];
+	[controller addFilterPredicate:^BOOL(id obj) {
+		return [(CDKTask *)obj hasTags:_currentTags];
+	} forKey:filterName];
+	[controller setActiveFilterByKey:filterName];
+	
+	self.navigationItem.rightBarButtonItem.enabled = NO;
+	[self setEditing:NO animated:YES];
+}
+
+
+- (void)closeTags {
+	[self.addTaskView closeTags];
+	
+	SSFilterableFetchedResultsController *controller = (SSFilterableFetchedResultsController *)self.fetchedResultsController;
+	[controller removeCurrentFilter];
+	
+	[_currentTags removeAllObjects];
+	
+	self.navigationItem.rightBarButtonItem.enabled = YES;
 }
 
 
@@ -469,8 +483,8 @@
 }
 
 
-- (void)addTaskViewShouldCloseTag:(CDIAddTaskView *)addTaskView; {
-	self.currentTag = nil;
+- (void)addTaskViewShouldCloseTags:(CDIAddTaskView *)addTaskView; {
+	[self closeTags];
 }
 
 
@@ -480,7 +494,7 @@
 	// Open tag
 	if ([url.scheme isEqualToString:@"x-cheddar-tag"]) {
 		CDKTag *tag = [CDKTag existingTagWithName:url.host];
-		self.currentTag = tag;
+		[self addTag:tag];
 		return;
 	}
 	

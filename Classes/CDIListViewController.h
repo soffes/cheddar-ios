@@ -14,7 +14,9 @@
 @interface CDIListViewController : CDIManagedTableViewController
 
 @property (nonatomic, strong, readonly) CDKList *list;
-@property (nonatomic, strong) CDKTag *currentTag;
 @property (nonatomic, assign) BOOL focusKeyboard;
+
+- (void)addTag:(CDKTag *)tag;
+- (void)closeTags;
 
 @end

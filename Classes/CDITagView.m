@@ -28,13 +28,14 @@
 		imageView.image = [UIImage imageNamed:@"tag.png"];
 		[self addSubview:imageView];
 		
-		_textLabel = [[UILabel alloc] initWithFrame:CGRectMake(44.0f, 13.0f, self.bounds.size.width - 54.0f, 24.0f)];
+		_textLabel = [[UILabel alloc] initWithFrame:CGRectZero];
 		_textLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		_textLabel.backgroundColor = [UIColor clearColor];
 		_textLabel.textColor = [UIColor whiteColor];
 		_textLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.2f];
 		_textLabel.shadowOffset = CGSizeMake(0.0f, 1.0f);
 		_textLabel.font = [UIFont cheddarFontOfSize:24.0f];
+		_textLabel.lineBreakMode = UILineBreakModeTailTruncation;
 		[self addSubview:_textLabel];
 		
 		imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.bounds.size.width - 26.0f, 18.0f, 16.0f, 16.0f)];
@@ -43,6 +44,13 @@
 		[self addSubview:imageView];
 	}
 	return self;
+}
+
+
+- (void)layoutSubviews {
+	[super layoutSubviews];
+	
+	_textLabel.frame = CGRectMake(44.0f, 13.0f, self.bounds.size.width - 74.0f, 24.0f);
 }
 
 @end

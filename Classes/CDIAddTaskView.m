@@ -16,7 +16,7 @@
 
 @interface CDIAddTaskView () <UITextFieldDelegate>
 @property (nonatomic, strong) SMTEDelegateController *textExpander;
-- (void)_closeTag;
+- (void)_closeTags;
 @end
 
 @implementation CDIAddTaskView {
@@ -220,8 +220,10 @@
 
 #pragma mark - Tag
 
-- (void)showTag:(NSString *)tagName {
+- (void)showTags:(NSArray *)tags {
 	_textField.enabled = NO;
+	
+	NSString *text = [[NSString stringWithFormat:@"#%@", [[tags valueForKey:@"name"] componentsJoinedByString:@" #"]] lowercaseString];
 	
 	if (!_tagContainer) {
 		_tagContainer = [[UIView alloc] initWithFrame:self.bounds];
@@ -237,10 +239,10 @@
 		[_tagContainer addSubview:_tagViewShadow];
 		
 		_tagView = [[CDITagView alloc] initWithFrame:CGRectMake(0.0f, size.height, size.width, size.height)];
-		_tagView.textLabel.text = [NSString stringWithFormat:@"#%@", tagName];
+		_tagView.textLabel.text = text;
 		[_tagContainer addSubview:_tagView];
 		
-		UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(_closeTag)];
+		UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(_closeTags)];
 		[_tagView addGestureRecognizer:tap];
 		
 		[UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction animations:^{
@@ -248,12 +250,12 @@
 			_tagViewShadow.alpha = 0.55f;
 		} completion:nil];
 	} else {
-		_tagView.textLabel.text = [NSString stringWithFormat:@"#%@", tagName];
+		_tagView.textLabel.text = text;
 	}
 }
 
 
-- (void)hideTag {
+- (void)closeTags {
 	_textField.enabled = YES;
 	
 	CGSize size = self.bounds.size;
@@ -273,9 +275,9 @@
 }
 
 
-- (void)_closeTag {
-	if ([self.delegate respondsToSelector:@selector(addTaskViewShouldCloseTag:)]) {
-		[self.delegate addTaskViewShouldCloseTag:self];
+- (void)_closeTags {
+	if ([self.delegate respondsToSelector:@selector(addTaskViewShouldCloseTags:)]) {
+		[self.delegate addTaskViewShouldCloseTags:self];
 	}
 }
 
