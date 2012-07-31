@@ -321,7 +321,7 @@
 		cell = [[CDITaskTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		cell.attributedLabel.delegate = self;
-        [cell setEditingAction:@selector(editRow:) forTarget:self];
+    	[cell setEditingAction:@selector(editRow:) forTarget:self];
 	}
 	
 	[self configureCell:cell atIndexPath:indexPath];

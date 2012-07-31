@@ -100,9 +100,9 @@
 		_editingTapGestureRecognizer.delegate = self;
 		[self addGestureRecognizer:_editingTapGestureRecognizer];
         
-        _editingLongPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] init];
-        _editingLongPressGestureRecognizer.delegate = self;
-        [self addGestureRecognizer:_editingLongPressGestureRecognizer];
+		_editingLongPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] init];
+		_editingLongPressGestureRecognizer.delegate = self;
+		[self addGestureRecognizer:_editingLongPressGestureRecognizer];
 	}
 	return self;
 }
