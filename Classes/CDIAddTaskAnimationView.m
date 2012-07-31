@@ -56,7 +56,7 @@
 	[container addSubview:background];
 	
 	// Checkbox
-	UIImageView *checkbox = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"checkbox.png"] stretchableImageWithLeftCapWidth:4 topCapHeight:4]];
+	UIImageView *checkbox = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"checkbox"] stretchableImageWithLeftCapWidth:4 topCapHeight:4]];
 	checkbox.frame = CGRectMake(-34.0f, 13.0f, 24.0f, 24.0f);
 	[background addSubview:checkbox];
 	

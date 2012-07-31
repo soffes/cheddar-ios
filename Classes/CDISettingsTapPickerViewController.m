@@ -67,4 +67,19 @@
 	return [[self class] textForKey:key];
 }
 
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	[super tableView:tableView didSelectRowAtIndexPath:indexPath];
+	
+	// Notify the parent view controller of the change
+//	SCPickerDemoViewController *viewController = (SCPickerDemoViewController *)[self.navigationController.viewControllers objectAtIndex:([self.navigationController.viewControllers count] - 2)];
+//	viewController.selectedAbbreviation = [self.keys objectAtIndex:indexPath.row];
+	
+	[[self class] setSelectedKey:[self.keys objectAtIndex:indexPath.row]];
+	[self.navigationController popViewControllerAnimated:YES];
+}
+
+
 @end

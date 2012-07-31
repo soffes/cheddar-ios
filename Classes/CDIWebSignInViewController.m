@@ -26,7 +26,7 @@
 - (id)init {
 	if ((self = [super init])) {
 		self.title = @"Cheddar";
-		UIImageView *title = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav-title.png"]];
+		UIImageView *title = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav-title"]];
 		title.frame = CGRectMake(0.0f, 0.0f, 116.0f, 21.0f);
 		self.navigationItem.titleView = title;
 	}

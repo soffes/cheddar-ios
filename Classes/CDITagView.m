@@ -25,7 +25,7 @@
 		self.bottomBorderColor = [UIColor colorWithRed:0.0f green:0.502f blue:0.725f alpha:1.0f];
 		
 		UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10.0f, 13.0f, 24.0f, 24.0f)];
-		imageView.image = [UIImage imageNamed:@"tag.png"];
+		imageView.image = [UIImage imageNamed:@"tag"];
 		[self addSubview:imageView];
 		
 		_textLabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -39,7 +39,7 @@
 		[self addSubview:_textLabel];
 		
 		imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.bounds.size.width - 26.0f, 18.0f, 16.0f, 16.0f)];
-		imageView.image = [UIImage imageNamed:@"tag-x.png"];
+		imageView.image = [UIImage imageNamed:@"tag-x"];
 		imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
 		[self addSubview:imageView];
 	}

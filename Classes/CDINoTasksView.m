@@ -17,7 +17,7 @@
 		self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 		
 		UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(roundf((frame.size.width - 108.0f) / 2.0f), 136.0f, 108.0f, 83.0f)];
-		imageView.image = [UIImage imageNamed:@"task-icon.png"];
+		imageView.image = [UIImage imageNamed:@"task-icon"];
 		imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
 		[self addSubview:imageView];
 
@@ -37,7 +37,7 @@
 		CGFloat offset = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 2.0f : 0.0f;
 		
 		imageView = [[UIImageView alloc] initWithFrame:CGRectMake(13.0f + offset, 56.0f, 34.0f, 40.0f)];
-		imageView.image = [UIImage imageNamed:@"add-task-arrow.png"];
+		imageView.image = [UIImage imageNamed:@"add-task-arrow"];
 		[self addSubview:imageView];
 		
 		label = [[UILabel alloc] initWithFrame:CGRectMake(41.0f + offset, 80.0f, 85.0f, 22.0f)];

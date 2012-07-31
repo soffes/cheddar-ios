@@ -16,7 +16,7 @@
 		self.userInteractionEnabled = NO;
 
 		UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(115.0f, 106.0f, 90.0f, 110.0f)];
-		imageView.image = [UIImage imageNamed:@"list-icon.png"];
+		imageView.image = [UIImage imageNamed:@"list-icon"];
 		[self addSubview:imageView];
 		
 		UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20.0f, 230.0f, 280.0f, 60.0f)];
@@ -34,7 +34,7 @@
 		CGFloat offset = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 2.0f : 0.0f;
 
 		imageView = [[UIImageView alloc] initWithFrame:CGRectMake(272.0f - offset, 5.0f, 34.0f, 40.0f)];
-		imageView.image = [UIImage imageNamed:@"add-list-arrow.png"];
+		imageView.image = [UIImage imageNamed:@"add-list-arrow"];
 		[self addSubview:imageView];
 
 		label = [[UILabel alloc] initWithFrame:CGRectMake(200.0f - offset, 30.0f, 75.0f, 22.0f)];

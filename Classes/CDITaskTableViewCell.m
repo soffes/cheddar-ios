@@ -90,10 +90,10 @@
 	if ((self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier])) {
 		self.textLabel.hidden = YES;
 		
-		_checkbox = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"checkbox.png"] stretchableImageWithLeftCapWidth:4 topCapHeight:4]];
+		_checkbox = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"checkbox"] stretchableImageWithLeftCapWidth:4 topCapHeight:4]];
 		[self.contentView addSubview:_checkbox];
 		
-		_checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"small-check.png"]];
+		_checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"small-check"]];
 		_checkmark.hidden = YES;
 		[self.contentView addSubview:_checkmark];
 		

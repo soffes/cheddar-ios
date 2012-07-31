@@ -15,9 +15,9 @@
 - (void)drawRectCustom:(CGRect)rect {
 	UIImage *image = nil;
 	if (self.highlighted) {
-		image = [UIImage imageNamed:@"archive-button-highlighted.png"];
+		image = [UIImage imageNamed:@"archive-button-highlighted"];
 	} else {
-		image = [UIImage imageNamed:@"archive-button.png"];
+		image = [UIImage imageNamed:@"archive-button"];
 	}
 	[[image stretchableImageWithLeftCapWidth:5 topCapHeight:0] drawInRect:rect];
 

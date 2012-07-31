@@ -106,7 +106,7 @@
 		
 		_textField = [[SSTextField alloc] initWithFrame:CGRectZero];
 		_textField.delegate = self;
-		_textField.background = [[UIImage imageNamed:@"textfield.png"] stretchableImageWithLeftCapWidth:8 topCapHeight:0];
+		_textField.background = [[UIImage imageNamed:@"textfield"] stretchableImageWithLeftCapWidth:8 topCapHeight:0];
 		_textField.textEdgeInsets = UIEdgeInsetsMake(0.0f, 13.0f, 0.0f, 13.0f);
 		_textField.autocapitalizationType = UITextAutocapitalizationTypeSentences;
 		_textField.autocorrectionType = UITextAutocorrectionTypeYes;
@@ -285,7 +285,7 @@
 #pragma mark - UITextFieldDelegate
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-	_textField.background = [[UIImage imageNamed:@"textfield-focused.png"] stretchableImageWithLeftCapWidth:8 topCapHeight:0];
+	_textField.background = [[UIImage imageNamed:@"textfield-focused"] stretchableImageWithLeftCapWidth:8 topCapHeight:0];
 	
 	if ([self.delegate respondsToSelector:@selector(addTaskViewDidBeginEditing:)]) {
 		[self.delegate addTaskViewDidBeginEditing:self];
@@ -294,7 +294,7 @@
 
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-	_textField.background = [[UIImage imageNamed:@"textfield.png"] stretchableImageWithLeftCapWidth:8 topCapHeight:0];
+	_textField.background = [[UIImage imageNamed:@"textfield"] stretchableImageWithLeftCapWidth:8 topCapHeight:0];
 	
 	if ([self.delegate respondsToSelector:@selector(addTaskViewDidEndEditing:)]) {
 		[self.delegate addTaskViewDidEndEditing:self];

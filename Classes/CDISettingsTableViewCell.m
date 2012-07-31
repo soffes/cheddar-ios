@@ -20,11 +20,6 @@
 		self.detailTextLabel.font = [UIFont cheddarFontOfSize:17.0f];
 		self.detailTextLabel.textColor = [UIColor cheddarBlueColor];
 		
-		UIImageView *disclosureImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 10.0f, 15.0f)];
-		disclosureImageView.image = [UIImage imageNamed:@"disclosure.png"];
-		self.accessoryView = disclosureImageView;
-		
-		disclosureImageView.highlightedImage = [UIImage imageNamed:@"disclosure-highlighted.png"];
 		SSGradientView *selectedBackground = [[SSGradientView alloc] initWithFrame:CGRectZero];
 		selectedBackground.colors = [[NSArray alloc] initWithObjects:
 									 [UIColor colorWithRed:0.0f green:0.722f blue:0.918f alpha:1.0f],
@@ -35,6 +30,26 @@
 		self.selectedBackgroundView = selectedBackground;
 	}
 	return self;
+}
+
+
+- (void)setAccessoryType:(UITableViewCellAccessoryType)accessoryType {
+	if (accessoryType == UITableViewCellAccessoryDisclosureIndicator) {
+		UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 10.0f, 15.0f)];
+		imageView.image = [UIImage imageNamed:@"disclosure"];
+		imageView.highlightedImage = [UIImage imageNamed:@"disclosure-highlighted"];
+		self.accessoryView = imageView;
+		return;
+	} else if (accessoryType == UITableViewCellAccessoryCheckmark) {
+		UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 15.0f, 12.0f)];
+		imageView.image = [UIImage imageNamed:@"cell-checkmark"];
+		imageView.highlightedImage = [UIImage imageNamed:@"cell-checkmark-highlighted"];
+		self.accessoryView = imageView;
+		return;
+	}
+	
+	self.accessoryView = nil;
+	[super setAccessoryType:accessoryType];
 }
 
 @end

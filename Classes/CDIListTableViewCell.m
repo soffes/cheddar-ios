@@ -32,10 +32,10 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
 	if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
 		UIImageView *disclosureImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 10.0f, 15.0f)];
-		disclosureImageView.image = [UIImage imageNamed:@"disclosure.png"];
+		disclosureImageView.image = [UIImage imageNamed:@"disclosure"];
 		self.accessoryView = disclosureImageView;
 		
-		disclosureImageView.highlightedImage = [UIImage imageNamed:@"disclosure-highlighted.png"];
+		disclosureImageView.highlightedImage = [UIImage imageNamed:@"disclosure-highlighted"];
 		SSGradientView *selectedBackground = [[SSGradientView alloc] initWithFrame:CGRectZero];
 		selectedBackground.colors = [[NSArray alloc] initWithObjects:
 									 [UIColor colorWithRed:0.0f green:0.722f blue:0.918f alpha:1.0f],
