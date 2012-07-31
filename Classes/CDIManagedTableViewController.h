@@ -18,7 +18,7 @@
 - (void)refresh:(id)sender;
 - (void)toggleEditMode:(id)sender;
 - (void)endCellTextEditing;
-- (void)editRow:(UITapGestureRecognizer *)editingTapGestureRecognizer;
+- (void)editRow:(UIGestureRecognizer *)editingGestureRecognizer;
 
 - (void)updateTableViewOffsets;
 - (void)keyboardDidShow:(NSNotification *)notification;

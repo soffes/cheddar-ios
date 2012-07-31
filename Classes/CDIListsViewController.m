@@ -35,6 +35,8 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 - (void)_cancelAddingList:(id)sender;
 - (void)_selectListAtIndexPath:(NSIndexPath *)indexPath newList:(BOOL)newList;
 - (void)_checkUser;
+- (void)_beginEditingWithGesture:(UIGestureRecognizer *)gestureRecognizer;
+- (BOOL)_shouldEditRowForGesture:(UIGestureRecognizer *)gestureRecognizer;
 @end
 
 @implementation CDIListsViewController {
@@ -129,6 +131,24 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 	return toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown;
 }
 
+#pragma mark - gesture support
+
+- (BOOL)_shouldEditRowForGesture:(UIGestureRecognizer *)gestureRecognizer {
+    BOOL didLongPressGestureSucceed = [gestureRecognizer isKindOfClass:[UITapGestureRecognizer class]] && gestureRecognizer.state == UIGestureRecognizerStateEnded;
+    BOOL didTapGestureSucceed = [gestureRecognizer isKindOfClass:[UILongPressGestureRecognizer class]] && gestureRecognizer.state == UIGestureRecognizerStateBegan;
+    return didTapGestureSucceed || didLongPressGestureSucceed;
+}
+
+
+- (void)_beginEditingWithGesture:(UIGestureRecognizer *)gestureRecognizer {
+    if ([self _shouldEditRowForGesture:gestureRecognizer]) {
+        if (![self isEditing]) {
+            [self setEditing:YES animated:YES];
+        }
+        
+        [self editRow:gestureRecognizer];
+    }
+}
 
 #pragma mark - SSManagedViewController
 
@@ -400,7 +420,7 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 	CDIListTableViewCell *cell = (CDIListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 	if (!cell) {
 		cell = [[CDIListTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-		[cell.editingTapGestureRecognizer addTarget:self action:@selector(editRow:)];
+        [cell setEditingAction:@selector(_beginEditingWithGesture:) forTarget:self];
 	}
 	
 	cell.list = [self objectForViewIndexPath:indexPath];

@@ -10,8 +10,9 @@
 
 @property (nonatomic, strong, readonly) SSTextField *textField;
 @property (nonatomic, assign) BOOL editingText;
-@property (nonatomic, strong, readonly) UITapGestureRecognizer *editingTapGestureRecognizer;
 
 + (CGFloat)cellHeight;
+
+- (void)setEditingAction:(SEL)editAction forTarget:(id)target;
 
 @end

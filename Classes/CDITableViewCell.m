@@ -12,6 +12,10 @@
 #import <objc/runtime.h>
 
 @interface CDITableViewCell () <UIGestureRecognizerDelegate>
+
+@property (nonatomic, strong, readonly) UITapGestureRecognizer *editingTapGestureRecognizer;
+@property (nonatomic, strong, readonly) UILongPressGestureRecognizer *editingLongPressGestureRecognizer;
+
 @end
 
 @implementation CDITableViewCell
@@ -19,6 +23,7 @@
 @synthesize editingText = _editingText;
 @synthesize textField = _textField;
 @synthesize editingTapGestureRecognizer = _editingTapGestureRecognizer;
+@synthesize editingLongPressGestureRecognizer = _editingLongPressGestureRecognizer;
 
 - (UITextField *)textField {
 	if (!_textField) {
@@ -94,6 +99,10 @@
 		_editingTapGestureRecognizer = [[UITapGestureRecognizer alloc] init];
 		_editingTapGestureRecognizer.delegate = self;
 		[self addGestureRecognizer:_editingTapGestureRecognizer];
+        
+        _editingLongPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] init];
+        _editingLongPressGestureRecognizer.delegate = self;
+        [self addGestureRecognizer:_editingLongPressGestureRecognizer];
 	}
 	return self;
 }
@@ -124,5 +133,15 @@
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
 	return [touch.view isKindOfClass:[UIControl class]] == NO;
 }
+
+
+#pragma mark - Gesture Actions
+
+- (void)setEditingAction:(SEL)editAction forTarget:(id)target
+{
+    [_editingTapGestureRecognizer addTarget:target action:editAction];
+    [_editingLongPressGestureRecognizer addTarget:target action:editAction];
+}
+
 
 @end
