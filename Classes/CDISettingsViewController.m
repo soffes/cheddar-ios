@@ -32,6 +32,13 @@
 }
 
 
+#pragma mark - NSObject
+
+- (void)dealloc {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
 #pragma mark - UIViewController
 
 - (void)viewDidLoad {
@@ -44,7 +51,7 @@
 	footer.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 	footer.textAlignment = UITextAlignmentCenter;
 	footer.textColor = [UIColor cheddarLightTextColor];
-	footer.font = [UIFont cheddarFontOfSize:14.0f];
+	footer.font = [UIFont cheddarInterfaceFontOfSize:14.0f];
 	footer.text = [NSString stringWithFormat:@"Version %@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
 	footer.shadowColor = [UIColor whiteColor];
 	footer.shadowOffset = CGSizeMake(0.0f, 1.0f);
@@ -86,6 +93,14 @@
 
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_updateUI) name:kCDKPlusDidChangeNotificationName object:nil];
 	[self _updateUI];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self.tableView selector:@selector(reloadData) name:kCDIFontDidChangeNotificationName object:nil];
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	[self.tableView reloadData];
 }
 
 
@@ -222,7 +237,15 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	static NSString *cellIdentifier = @"cellIdentifier";
+	NSString *cellIdentifier = @"None";
+	NSUInteger numberOfRows = [tableView numberOfRowsInSection:indexPath.section];
+	if (numberOfRows == 1) {
+		cellIdentifier = @"Both";
+	} else if (indexPath.row == 0) {
+		cellIdentifier = @"Top";
+	} else if (indexPath.row == numberOfRows - 1) {
+		cellIdentifier = @"Bottom";
+	}
 	
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 	if (!cell) {
@@ -237,7 +260,7 @@
 			cell.detailTextLabel.text = @"Large";
 		} else if (indexPath.row == 1) {
 			cell.textLabel.text = @"Font";
-			cell.detailTextLabel.text = @"Gotham";
+			cell.detailTextLabel.text = [CDISettingsFontPickerViewController textForSelectedKey];
 		}
 	}
 	
@@ -245,7 +268,7 @@
 	if (indexPath.section == 1) {
 		if (indexPath.row == 0) {
 			cell.textLabel.text = @"Tap Action";
-			cell.detailTextLabel.text = @"Complete";
+			cell.detailTextLabel.text = [CDISettingsTapPickerViewController textForSelectedKey];
 		}
 	}
 	

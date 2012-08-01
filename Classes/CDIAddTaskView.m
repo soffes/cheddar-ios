@@ -160,8 +160,9 @@
 			_archiveCompletedTasksButton.frame = CGRectMake(margin - 1.0f + spacing + width + spacing + width, 5.0f, width, 42.0f);
 		}
 	} else {
-		_renameListButton.frame = CGRectMake(margin - 1.0f, 5.0f, 153.0f, 42.0f);
-		_archiveTasksButton.frame = CGRectMake(158.0f + margin, 5.0f, 153.0f, 42.0f);
+        CGFloat buttonWidth = roundf((size.width - margin - margin - margin) / 2.0f);
+		_renameListButton.frame = CGRectMake(margin, 5.0f, buttonWidth, 42.0f);
+		_archiveTasksButton.frame = CGRectMake(size.width - buttonWidth - margin, 5.0f, buttonWidth, 42.0f);
 	}
 }
 

@@ -12,6 +12,7 @@
 #import "CDICreateListViewController.h"
 #import "CDISettingsViewController.h"
 #import "CDISplitViewController.h"
+#import "CDISettingsFontPickerViewController.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "CDIUpgradeViewController.h"
 #import "CDINoListsView.h"
@@ -75,6 +76,8 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_listUpdated:) name:kCDKListDidUpdateNotificationName object:nil];
 	}
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self.tableView selector:@selector(reloadData) name:kCDIFontDidChangeNotificationName object:nil];
 
 	_checkForOneList = YES;
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_currentUserDidChange:) name:kCDKCurrentUserChangedNotificationName object:nil];

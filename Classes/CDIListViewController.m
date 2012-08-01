@@ -16,6 +16,7 @@
 #import "CDIRenameTaskViewController.h"
 #import "CDIWebViewController.h"
 #import "CDIMarkdownInputAccessoryView.h"
+#import "CDISettingsTapPickerViewController.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIFont+CheddariOSAdditions.h"
 
@@ -27,6 +28,7 @@
 - (void)_archiveTasks:(id)sender;
 - (void)_archiveAllTasks:(id)sender;
 - (void)_archiveCompletedTasks:(id)sender;
+- (void)_editTask:(CDKTask *)task;
 @end
 
 @implementation CDIListViewController {
@@ -190,10 +192,6 @@
 
 
 - (NSPredicate *)predicate {
-//	if (self.currentTags.count > 0) {
-//		return [NSPredicate predicateWithFormat:@"list = %@ AND archivedAt = nil AND ANY taggings.tag IN %@", self.list, self.currentTags];
-//	}
-	
 	return [NSPredicate predicateWithFormat:@"list = %@ AND archivedAt = nil", self.list];
 }
 
@@ -215,11 +213,8 @@
 		return;
 	}
 
-	CDIRenameTaskViewController *viewController = [[CDIRenameTaskViewController alloc] init];
-	viewController.task = [self objectForViewIndexPath:indexPath];
-	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
-	navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
-	[self.navigationController presentModalViewController:navigationController animated:YES];
+	CDKTask *task = [self objectForViewIndexPath:indexPath];
+	[self _editTask:task];
 }
 
 
@@ -337,6 +332,15 @@
 }
 
 
+- (void)_editTask:(CDKTask *)task {
+	CDIRenameTaskViewController *viewController = [[CDIRenameTaskViewController alloc] init];
+	viewController.task = task;
+	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+	navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+	[self.navigationController presentModalViewController:navigationController animated:YES];
+}
+
+
 #pragma mark - UITableViewDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -364,8 +368,25 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	NSString *action = [CDISettingsTapPickerViewController selectedKey];
+	
+	// Nothing
+	if ([action isEqualToString:kCDITapActionNothingKey]) {
+		return;
+	}	
+	
 	CDKTask *task = [self objectForViewIndexPath:indexPath];
-	[task toggleCompleted];
+	
+	// Complete
+	if ([action isEqualToString:kCDITapActionCompleteKey]) {
+		[task toggleCompleted];
+		return;
+	}
+	
+	// Edit
+	if ([action isEqualToString:kCDITapActionEditKey]) {
+		[self _editTask:task];
+	}
 }
 
 
@@ -416,8 +437,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	CDKTask *task = [self objectForViewIndexPath:indexPath];
-//	CGFloat offset = self.editing ? 29.0f : 0.0f;
-//	return [CDITaskTableViewCell cellHeightForTask:task width:tableView.frame.size.width - offset];
 	return [CDITaskTableViewCell cellHeightForTask:task width:tableView.frame.size.width];
 }
 

@@ -13,51 +13,74 @@
 
 #pragma mark - Accessors
 
-@synthesize selectedKey = _selectedKey;
-@synthesize keys = _keys;
 @synthesize currentIndexPath = _currentIndexPath;
 
 
-#pragma mark - UIViewController Methods
+#pragma mark - UIViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	[self loadKeys];
+	NSString *selectedKey = [[self class] selectedKey];
 	
-	if (self.selectedKey != nil) {
-		self.currentIndexPath = [NSIndexPath indexPathForRow:[self.keys indexOfObject:self.selectedKey] inSection:0];
+	if (selectedKey != nil) {
+		self.currentIndexPath = [NSIndexPath indexPathForRow:[self.keys indexOfObject:selectedKey] inSection:0];
 		[self.tableView reloadData];
 		[self.tableView scrollToRowAtIndexPath:self.currentIndexPath atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
 	}
 }
 
 
-#pragma mark - SSPickerViewController
+#pragma mark - Picker
 
-// This method should be overridden by a subclass
-- (void)loadKeys {
-	self.keys = nil;
-	self.selectedKey = nil;
++ (NSString *)defaultsKey {
+	return nil;
 }
 
 
-// This method should be overridden by a subclass
++ (NSString *)selectedKey {
+	return [[NSUserDefaults standardUserDefaults] stringForKey:[self defaultsKey]];
+}
+
+
++ (void)setSelectedKey:(NSString *)key {
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	[userDefaults setObject:key forKey:[self defaultsKey]];
+	[userDefaults synchronize];
+}
+
+
+// This method may be overridden by a subclass
 - (NSString *)cellTextForKey:(id)key {
-	return key;
+	return [[self class] textForKey:key];
 }
+
 
 // This method should be overridden by a subclass
 - (UIImage *)cellImageForKey:(id)key {
     return nil;
 }
 
-#pragma mark - UITableViewDelegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	[[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
-	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-	self.currentIndexPath = indexPath;
+// This method must be overridden by a subclass
+- (NSArray *)keys {
+	return nil;
+}
+
+
+// This method must be overridden by a subclass
++ (NSDictionary *)valueMap {
+	return nil;
+}
+
+
++ (NSString *)textForKey:(NSString *)key {
+	return [[self valueMap] objectForKey:key];
+}
+
+
++ (NSString *)textForSelectedKey {
+	return [self textForKey:[self selectedKey]];
 }
 
 
@@ -74,8 +97,15 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	
-    static NSString *cellIdentifier = @"cellIdentifier";
+    NSString *cellIdentifier = @"None";
+	NSUInteger numberOfRows = [tableView numberOfRowsInSection:indexPath.section];
+	if (numberOfRows == 1) {
+		cellIdentifier = @"Both";
+	} else if (indexPath.row == 0) {
+		cellIdentifier = @"Top";
+	} else if (indexPath.row == numberOfRows - 1) {
+		cellIdentifier = @"Bottom";
+	}
 	
     CDISettingsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
@@ -84,12 +114,24 @@
 	id key = [self.keys objectAtIndex:indexPath.row];
 	cell.textLabel.text = [self cellTextForKey:key];
     cell.imageView.image = [self cellImageForKey:key];
-	if([key isEqual:self.selectedKey] == YES) {
+	if([key isEqual:[[self class] selectedKey]]) {
 		cell.accessoryType = UITableViewCellAccessoryCheckmark;
 	} else {
 		cell.accessoryType = UITableViewCellAccessoryNone;
 	}
     return cell;
+}
+
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	[[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	self.currentIndexPath = indexPath;
+	
+	[[self class] setSelectedKey:[self.keys objectAtIndex:indexPath.row]];
+	[self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

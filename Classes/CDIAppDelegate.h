@@ -10,7 +10,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-+ (void)applyStylesheet;
 + (CDIAppDelegate *)sharedAppDelegate;
+- (void)applyStylesheet;
 
 @end
