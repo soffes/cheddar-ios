@@ -13,3 +13,6 @@
 [submodule "Vendor/SSPullToRefresh"]
 	path = Vendor/SSPullToRefresh
 	url = https://github.com/samsoffes/sspulltorefresh.git
+[submodule "Vendor/SSDataKit"]
+	path = Vendor/SSDataKit
+	url = git://github.com/samsoffes/ssdatakit.git

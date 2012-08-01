@@ -36,6 +36,10 @@ While it is not strictly forbidden by the license, I would greatly appreciate it
 
 If you want to fix bugs, I'll love you forever! If you want to add some features, I may not merge it. I'm sure it will be awesome, but defending Cheddar's simplicity is my upmost duty. If you're feeling like implementing a feature, check out the [issues](https://github.com/nothingmagical/cheddar-ios/issues) for things tagged with "feature".
 
+Also, after forking and downloading the project, make sure to setup the Git submodules:
+
+    git submodule init
+    git submodule update
 
 ## Give Back
 
