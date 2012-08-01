@@ -15,11 +15,13 @@
 #import "CDINoTasksView.h"
 #import "CDIRenameTaskViewController.h"
 #import "CDIWebViewController.h"
+#import "CDIMarkdownInputAccessoryView.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIFont+CheddariOSAdditions.h"
 
-@interface CDIListViewController () <CDIAddTaskViewDelegate, TTTAttributedLabelDelegate, UITextFieldDelegate, UIActionSheetDelegate, UIAlertViewDelegate>
+@interface CDIListViewController () <CDIAddTaskViewDelegate, TTTAttributedLabelDelegate, UITextFieldDelegate, UIActionSheetDelegate, UIAlertViewDelegate, CDIMarkdownInputAccessoryViewDelegate>
 @property (nonatomic, strong) CDIAddTaskView *addTaskView;
+@property (nonatomic, strong) CDIMarkdownInputAccessoryView *markdownAccessoryView;
 @property (nonatomic, strong) NSMutableArray *currentTags;
 - (void)_renameList:(id)sender;
 - (void)_archiveTasks:(id)sender;
@@ -88,8 +90,18 @@
 		[_addTaskView.archiveTasksButton addTarget:self action:@selector(_archiveTasks:) forControlEvents:UIControlEventTouchUpInside];
 		[_addTaskView.archiveAllTasksButton addTarget:self action:@selector(_archiveAllTasks:) forControlEvents:UIControlEventTouchUpInside];
 		[_addTaskView.archiveCompletedTasksButton addTarget:self action:@selector(_archiveCompletedTasks:) forControlEvents:UIControlEventTouchUpInside];
+        [_addTaskView.textField setInputAccessoryView:[self markdownAccessoryView]];
 	}
 	return _addTaskView;
+}
+
+
+- (CDIMarkdownInputAccessoryView *)markdownAccessoryView {
+    if (!_markdownAccessoryView ) {
+        _markdownAccessoryView = [[CDIMarkdownInputAccessoryView alloc] initWithFrame:(CGRect){ CGPointZero, self.tableView.bounds.size.width, [CDIMarkdownInputAccessoryView defaultHeight] }];
+        [_markdownAccessoryView setDelegate:self];
+    }
+    return _markdownAccessoryView;
 }
 
 
@@ -579,5 +591,14 @@
 		}
 	}
 }
+
+
+#pragma mark - CDIMarkdownInputAccessoryView
+
+- (void)markdownAccessoryView:(CDIMarkdownInputAccessoryView *)markdownView didSelectKeyForString:(NSString *)characterString
+{
+    [self.addTaskView.textField insertText:characterString];
+}
+
 
 @end
