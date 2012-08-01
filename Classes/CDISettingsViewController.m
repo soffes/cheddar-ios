@@ -228,18 +228,14 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSString *cellIdentifier = @"cellIdentifierRound";
-	int numberOfRows = [tableView numberOfRowsInSection:indexPath.section];
+	NSString *cellIdentifier = @"None";
+	NSUInteger numberOfRows = [tableView numberOfRowsInSection:indexPath.section];
 	if (numberOfRows == 1) {
 		cellIdentifier = @"Both";
-	} else {
-		if (indexPath.row == 0) {
-			cellIdentifier = @"Top";
-		} else if ((indexPath.row + 1) == numberOfRows) {
-			cellIdentifier = @"Bottom";
-		} else {
-			cellIdentifier = @"None";
-		}
+	} else if (indexPath.row == 0) {
+		cellIdentifier = @"Top";
+	} else if (indexPath.row == numberOfRows - 1) {
+		cellIdentifier = @"Bottom";
 	}
 	
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
