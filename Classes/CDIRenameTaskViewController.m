@@ -9,8 +9,10 @@
 #import "CDIRenameTaskViewController.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIFont+CheddariOSAdditions.h"
+#import "CDIMarkdownInputAccessoryView.h"
 
-@interface CDIRenameTaskViewController () <UITextViewDelegate>
+@interface CDIRenameTaskViewController () <UITextViewDelegate, CDIMarkdownInputAccessoryViewDelegate>
+@property (nonatomic, strong) CDIMarkdownInputAccessoryView *markdownAccessoryView;
 - (void)_keyboardDidShow:(NSNotification *)notification;
 - (void)_keyboardDidHide:(NSNotification *)notification;
 - (void)_updateTextViewFrame;
@@ -50,8 +52,10 @@
 	_textView.placeholderTextColor = [UIColor cheddarLightTextColor];
 	_textView.placeholder = @"What do you have to do?";
 	_textView.returnKeyType = UIReturnKeyGo;
+    _textView.inputAccessoryView = [self markdownAccessoryView];
 	_textView.font = [UIFont cheddarFontOfSize:18.0f];
 	_textView.text = self.task.text;
+    
 	[self.view addSubview:_textView];
 
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
@@ -78,6 +82,17 @@
 	}
 	
 	return toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown;
+}
+
+
+#pragma mark - Properties
+
+- (CDIMarkdownInputAccessoryView *)markdownAccessoryView {
+    if (!_markdownAccessoryView ) {
+        _markdownAccessoryView = [[CDIMarkdownInputAccessoryView alloc] initWithFrame:(CGRect){ CGPointZero, self.view.bounds.size.width, [CDIMarkdownInputAccessoryView defaultHeight] }];
+        [_markdownAccessoryView setDelegate:self];
+    }
+    return _markdownAccessoryView;
 }
 
 
@@ -135,6 +150,13 @@
 		return NO;
 	}
 	return YES;
+}
+
+#pragma mark - CDIMarkdownInputAccessoryViewDelegate
+
+- (void)markdownAccessoryView:(CDIMarkdownInputAccessoryView *)markdownView didSelectKeyForString:(NSString *)characterString
+{
+    [[self textView] insertText:characterString];
 }
 
 @end

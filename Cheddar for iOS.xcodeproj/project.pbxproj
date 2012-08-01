@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A48A2ADD15C8A00B00CCD75A /* CDIMarkdownInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = A48A2ADC15C8A00B00CCD75A /* CDIMarkdownInputAccessoryView.m */; };
 		B208BC2915BF63A80080705D /* CDIAddListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BB9315BF63A80080705D /* CDIAddListTableViewCell.m */; };
 		B208BC2A15BF63A80080705D /* CDIAddTaskAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BB9515BF63A80080705D /* CDIAddTaskAnimationView.m */; };
 		B208BC2B15BF63A80080705D /* CDIAddTaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BB9715BF63A80080705D /* CDIAddTaskView.m */; };
@@ -262,6 +263,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A48A2ADB15C8A00B00CCD75A /* CDIMarkdownInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIMarkdownInputAccessoryView.h; sourceTree = "<group>"; };
+		A48A2ADC15C8A00B00CCD75A /* CDIMarkdownInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIMarkdownInputAccessoryView.m; sourceTree = "<group>"; };
 		B208BB9215BF63A80080705D /* CDIAddListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIAddListTableViewCell.h; sourceTree = "<group>"; };
 		B208BB9315BF63A80080705D /* CDIAddListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIAddListTableViewCell.m; sourceTree = "<group>"; };
 		B208BB9415BF63A80080705D /* CDIAddTaskAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIAddTaskAnimationView.h; sourceTree = "<group>"; };
@@ -995,6 +998,8 @@
 				B208BBBF15BF63A80080705D /* CDITableViewCellDeleteConfirmationControl.m */,
 				B208BBC015BF63A80080705D /* CDITagView.h */,
 				B208BBC115BF63A80080705D /* CDITagView.m */,
+				A48A2ADB15C8A00B00CCD75A /* CDIMarkdownInputAccessoryView.h */,
+				A48A2ADC15C8A00B00CCD75A /* CDIMarkdownInputAccessoryView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1347,6 +1352,7 @@
 				B26AE9BA15C5D0100008AB1F /* CDISettingsFontPickerViewController.m in Sources */,
 				B26AE9BD15C5D25E0008AB1F /* CDIGroupedTableViewController.m in Sources */,
 				B26AE9C015C5D52D0008AB1F /* CDIPickerViewController.m in Sources */,
+				A48A2ADD15C8A00B00CCD75A /* CDIMarkdownInputAccessoryView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
