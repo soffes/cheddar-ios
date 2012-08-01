@@ -62,7 +62,7 @@
 		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		label.backgroundColor = [UIColor clearColor];
 		label.textColor = [UIColor cheddarTextColor];
-		label.font = [UIFont boldCheddarFontOfSize:17.0f];
+		label.font = [UIFont boldCheddarInterfaceFontOfSize:17.0f];
 		label.shadowColor = [UIColor whiteColor];
 		label.shadowOffset = CGSizeMake(0.0f, 1.0f);
 		label.text = text;

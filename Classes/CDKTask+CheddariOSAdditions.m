@@ -7,6 +7,7 @@
 //
 
 #import "CDKTask+CheddariOSAdditions.h"
+#import "UIFont+CheddariOSAdditions.h"
 #import "TTTAttributedLabel.h"
 
 @implementation CDKTask (CheddariOSAdditions)
@@ -19,7 +20,8 @@
 	}
 	
 	NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self.displayText];
-	CTFontRef regularFont = CTFontCreateWithName((__bridge CFStringRef)kCDIRegularFontName, 20.0f, NULL);
+	NSString *fontName = [UIFont cheddarFontNameForStyle:kCDIFontRegularKey];
+	CTFontRef regularFont = CTFontCreateWithName((__bridge CFStringRef)fontName, 20.0f, NULL);
 	if (regularFont) {
 		[attributedString addAttribute:(__bridge NSString *)kCTFontAttributeName value:(__bridge id)regularFont range:NSMakeRange(0, self.displayText.length)];
 	}
@@ -52,7 +54,8 @@
 		// Italic
 		if ([type isEqualToString:@"emphasis"]) {
 			if (!italicFont) {
-				italicFont = CTFontCreateWithName((__bridge CFStringRef)kCDIItalicFontName, 20.0f, NULL);
+				NSString *fontName = [UIFont cheddarFontNameForStyle:kCDIFontItalicKey];
+				italicFont = CTFontCreateWithName((__bridge CFStringRef)fontName, 20.0f, NULL);
 			}
 			[attributedString addAttribute:(__bridge NSString *)kCTFontAttributeName value:(__bridge id)italicFont range:range];
 		}
@@ -60,7 +63,8 @@
 		// Bold
 		else if ([type isEqualToString:@"double_emphasis"]) {
 			if (!boldFont) {
-				boldFont = CTFontCreateWithName((__bridge CFStringRef)kCDIBoldFontName, 20.0f, NULL);
+				NSString *fontName = [UIFont cheddarFontNameForStyle:kCDIFontBoldKey];
+				boldFont = CTFontCreateWithName((__bridge CFStringRef)fontName, 20.0f, NULL);
 			}
 			[attributedString addAttribute:(__bridge NSString *)kCTFontAttributeName value:(__bridge id)boldFont range:range];
 		}
@@ -68,7 +72,8 @@
 		// Bold Italic
 		else if ([type isEqualToString:@"triple_emphasis"]) {
 			if (!boldItalicFont) {
-				boldItalicFont = CTFontCreateWithName((__bridge CFStringRef)kCDIBoldItalicFontName, 20.0f, NULL);
+				NSString *fontName = [UIFont cheddarFontNameForStyle:kCDIFontBoldItalicKey];
+				boldItalicFont = CTFontCreateWithName((__bridge CFStringRef)fontName, 20.0f, NULL);
 			}
 			[attributedString addAttribute:(__bridge NSString *)kCTFontAttributeName value:(__bridge id)boldItalicFont range:range];
 		}

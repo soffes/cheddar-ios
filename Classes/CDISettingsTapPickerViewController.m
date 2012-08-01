@@ -36,11 +36,6 @@ NSString *const kCDITapActionEditKey = @"CDITapActionEdit";
 }
 
 
-+ (NSString *)textForKey:(NSString *)key {
-	return [[self valueMap] objectForKey:key];
-}
-
-
 - (NSArray *)keys {
 	return [[NSArray alloc] initWithObjects:kCDITapActionNothingKey, kCDITapActionCompleteKey, kCDITapActionEditKey, nil];
 }
@@ -51,18 +46,6 @@ NSString *const kCDITapActionEditKey = @"CDITapActionEdit";
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	self.title = @"Tap Action";
-}
-
-
-
-#pragma mark - UITableViewDelegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	[super tableView:tableView didSelectRowAtIndexPath:indexPath];
-	
-	// Notify the parent view controller of the change
-//	SCPickerDemoViewController *viewController = (SCPickerDemoViewController *)[self.navigationController.viewControllers objectAtIndex:([self.navigationController.viewControllers count] - 2)];
-//	viewController.selectedAbbreviation = [self.keys objectAtIndex:indexPath.row];
 }
 
 @end

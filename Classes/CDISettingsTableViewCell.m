@@ -21,9 +21,9 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
 	if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
 		self.backgroundColor = [UIColor whiteColor];
-		self.textLabel.font = [UIFont cheddarFontOfSize:17.0f];
+		self.textLabel.font = [UIFont cheddarInterfaceFontOfSize:17.0f];
 		self.textLabel.textColor = [UIColor cheddarTextColor];
-		self.detailTextLabel.font = [UIFont cheddarFontOfSize:17.0f];
+		self.detailTextLabel.font = [UIFont cheddarInterfaceFontOfSize:17.0f];
 		self.detailTextLabel.textColor = [UIColor cheddarBlueColor];
 		
 		[self _setupSelectedBackgroundView];

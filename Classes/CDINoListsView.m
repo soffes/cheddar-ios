@@ -25,7 +25,7 @@
 		label.textAlignment = UITextAlignmentCenter;
 		label.textColor = [UIColor colorWithRed:0.702f green:0.694f blue:0.686f alpha:1.0f];
 		label.text = @"You don't have any lists.";
-		label.font = [UIFont cheddarFontOfSize:22.0f];
+		label.font = [UIFont cheddarInterfaceFontOfSize:22.0f];
 		label.shadowColor = [UIColor whiteColor];
 		label.shadowOffset = CGSizeMake(0.0f, 1.0f);
 		[self addSubview:label];

@@ -11,6 +11,8 @@
 #import "CDIListsViewController.h"
 #import "CDITransactionObserver.h"
 #import "CDIDefines.h"
+#import "CDISettingsTapPickerViewController.h"
+#import "CDISettingsFontPickerViewController.h"
 #import "UIFont+CheddariOSAdditions.h"
 #import "LocalyticsUtilities.h"
 #import <Crashlytics/Crashlytics.h>
@@ -50,7 +52,7 @@
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	self.window.backgroundColor = [UIColor blackColor];
 	
-	[[self class] applyStylesheet];
+	[self applyStylesheet];
 	
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		self.window.rootViewController = [[CDISplitViewController alloc] init];
@@ -65,7 +67,7 @@
 	// Defer some stuff to make launching faster
 	dispatch_async(dispatch_get_main_queue(), ^{
 		// Setup status bar network indicator
-		[AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+//		[AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
 		
 		// Set the OAuth client
 		[[CDKHTTPClient sharedClient] setClientID:kCDIAPIClientID secret:kCDIAPIClientSecret];
@@ -78,9 +80,12 @@
 		
 		// Default defaults
 		NSDictionary *defaults = [[NSDictionary alloc] initWithObjectsAndKeys:
-								  @"complete", @"CDISettingTapAction",
+								  kCDITapActionCompleteKey, kCDITapActionDefaultsKey,
+								  kCDIFontGothamKey, kCDIFontDefaultsKey,
 								  nil];
 		[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+		
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applyStylesheet) name:kCDIFontDidChangeNotificationName object:nil];
 	});
 
 	return YES;
@@ -109,13 +114,16 @@
 }
 
 
-+ (void)applyStylesheet {
+
+#pragma mark - Stylesheet
+
+- (void)applyStylesheet {
 	// Navigation bar
 	UINavigationBar *navigationBar = [UINavigationBar appearance];
 	[navigationBar setBackgroundImage:[UIImage imageNamed:@"nav-background"] forBarMetrics:UIBarMetricsDefault];
 	[navigationBar setTitleVerticalPositionAdjustment:-1.0f forBarMetrics:UIBarMetricsDefault];
 	[navigationBar setTitleTextAttributes:[[NSDictionary alloc] initWithObjectsAndKeys:
-										   [UIFont cheddarFontOfSize:20.0f], UITextAttributeFont,
+										   [UIFont cheddarInterfaceFontOfSize:20.0f], UITextAttributeFont,
 										   [UIColor colorWithWhite:0.0f alpha:0.2f], UITextAttributeTextShadowColor,
 										   [NSValue valueWithUIOffset:UIOffsetMake(0.0f, 1.0f)], UITextAttributeTextShadowOffset,
 										   [UIColor whiteColor], UITextAttributeTextColor,
@@ -127,29 +135,29 @@
 	
 	// Navigation button
 	NSDictionary *barButtonTitleTextAttributes = [[NSDictionary alloc] initWithObjectsAndKeys:
-												  [UIFont cheddarFontOfSize:14.0f], UITextAttributeFont,
+												  [UIFont cheddarInterfaceFontOfSize:14.0f], UITextAttributeFont,
 												  [UIColor colorWithWhite:0.0f alpha:0.2f], UITextAttributeTextShadowColor,
 												  [NSValue valueWithUIOffset:UIOffsetMake(0.0f, 1.0f)], UITextAttributeTextShadowOffset,
 												  nil];
 	UIBarButtonItem *barButton = [UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil];
-	[barButton setTitlePositionAdjustment:UIOffsetMake(0.0f, 1.0f) forBarMetrics:UIBarMetricsDefault];
+	//	[barButton setTitlePositionAdjustment:UIOffsetMake(0.0f, 1.0f) forBarMetrics:UIBarMetricsDefault];
 	[barButton setTitleTextAttributes:barButtonTitleTextAttributes forState:UIControlStateNormal];
 	[barButton setTitleTextAttributes:barButtonTitleTextAttributes forState:UIControlStateHighlighted];
 	[barButton setBackgroundImage:[[UIImage imageNamed:@"nav-button"] stretchableImageWithLeftCapWidth:6 topCapHeight:0] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
 	[barButton setBackgroundImage:[[UIImage imageNamed:@"nav-button-highlighted"] stretchableImageWithLeftCapWidth:6 topCapHeight:0] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
 	
 	// Navigation back button
-	[barButton setBackButtonTitlePositionAdjustment:UIOffsetMake(1.0f, -2.0f) forBarMetrics:UIBarMetricsDefault];
+	[barButton setBackButtonTitlePositionAdjustment:UIOffsetMake(2.0f, -2.0f) forBarMetrics:UIBarMetricsDefault];
 	[barButton setBackButtonBackgroundImage:[[UIImage imageNamed:@"nav-back"] stretchableImageWithLeftCapWidth:13 topCapHeight:0] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
 	[barButton setBackButtonBackgroundImage:[[UIImage imageNamed:@"nav-back-highlighted"] stretchableImageWithLeftCapWidth:13 topCapHeight:0] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
-
+	
 	// Navigation button mini
-	[barButton setTitlePositionAdjustment:UIOffsetMake(0.0f, 1.0f) forBarMetrics:UIBarMetricsLandscapePhone];
+	//	[barButton setTitlePositionAdjustment:UIOffsetMake(0.0f, 1.0f) forBarMetrics:UIBarMetricsLandscapePhone];
 	[barButton setBackgroundImage:[[UIImage imageNamed:@"nav-button-mini"] stretchableImageWithLeftCapWidth:6 topCapHeight:0] forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
 	[barButton setBackgroundImage:[[UIImage imageNamed:@"nav-button-mini-highlighted"] stretchableImageWithLeftCapWidth:6 topCapHeight:0] forState:UIControlStateHighlighted barMetrics:UIBarMetricsLandscapePhone];
 	
 	// Navigation back button mini
-	[barButton setBackButtonTitlePositionAdjustment:UIOffsetMake(1.0f, -2.0f) forBarMetrics:UIBarMetricsLandscapePhone];
+	[barButton setBackButtonTitlePositionAdjustment:UIOffsetMake(2.0f, -2.0f) forBarMetrics:UIBarMetricsLandscapePhone];
 	[barButton setBackButtonBackgroundImage:[[UIImage imageNamed:@"nav-back-mini"] stretchableImageWithLeftCapWidth:10 topCapHeight:0] forState:UIControlStateNormal barMetrics:UIBarMetricsLandscapePhone];
 	[barButton setBackButtonBackgroundImage:[[UIImage imageNamed:@"nav-back-mini-highlighted"] stretchableImageWithLeftCapWidth:10 topCapHeight:0] forState:UIControlStateHighlighted barMetrics:UIBarMetricsLandscapePhone];
 	
