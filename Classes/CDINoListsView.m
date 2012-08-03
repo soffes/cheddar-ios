@@ -52,6 +52,7 @@
 		
         // This label is displayed under the list icon image
 		_noListsLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+		_noListsLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0f, 230.0f, 280.0f, 60.0f)];
 		_noListsLabel.textAlignment = UITextAlignmentCenter;
 		_noListsLabel.textColor = [UIColor colorWithRed:0.702f
                                                   green:0.694f
