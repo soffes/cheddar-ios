@@ -9,7 +9,7 @@
 
 Run the following commands to get started:
 
-    $ git clone https://github.com/nothingmagical/cheddar-ios.git
+    $ git clone --recursive https://github.com/nothingmagical/cheddar-ios.git
     $ cd cheddar-ios
     $ rake setup
 
