@@ -1,0 +1,32 @@
+/* css reset based on the work by eric meyer */
+html,body {position:relative;margin:0;padding:0;min-height:100%;width:100%;height:100%;}
+div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td, keygen, select, button, button::-moz-focus-inner, isindex, hr {margin:0;padding:0;}
+table {border-collapse:collapse;border-spacing:0;}
+fieldset,img {border:0;}
+input, textarea{border:none;outline:none;padding:none;background-color:#fff;}
+address,caption,cite,code,dfn,th,var {font-style:normal;font-weight:normal;}
+ol,ul {list-style:none;}
+li {list-style-type: none;}
+caption,th {text-align:left;}
+em, strong {font-style: normal; font-weight: normal;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:normal;}
+q:before,q:after {content:'';}
+abbr,acronym {border:0;}
+a, a:hover, a:visited, a:active, a:link {text-decoration:none;}
+form {display: block;}
+textarea:focus, input:focus, select:focus {outline: none;}
+input, textarea, keygen, select, button, isindex { font: inherit; color: inherit; letter-spacing: inherit; word-spacing: inherit; line-height: inherit; text-transform: none; text-indent: 0; text-shadow: inherit; display: inline-block; text-align: inherit; border: none; }
+/* html5 block elements for IE. Stop using IE. */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, address {display: block;}
+.clear, .clearfloat {clear:both;}
+h1,h2,h3,h4,h5,h6 {font-size: 1.0em; }
+
+/* save your sanity */
+* { 
+  -webkit-box-sizing: border-box;
+   -khtml-box-sizing: border-box;
+    -icab-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+       -o-box-sizing: border-box;
+          box-sizing: border-box; 
+}

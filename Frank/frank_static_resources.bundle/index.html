@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>Symbiote</title>
+    <script src='jquery.min.js'></script>
+    <script src='jquery-ui.min.js'></script>
+    <script src='coffee-script.js'></script>
+    <script src='raphael-min.js'></script>
+    <script src='jquery.treeview.js'></script>
+    <script src='json2.js'></script>
+    <script src='underscore.js'></script>
+    <script src='symbiote.js'></script>
+    <script src='symbiote_ui.coffee' type='text/coffeescript'></script>
+    <link href='reset.css' rel='stylesheet' />
+    <link href='pictos/pictos.css' rel='stylesheet' />
+    <link href='jquery.treeview.css' rel='stylesheet' />
+    <link href='symbiote.css' rel='stylesheet' />
+  </head>
+  <body>
+    <header id='header'>
+      <h1>symbiote</h1>
+      <i>From here you can inspect the current state of the app's UI, and test which UI elements a selector will select</i>
+      <div id='refresh'>
+        <button id='dump_button'>
+          <span></span>
+        </button>
+      </div>
+    </header>
+    <section class='symbiote_shell'>
+      <article id='selector-test'>
+        <input id='query' placeholder="Selector label marked:'Search'" />
+        <div class='action-buttons'>
+          <button id='highlight'>Highlight</button>
+          <ul class='extra-actions'>
+            <li>
+              <button id='touch'>Touch In App</button>
+            </li>
+            <li>
+              <button id='flash'>Flash In App</button>
+            </li>
+          </ul>
+          <div class='drop-indicator'>v</div>
+        </div>
+        <div class='selector_engine'>
+          <input id='selector_engine' value='shelley_compat' />
+          <button id='selector_engine_dropdown'>&#x25BC;</button>
+          <ul id='selector_engine_options'>
+            <li>shelley_compat</li>
+            <li>uiquery</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+    <section class='the-columns'>
+      <div id='list-tabs'>
+        <ul>
+          <li>
+            <a href='#dom_dump'>View Heirarchy</a>
+          </li>
+          <li>
+            <a href='#accessible-views-tab'>Accessible Elements</a>
+          </li>
+        </ul>
+        <div id='dom_dump'>
+          <ul></ul>
+        </div>
+        <div id='accessible-views-tab'>
+          <div class='hints'>
+            <p>Here is a list of all elements with accessibility labels.</p>
+            <p>Clicking on a row will flash that view element in the simulator. Hover over a row to see the selector used to flash that view element.</p>
+          </div>
+          <div id='accessible-views'></div>
+        </div>
+      </div>
+      <div id='inspect-tabs'>
+        <ul>
+          <li>
+            <a href='#dom_detail'>View Properties</a>
+          </li>
+          <li>
+            <a href='#ui-locator'>View Locator</a>
+          </li>
+        </ul>
+        <div id='ui-locator'>
+          <div id='live-view'>
+            <button>
+              Live
+              <span>Y</span>
+            </button>
+          </div>
+          <button id='ui-locator-rotator'>1</button>
+          <div id='ui-locator-view'></div>
+        </div>
+        <div id='dom_detail'>
+          <p>Click an element in the view heirarchy on the right to see details of that element here.</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIView</key>
+	<array>
+		<string>accessibilityLabel</string>
+		<string>accessibilityFrame</string>
+		<string>tag</string>
+		<string>alpha</string>
+		<string>autoresizingMask</string>
+		<string>backgroundColor</string>
+		<string>frame</string>
+		<string>isHidden</string>
+	</array>
+    <key>UIWindow</key>
+	<array>
+		<string>windowLevel</string>
+		<string>isKeyWindow</string>
+	</array>
+	<key>UIScrollView</key>
+	<array>
+		<string>contentOffset</string>
+		<string>contentSize</string>
+		<string>isScrollEnabled</string>
+		<string>contentInset</string>
+		<string>isPagingEnabled</string>
+		<string>bounces</string>
+		<string>alwaysBounceVertical</string>
+		<string>alwaysBounceHorizontal</string>
+		<string>showsHorizontalScrollIndicator</string>
+		<string>showsVerticalScrollIndicator</string>
+		<string>zoomScale</string>
+		<string>maximumZoomScale</string>
+		<string>minimumZoomScale</string>
+		<string>delegate</string>
+	</array>
+	<key>UITableView</key>
+	<array>
+		<string>dataSource</string>
+	</array>
+	<key>UILabel</key>
+	<array>
+		<string>text</string>
+		<string>font</string>
+		<string>textAlignment</string>
+	</array>
+	<key>UISegmentedControl</key>
+	<array>
+		<string>segmentedControlStyle</string>
+		<string>numberOfSegments</string>
+		<string>selectedSegmentIndex</string>
+	</array>
+	<key>MKMapView</key>
+	<array>
+		<string>mapType</string>
+		<string>isZoomEnabled</string>
+		<string>isScrollEnabled</string>
+		<string>userTrackingMode</string>
+		<string>delegate</string>
+	</array>
+</dict>
+</plist>
