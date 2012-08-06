@@ -64,6 +64,7 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	UIImageView *title = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav-title"]];
+    title.accessibilityLabel = @"Cheddar";
 	title.frame = CGRectMake(0.0f, 0.0f, 116.0f, 21.0f);	
 	self.navigationItem.titleView = title;
 	self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Lists" style:UIBarButtonItemStyleBordered target:nil action:nil];
