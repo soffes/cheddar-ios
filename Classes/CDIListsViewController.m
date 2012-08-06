@@ -227,6 +227,7 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 	CDISettingsViewController *viewController = [[CDISettingsViewController alloc] init];
 	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
 	navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self toggleEditMode:self];
 	[self.navigationController presentModalViewController:navigationController animated:YES];
 }
 
