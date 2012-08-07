@@ -13,7 +13,7 @@ Run the following commands to get started:
     $ cd cheddar-ios
     $ rake setup
 
-Now open the Xcode project and build. You will see one error telling you to fill in your API credentials. If you don't already have API credentials, head over to the [Cheddar developer site](http://cheddarapp.com/developer).
+Now open the Xcode project and build. You will see one error telling you to fill in your API credentials. If you don't already have API credentials, head over to the [Cheddar developer site](http://cheddarapp.com/developer). Be sure to set `cheddar://oauth` as your redirect URI.
 
 Need help? Email <support@cheddarapp.com> or open an issue with specifics.
 
