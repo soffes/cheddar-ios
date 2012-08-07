@@ -20,7 +20,7 @@ Need help? Email <support@cheddarapp.com> or open an issue with specifics.
 
 ## Why is this open source?
 
-This is open source since the app is free already. It is indended to be a source of sample code for everyone to benefit from. You can make cool apps that use Cheddar and I hopefully get more users because you built something awesome.
+This is open source since the app is free already. It is intended to be a source of sample code for everyone to benefit from. You can make cool apps that use Cheddar and I hopefully get more users because you built something awesome.
 
 Also, if you want to help out and fix some bugs, I'll love you forever. Maybe you'll even get a shirt or something :)
 
