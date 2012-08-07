@@ -13,3 +13,6 @@
 [submodule "Vendor/SSPullToRefresh"]
 	path = Vendor/SSPullToRefresh
 	url = https://github.com/samsoffes/sspulltorefresh.git
+[submodule "Vendor/symbiote"]
+	path = Vendor/symbiote
+	url = https://github.com/moredip/symbiote.git

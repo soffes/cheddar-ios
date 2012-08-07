@@ -1,0 +1,4 @@
+INSTALL_PATH = /./
+
+FRANK_LDFLAGS = -all_load -ObjC -framework CFNetwork -framework Security -lShelley -lCocoaHTTPServer -lFrank
+GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = FRANKIFIED
