@@ -1,3 +1,6 @@
+  # let's be nice and not force people to install testing infrastructure if they don't want to
+begin require 'cucumber/rake/task' rescue LoadError nil end
+
 class String
   def self.colorize(text, color_code)
     "\e[#{color_code}m#{text}\e[0m"
@@ -55,4 +58,18 @@ task :'setup:private' do
   
   # Done!
   puts 'Done! You\'re ready to get started!'.green
+end
+
+if defined? Cucumber
+  desc 'build a Frankified version of the app for acceptance testing'
+  task 'acceptance_build' do
+    sh 'frank build'
+  end
+
+  Cucumber::Rake::Task.new(:acceptance_without_build, 'Run Frank acceptance tests') do |t|
+    t.cucumber_opts = "Frank/features"
+  end
+
+  desc "rebuild app and run acceptance tests. Use acceptance_without_build if you'd like to skip the rebuild part."
+  task 'acceptance' => %w{acceptance_build acceptance_without_build}
 end
