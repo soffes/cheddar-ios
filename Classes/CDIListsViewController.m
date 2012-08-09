@@ -534,21 +534,23 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 	[super controllerDidChangeContent:controller];
 	
 	if (_checkForOneList) {
-		NSNumber *selectedList = [[NSUserDefaults standardUserDefaults] objectForKey:kCDISelectedListKey];
-		if (selectedList) {
-			CDKList *list = [CDKList objectWithRemoteID:selectedList];
-			NSIndexPath *fIndexPath = [self.fetchedResultsController indexPathForObject:list];
-			if (!fIndexPath) {
-				_checkForOneList = NO;
-				return;
+		if ([self.navigationController topViewController] == self) {
+			NSNumber *selectedList = [[NSUserDefaults standardUserDefaults] objectForKey:kCDISelectedListKey];
+			if (selectedList) {
+				CDKList *list = [CDKList objectWithRemoteID:selectedList];
+				NSIndexPath *fIndexPath = [self.fetchedResultsController indexPathForObject:list];
+				if (!fIndexPath) {
+					_checkForOneList = NO;
+					return;
+				}
+				
+				NSIndexPath *selectedIndexPath = [self viewIndexPathForFetchedIndexPath:fIndexPath];
+				[self _selectListAtIndexPath:selectedIndexPath newList:NO];
 			}
-			
-			NSIndexPath *selectedIndexPath = [self viewIndexPathForFetchedIndexPath:fIndexPath];
-			[self _selectListAtIndexPath:selectedIndexPath newList:NO];
-		}
-		
-		if (self.fetchedResultsController.fetchedObjects.count == 1) {
-			[self _selectListAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] newList:NO];
+
+			if (self.fetchedResultsController.fetchedObjects.count == 1) {
+				[self _selectListAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] newList:NO];
+			}
 		}
 		_checkForOneList = NO;
 	}
