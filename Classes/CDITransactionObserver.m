@@ -78,7 +78,7 @@ NSString *const kCDIPaymentTransactionDidCancelNotificationName = @"CDIPaymentTr
 	
 	_requestingProducts = YES;
 	
-	NSSet *identifiers = [[NSSet alloc] initWithObjects:@"cheddar_plus_3mo", @"cheddar_plus_6mo", @"cheddar_plus_1yr", nil];
+	NSSet *identifiers = [[NSSet alloc] initWithObjects:@"cheddar_plus_3mo", @"cheddar_plus_1yr", nil];
 	SKProductsRequest *request = [[SKProductsRequest alloc] initWithProductIdentifiers:identifiers];
 	request.delegate = self;
 	[request start];
