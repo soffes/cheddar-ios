@@ -433,6 +433,14 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 	return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (_adding && indexPath.row == 0) {
+        return NO;
+    }
+    
+    return YES;
+}
+
 
 #pragma mark - UITableViewDelegate
 
