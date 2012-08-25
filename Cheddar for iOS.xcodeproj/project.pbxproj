@@ -1453,10 +1453,16 @@
 				);
 				INFOPLIST_FILE = "Resources/Cheddar-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRANK_LIBRARY_SEARCH_PATHS)",
+				);
 				OTHER_CFLAGS = "-DDEBUG";
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-all_load",
 					"-ObjC",
+					"$(FRANK_LDFLAGS)",
 				);
 				PRODUCT_NAME = Cheddar;
 				PROVISIONING_PROFILE = "";
