@@ -18,8 +18,7 @@
 		B208BC3115BF63A80080705D /* CDIListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBA315BF63A80080705D /* CDIListViewController.m */; };
 		B208BC3215BF63A80080705D /* CDILoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBA515BF63A80080705D /* CDILoadingView.m */; };
 		B208BC3315BF63A80080705D /* CDIManagedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBA715BF63A80080705D /* CDIManagedTableViewController.m */; };
-		B208BC3415BF63A80080705D /* CDINoListsView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBA915BF63A80080705D /* CDINoListsView.m */; };
-		B208BC3515BF63A80080705D /* CDINoTasksView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBAB15BF63A80080705D /* CDINoTasksView.m */; };
+		B208BC3515BF63A80080705D /* CDITasksPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBAB15BF63A80080705D /* CDITasksPlaceholderView.m */; };
 		B208BC3615BF63A80080705D /* CDIPullToRefreshContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBAD15BF63A80080705D /* CDIPullToRefreshContentView.m */; };
 		B208BC3715BF63A80080705D /* CDIPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBAF15BF63A80080705D /* CDIPullToRefreshView.m */; };
 		B208BC3815BF63A80080705D /* CDIRenameTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBB115BF63A80080705D /* CDIRenameTaskViewController.m */; };
@@ -200,6 +199,8 @@
 		B2AD02F415C482B200D9B909 /* TextExpander.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2AD02F315C482B200D9B909 /* TextExpander.framework */; };
 		B2AD031915C4896E00D9B909 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2AD031815C4896E00D9B909 /* AudioToolbox.framework */; };
 		B2AD032115C493C200D9B909 /* CDIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD032015C493C100D9B909 /* CDIWebViewController.m */; };
+		B2AD656B15E907870073BBC5 /* CDIPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD656A15E907870073BBC5 /* CDIPlaceholderView.m */; };
+		B2AD656F15E907C50073BBC5 /* CDIListsPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD656E15E907C50073BBC5 /* CDIListsPlaceholderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -284,10 +285,8 @@
 		B208BBA515BF63A80080705D /* CDILoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDILoadingView.m; sourceTree = "<group>"; };
 		B208BBA615BF63A80080705D /* CDIManagedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIManagedTableViewController.h; sourceTree = "<group>"; };
 		B208BBA715BF63A80080705D /* CDIManagedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIManagedTableViewController.m; sourceTree = "<group>"; };
-		B208BBA815BF63A80080705D /* CDINoListsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDINoListsView.h; sourceTree = "<group>"; };
-		B208BBA915BF63A80080705D /* CDINoListsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDINoListsView.m; sourceTree = "<group>"; };
-		B208BBAA15BF63A80080705D /* CDINoTasksView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDINoTasksView.h; sourceTree = "<group>"; };
-		B208BBAB15BF63A80080705D /* CDINoTasksView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDINoTasksView.m; sourceTree = "<group>"; };
+		B208BBAA15BF63A80080705D /* CDITasksPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDITasksPlaceholderView.h; sourceTree = "<group>"; };
+		B208BBAB15BF63A80080705D /* CDITasksPlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDITasksPlaceholderView.m; sourceTree = "<group>"; };
 		B208BBAC15BF63A80080705D /* CDIPullToRefreshContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIPullToRefreshContentView.h; sourceTree = "<group>"; };
 		B208BBAD15BF63A80080705D /* CDIPullToRefreshContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIPullToRefreshContentView.m; sourceTree = "<group>"; };
 		B208BBAE15BF63A80080705D /* CDIPullToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIPullToRefreshView.h; sourceTree = "<group>"; };
@@ -509,6 +508,10 @@
 		B2AD031815C4896E00D9B909 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B2AD031F15C493C100D9B909 /* CDIWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIWebViewController.h; sourceTree = "<group>"; };
 		B2AD032015C493C100D9B909 /* CDIWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIWebViewController.m; sourceTree = "<group>"; };
+		B2AD656915E907870073BBC5 /* CDIPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIPlaceholderView.h; sourceTree = "<group>"; };
+		B2AD656A15E907870073BBC5 /* CDIPlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIPlaceholderView.m; sourceTree = "<group>"; };
+		B2AD656D15E907C50073BBC5 /* CDIListsPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIListsPlaceholderView.h; sourceTree = "<group>"; };
+		B2AD656E15E907C50073BBC5 /* CDIListsPlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIListsPlaceholderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -963,6 +966,19 @@
 			path = "Other Sources";
 			sourceTree = "<group>";
 		};
+		B2AD656C15E907990073BBC5 /* Placeholders */ = {
+			isa = PBXGroup;
+			children = (
+				B2AD656915E907870073BBC5 /* CDIPlaceholderView.h */,
+				B2AD656A15E907870073BBC5 /* CDIPlaceholderView.m */,
+				B2AD656D15E907C50073BBC5 /* CDIListsPlaceholderView.h */,
+				B2AD656E15E907C50073BBC5 /* CDIListsPlaceholderView.m */,
+				B208BBAA15BF63A80080705D /* CDITasksPlaceholderView.h */,
+				B208BBAB15BF63A80080705D /* CDITasksPlaceholderView.m */,
+			);
+			name = Placeholders;
+			sourceTree = "<group>";
+		};
 		B2D1241F15C1FC3C00ED1218 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -977,16 +993,13 @@
 			children = (
 				B23261A015C206C700D455EF /* Cells */,
 				B23261A115C206D000D455EF /* Animations */,
+				B2AD656C15E907990073BBC5 /* Placeholders */,
 				B208BB9615BF63A80080705D /* CDIAddTaskView.h */,
 				B208BB9715BF63A80080705D /* CDIAddTaskView.m */,
 				B208BB9A15BF63A80080705D /* CDIAttributedLabel.h */,
 				B208BB9B15BF63A80080705D /* CDIAttributedLabel.m */,
 				B208BBA415BF63A80080705D /* CDILoadingView.h */,
 				B208BBA515BF63A80080705D /* CDILoadingView.m */,
-				B208BBA815BF63A80080705D /* CDINoListsView.h */,
-				B208BBA915BF63A80080705D /* CDINoListsView.m */,
-				B208BBAA15BF63A80080705D /* CDINoTasksView.h */,
-				B208BBAB15BF63A80080705D /* CDINoTasksView.m */,
 				B208BBAC15BF63A80080705D /* CDIPullToRefreshContentView.h */,
 				B208BBAD15BF63A80080705D /* CDIPullToRefreshContentView.m */,
 				B208BBAE15BF63A80080705D /* CDIPullToRefreshView.h */,
@@ -1307,8 +1320,7 @@
 				B208BC3115BF63A80080705D /* CDIListViewController.m in Sources */,
 				B208BC3215BF63A80080705D /* CDILoadingView.m in Sources */,
 				B208BC3315BF63A80080705D /* CDIManagedTableViewController.m in Sources */,
-				B208BC3415BF63A80080705D /* CDINoListsView.m in Sources */,
-				B208BC3515BF63A80080705D /* CDINoTasksView.m in Sources */,
+				B208BC3515BF63A80080705D /* CDITasksPlaceholderView.m in Sources */,
 				B208BC3615BF63A80080705D /* CDIPullToRefreshContentView.m in Sources */,
 				B208BC3715BF63A80080705D /* CDIPullToRefreshView.m in Sources */,
 				B208BC3815BF63A80080705D /* CDIRenameTaskViewController.m in Sources */,
@@ -1347,6 +1359,8 @@
 				B26AE9BA15C5D0100008AB1F /* CDISettingsFontPickerViewController.m in Sources */,
 				B26AE9BD15C5D25E0008AB1F /* CDIGroupedTableViewController.m in Sources */,
 				B26AE9C015C5D52D0008AB1F /* CDIPickerViewController.m in Sources */,
+				B2AD656B15E907870073BBC5 /* CDIPlaceholderView.m in Sources */,
+				B2AD656F15E907C50073BBC5 /* CDIListsPlaceholderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

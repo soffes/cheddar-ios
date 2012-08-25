@@ -15,7 +15,7 @@
 #import "CDISettingsFontPickerViewController.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "CDIUpgradeViewController.h"
-#import "CDINoListsView.h"
+#import "CDIListsPlaceholderView.h"
 #import "CDIAddListTableViewCell.h"
 #import "SMTEDelegateController.h"
 #import <SSToolkit/UIScrollView+SSToolkitAdditions.h>
@@ -71,7 +71,7 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 
 	[self setEditing:NO animated:NO];
 
-	self.noContentView = [[CDINoListsView alloc] initWithFrame:CGRectZero];
+	self.noContentView = [[CDIListsPlaceholderView alloc] initWithFrame:CGRectZero];
 
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_listUpdated:) name:kCDKListDidUpdateNotificationName object:nil];

@@ -12,7 +12,7 @@
 #import "CDIAddTaskAnimationView.h"
 #import "CDIAttributedLabel.h"
 #import "CDICreateListViewController.h"
-#import "CDINoTasksView.h"
+#import "CDITasksPlaceholderView.h"
 #import "CDIRenameTaskViewController.h"
 #import "CDIWebViewController.h"
 #import "CDISettingsTapPickerViewController.h"
@@ -128,7 +128,7 @@
 	self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake([CDIAddTaskView height], 0.0f, 0.0f, 0.0f);
 	self.pullToRefreshView.bottomBorderColor = [UIColor colorWithWhite:0.8f alpha:1.0f];
 
-	self.noContentView = [[CDINoTasksView alloc] initWithFrame:CGRectZero];
+	self.noContentView = [[CDITasksPlaceholderView alloc] initWithFrame:CGRectZero];
 }
 
 
