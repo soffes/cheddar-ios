@@ -39,4 +39,4 @@ If you want to fix bugs, I'll love you forever! If you want to add some features
 
 ## Give Back
 
-If you want to give back in ways other than pull requets, you can [buy a Cheddar shirt](http://cheddarapp.com/store), [Gittip](https://www.gittip.com/samsoffes/), or [spread the word about @cheddar on Twitter](http://twitter.com/cheddar). Of course, pull requets are grealy appreciated. I'll love you forever.
+If you want to give back in ways other than pull requests, you can [buy a Cheddar shirt](http://cheddarapp.com/store), [Gittip](https://www.gittip.com/samsoffes/), or [spread the word about @cheddar on Twitter](http://twitter.com/cheddar). Of course, pull requests are grealy appreciated. I'll love you forever.
