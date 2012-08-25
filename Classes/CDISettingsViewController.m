@@ -327,19 +327,25 @@
 	}
 	
 	// Other
-//	if (indexPath.section == 2) {
-//		if (indexPath.row == 0) {
-//			cell.textLabel.text = @"About";
-//			cell.detailTextLabel.text = nil;
-//		} else if (indexPath.row == 1) {
-//			cell.textLabel.text = @"Support";
-//			cell.detailTextLabel.text = nil;
-//		} else if (indexPath.row == 2) {
-//			cell.textLabel.text = @"Sign Out";
-//			cell.detailTextLabel.text = nil;
-//		}
-//	}
-	
+	if (indexPath.section == 2) {
+		// About
+		if (indexPath.row == 0) {
+			// TODO: Show about
+		}
+
+		// Support
+		else if (indexPath.row == 1) {
+			[self support:nil];
+			return;
+		}
+
+		// Sign out
+		else if (indexPath.row == 2) {
+			[self signOut:nil];
+			return;
+		}
+	}
+
 	if (viewController) {
 		[self.navigationController pushViewController:viewController animated:YES];
 	}
