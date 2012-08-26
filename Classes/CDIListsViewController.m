@@ -19,6 +19,7 @@
 #import "CDIAddListTableViewCell.h"
 #import "SMTEDelegateController.h"
 #import <SSToolkit/UIScrollView+SSToolkitAdditions.h>
+#import <QuartzCore/QuartzCore.h>
 
 #ifdef CHEDDAR_USE_PASSWORD_FLOW
 	#import "CDISignUpViewController.h"
@@ -96,6 +97,7 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
 		[self _checkUser];
 	}
+	[self.navigationController.navigationBar.layer setMasksToBounds:NO];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -359,7 +361,8 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		[CDISplitViewController sharedSplitViewController].listViewController.managedObject = list;
 		_selectedList = list;
-	} else {		
+	} else {
+		[self.navigationController.navigationBar.layer setMasksToBounds:YES];
 		CDIListViewController *viewController = [[CDIListViewController alloc] init];
 		viewController.managedObject = list;
 		viewController.focusKeyboard = newList;
