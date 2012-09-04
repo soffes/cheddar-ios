@@ -47,7 +47,14 @@
 	[CDKHTTPClient setDevelopmentModeEnabled:YES];
 	[CDKPushController setDevelopmentModeEnabled:YES];
 #endif
-	
+
+	// Default defaults
+	NSDictionary *defaults = [[NSDictionary alloc] initWithObjectsAndKeys:
+							  kCDITapActionCompleteKey, kCDITapActionDefaultsKey,
+							  kCDIFontGothamKey, kCDIFontDefaultsKey,
+							  nil];
+	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+
 	// Initialize the window
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	self.window.backgroundColor = [UIColor blackColor];
@@ -77,15 +84,6 @@
 		
 		// Add the transaction observer
 		[[SKPaymentQueue defaultQueue] addTransactionObserver:[CDITransactionObserver defaultObserver]];
-		
-		// Default defaults
-		NSDictionary *defaults = [[NSDictionary alloc] initWithObjectsAndKeys:
-								  kCDITapActionCompleteKey, kCDITapActionDefaultsKey,
-								  kCDIFontGothamKey, kCDIFontDefaultsKey,
-								  nil];
-		[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
-		
-		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applyStylesheet) name:kCDIFontDidChangeNotificationName object:nil];
 	});
 
 	return YES;
