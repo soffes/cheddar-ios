@@ -7,6 +7,7 @@
 //
 
 #import "CDICreateListViewController.h"
+#import "CDIHUDView.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIFont+CheddariOSAdditions.h"
 
@@ -101,7 +102,7 @@
 	}
 
 	// Create list
-	SSHUDView *hud = [[SSHUDView alloc] initWithTitle:@"Creating..." loading:YES];
+	CDIHUDView *hud = [[CDIHUDView alloc] initWithTitle:@"Creating..." loading:YES];
 	[hud show];
 	
 	CDKList *list = [[CDKList alloc] init];

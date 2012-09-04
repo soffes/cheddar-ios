@@ -7,9 +7,10 @@
 //
 
 #import "CDISignUpViewController.h"
+#import "CDISignInViewController.h"
+#import "CDIHUDView.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIFont+CheddariOSAdditions.h"
-#import "CDISignInViewController.h"
 
 @interface CDISignUpViewController ()
 @property (nonatomic, strong, readonly) UITextField *emailTextField;
@@ -30,7 +31,7 @@
 		_emailTextField.delegate = self;
 		_emailTextField.returnKeyType = UIReturnKeyNext;
 		_emailTextField.placeholder = @"Your email address";
-		_emailTextField.font = [UIFont cheddarFontOfSize:18.0f];
+		_emailTextField.font = [UIFont cheddarInterfaceFontOfSize:18.0f];
 	}
 	return _emailTextField;
 }
@@ -49,7 +50,7 @@
 	[footer setTitleColor:[UIColor cheddarBlueColor] forState:UIControlStateNormal];
 	[footer setTitleColor:[UIColor cheddarTextColor] forState:UIControlStateHighlighted];
 	[footer addTarget:self action:@selector(signIn:) forControlEvents:UIControlEventTouchUpInside];
-	footer.titleLabel.font = [UIFont cheddarFontOfSize:16.0f];
+	footer.titleLabel.font = [UIFont cheddarInterfaceFontOfSize:16.0f];
 	self.tableView.tableFooterView = footer;
 }
 
@@ -62,7 +63,7 @@
 
 
 - (void)signUp:(id)sender {
-	SSHUDView *hud = [[SSHUDView alloc] initWithTitle:@"Signing up..." loading:YES];
+	CDIHUDView *hud = [[CDIHUDView alloc] initWithTitle:@"Signing up..." loading:YES];
 	[hud show];
 	
 	[[CDKHTTPClient sharedClient] signUpWithUsername:self.usernameTextField.text email:self.emailTextField.text password:self.passwordTextField.text success:^(AFJSONRequestOperation *operation, id responseObject) {
@@ -93,7 +94,7 @@
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		cell.textLabel.textColor = [UIColor cheddarTextColor];
-		cell.textLabel.font = [UIFont cheddarFontOfSize:18.0f];
+		cell.textLabel.font = [UIFont cheddarInterfaceFontOfSize:18.0f];
 	}
 	
 	if (indexPath.row == 0) {

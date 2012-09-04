@@ -7,6 +7,7 @@
 //
 
 #import "CDIWebViewController.h"
+#import "CDIHUDView.h"
 #import "UIColor+CheddariOSAdditions.h"
 
 @interface CDIWebViewController ()
@@ -208,7 +209,7 @@
 	[controller dismissModalViewControllerAnimated:YES];
 	
 	if (result == MFMailComposeResultSent) {
-		SSHUDView *hud = [[SSHUDView alloc] init];
+		CDIHUDView *hud = [[CDIHUDView alloc] init];
 		[hud completeQuicklyWithTitle:@"Sent!"];
 	}
 }

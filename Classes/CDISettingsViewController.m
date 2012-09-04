@@ -9,6 +9,7 @@
 #import "CDISettingsViewController.h"
 #import "CDIUpgradeViewController.h"
 #import "CDISettingsTableViewCell.h"
+#import "CDIHUDView.h"
 #import "TTTAttributedLabel.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIButton+CheddariOSAdditions.h"
@@ -177,7 +178,7 @@
 	[controller dismissModalViewControllerAnimated:YES];
 
 	if (result == MFMailComposeResultSent) {
-		SSHUDView *hud = [[SSHUDView alloc] init];
+		CDIHUDView *hud = [[CDIHUDView alloc] init];
 		[hud completeQuicklyWithTitle:@"Sent!"];
 	}
 }

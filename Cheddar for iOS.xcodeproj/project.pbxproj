@@ -137,6 +137,7 @@
 		B26AE9BA15C5D0100008AB1F /* CDISettingsFontPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26AE9B915C5D0100008AB1F /* CDISettingsFontPickerViewController.m */; };
 		B26AE9BD15C5D25E0008AB1F /* CDIGroupedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26AE9BC15C5D25E0008AB1F /* CDIGroupedTableViewController.m */; };
 		B26AE9C015C5D52D0008AB1F /* CDIPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26AE9BF15C5D52D0008AB1F /* CDIPickerViewController.m */; };
+		B2711F0F15F58398000D6C09 /* CDIHUDView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2711F0E15F58398000D6C09 /* CDIHUDView.m */; };
 		B28F84DB15C37E1D003E4595 /* SSToolkitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B208C1E315BF63E30080705D /* SSToolkitResources.bundle */; };
 		B28FD2BE15BF730100365CD6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FD2BD15BF730100365CD6 /* CFNetwork.framework */; };
 		B28FD2C015BF731100365CD6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FD2BF15BF731000365CD6 /* CoreGraphics.framework */; };
@@ -442,6 +443,8 @@
 		B26AE9BC15C5D25E0008AB1F /* CDIGroupedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIGroupedTableViewController.m; sourceTree = "<group>"; };
 		B26AE9BE15C5D52D0008AB1F /* CDIPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIPickerViewController.h; sourceTree = "<group>"; };
 		B26AE9BF15C5D52D0008AB1F /* CDIPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIPickerViewController.m; sourceTree = "<group>"; };
+		B2711F0D15F58398000D6C09 /* CDIHUDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIHUDView.h; sourceTree = "<group>"; };
+		B2711F0E15F58398000D6C09 /* CDIHUDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIHUDView.m; sourceTree = "<group>"; };
 		B28FD2BD15BF730100365CD6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B28FD2BF15BF731000365CD6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B28FD2C115BF731B00365CD6 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -1008,6 +1011,8 @@
 				B208BBBF15BF63A80080705D /* CDITableViewCellDeleteConfirmationControl.m */,
 				B208BBC015BF63A80080705D /* CDITagView.h */,
 				B208BBC115BF63A80080705D /* CDITagView.m */,
+				B2711F0D15F58398000D6C09 /* CDIHUDView.h */,
+				B2711F0E15F58398000D6C09 /* CDIHUDView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1361,6 +1366,7 @@
 				B26AE9C015C5D52D0008AB1F /* CDIPickerViewController.m in Sources */,
 				B2AD656B15E907870073BBC5 /* CDIPlaceholderView.m in Sources */,
 				B2AD656F15E907C50073BBC5 /* CDIListsPlaceholderView.m in Sources */,
+				B2711F0F15F58398000D6C09 /* CDIHUDView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

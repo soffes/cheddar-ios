@@ -8,6 +8,7 @@
 
 #import "CDISignInViewController.h"
 #import "CDISignUpViewController.h"
+#import "CDIHUDView.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIFont+CheddariOSAdditions.h"
 
@@ -26,7 +27,7 @@
 	[footer setTitleColor:[UIColor cheddarBlueColor] forState:UIControlStateNormal];
 	[footer setTitleColor:[UIColor cheddarTextColor] forState:UIControlStateHighlighted];
 	[footer addTarget:self action:@selector(forgot:) forControlEvents:UIControlEventTouchUpInside];
-	footer.titleLabel.font = [UIFont cheddarFontOfSize:16.0f];
+	footer.titleLabel.font = [UIFont cheddarInterfaceFontOfSize:16.0f];
 	self.tableView.tableFooterView = footer;
 }
 
@@ -34,7 +35,7 @@
 #pragma mark - Actions
 
 - (void)signIn:(id)sender {	
-	SSHUDView *hud = [[SSHUDView alloc] initWithTitle:@"Signing in..." loading:YES];
+	CDIHUDView *hud = [[CDIHUDView alloc] initWithTitle:@"Signing in..." loading:YES];
 	[hud show];
 	
 	[[CDKHTTPClient sharedClient] signInWithLogin:self.usernameTextField.text password:self.passwordTextField.text success:^(AFJSONRequestOperation *operation, id responseObject) {
@@ -70,7 +71,7 @@
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		cell.textLabel.textColor = [UIColor cheddarTextColor];
-		cell.textLabel.font = [UIFont cheddarFontOfSize:18.0f];
+		cell.textLabel.font = [UIFont cheddarInterfaceFontOfSize:18.0f];
 	}
 	
 	if (indexPath.row == 0) {

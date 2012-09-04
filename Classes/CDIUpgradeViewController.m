@@ -7,6 +7,7 @@
 //
 
 #import "CDIUpgradeViewController.h"
+#import "CDIHUDView.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIFont+CheddariOSAdditions.h"
 #import "UIButton+CheddariOSAdditions.h"
@@ -196,7 +197,7 @@
 	}
 	_purchasing = YES;
 	
-	SSHUDView *hud = [[SSHUDView alloc] initWithTitle:@"Upgrading..."];
+	CDIHUDView *hud = [[CDIHUDView alloc] initWithTitle:@"Upgrading..."];
 	[hud show];
 	
 	NSDictionary *products = [[CDITransactionObserver defaultObserver] products];

@@ -17,6 +17,7 @@
 #import "CDIUpgradeViewController.h"
 #import "CDIListsPlaceholderView.h"
 #import "CDIAddListTableViewCell.h"
+#import "CDIHUDView.h"
 #import "SMTEDelegateController.h"
 #import <SSToolkit/UIScrollView+SSToolkitAdditions.h>
 
@@ -289,7 +290,7 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 		return;
 	}
 
-	SSHUDView *hud = [[SSHUDView alloc] initWithTitle:@"Creating..." loading:YES];
+	CDIHUDView *hud = [[CDIHUDView alloc] initWithTitle:@"Creating..." loading:YES];
 	[hud show];
 	
 	CDKList *list = [[CDKList alloc] init];

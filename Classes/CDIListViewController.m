@@ -16,6 +16,7 @@
 #import "CDIRenameTaskViewController.h"
 #import "CDIWebViewController.h"
 #import "CDISettingsTapPickerViewController.h"
+#import "CDIHUDView.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIFont+CheddariOSAdditions.h"
 
@@ -481,7 +482,7 @@
 			[task createWithSuccess:nil failure:^(AFJSONRequestOperation *remoteOperation, NSError *error) {
 				dispatch_async(dispatch_get_main_queue(), ^{
 					addTaskView.textField.text = title;
-					SSHUDView *hud = [[SSHUDView alloc] init];
+					CDIHUDView *hud = [[CDIHUDView alloc] init];
 					[hud failQuicklyWithTitle:@"Failed to create task"];
 				});
 			}];

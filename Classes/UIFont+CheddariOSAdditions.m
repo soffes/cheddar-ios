@@ -114,26 +114,12 @@ NSString *const kCDIFontBoldItalicKey = @"BoldItalic";
 #pragma mark - Interface
 
 + (UIFont *)cheddarInterfaceFontOfSize:(CGFloat)fontSize {
-	NSString *fontName = nil;
-	NSString *key = [CDISettingsFontPickerViewController selectedKey];
-	if ([key isEqualToString:kCDIFontHoeflerKey]) {
-		fontName = kCDIRegularFontName;
-	} else {
-		fontName = [self cheddarFontNameForFontKey:key style:kCDIFontRegularKey];
-	}
-	return [self fontWithName:fontName size:fontSize];
+	return [self fontWithName:kCDIRegularFontName size:fontSize];
 }
 
 
 + (UIFont *)boldCheddarInterfaceFontOfSize:(CGFloat)fontSize {
-	NSString *fontName = nil;
-	NSString *key = [CDISettingsFontPickerViewController selectedKey];
-	if ([key isEqualToString:kCDIFontHoeflerKey]) {
-		fontName = kCDIBoldFontName;
-	} else {
-		fontName = [self cheddarFontNameForFontKey:key style:kCDIFontBoldKey];
-	}
-	return [self fontWithName:fontName size:fontSize];
+	return [self fontWithName:kCDIBoldFontName size:fontSize];
 }
 
 @end

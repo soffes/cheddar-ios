@@ -25,7 +25,7 @@
 		_usernameTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
 		_usernameTextField.delegate = self;
 		_usernameTextField.returnKeyType = UIReturnKeyNext;
-		_usernameTextField.font = [UIFont cheddarFontOfSize:18.0f];
+		_usernameTextField.font = [UIFont cheddarInterfaceFontOfSize:18.0f];
 	}
 	return _usernameTextField;
 }
@@ -39,7 +39,7 @@
 		_passwordTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
 		_passwordTextField.delegate = self;
 		_passwordTextField.returnKeyType = UIReturnKeyGo;
-		_passwordTextField.font = [UIFont cheddarFontOfSize:18.0f];
+		_passwordTextField.font = [UIFont cheddarInterfaceFontOfSize:18.0f];
 	}
 	return _passwordTextField;
 }
