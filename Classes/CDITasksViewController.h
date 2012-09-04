@@ -1,5 +1,5 @@
 //
-//  CDIListViewController.h
+//  CDITasksViewController.h
 //  Cheddar for iOS
 //
 //  Created by Sam Soffes on 3/31/12.
@@ -11,7 +11,7 @@
 @class CDKList;
 @class CDKTag;
 
-@interface CDIListViewController : CDIManagedTableViewController
+@interface CDITasksViewController : CDIManagedTableViewController
 
 @property (nonatomic, strong, readonly) CDKList *list;
 @property (nonatomic, assign) BOOL focusKeyboard;

@@ -1,12 +1,12 @@
 //
-//  CDIListViewController.m
+//  CDITasksViewController.m
 //  Cheddar for iOS
 //
 //  Created by Sam Soffes on 3/31/12.
 //  Copyright (c) 2012 Nothing Magical. All rights reserved.
 //
 
-#import "CDIListViewController.h"
+#import "CDITasksViewController.h"
 #import "CDITaskTableViewCell.h"
 #import "CDIAddTaskView.h"
 #import "CDIAddTaskAnimationView.h"
@@ -17,20 +17,22 @@
 #import "CDIWebViewController.h"
 #import "CDISettingsTapPickerViewController.h"
 #import "CDIHUDView.h"
+#import "CDICheckboxButton.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIFont+CheddariOSAdditions.h"
 
-@interface CDIListViewController () <CDIAddTaskViewDelegate, TTTAttributedLabelDelegate, UITextFieldDelegate, UIActionSheetDelegate, UIAlertViewDelegate>
+@interface CDITasksViewController () <CDIAddTaskViewDelegate, TTTAttributedLabelDelegate, UITextFieldDelegate, UIActionSheetDelegate, UIAlertViewDelegate>
 @property (nonatomic, strong) CDIAddTaskView *addTaskView;
 @property (nonatomic, strong) NSMutableArray *currentTags;
 - (void)_renameList:(id)sender;
 - (void)_archiveTasks:(id)sender;
 - (void)_archiveAllTasks:(id)sender;
 - (void)_archiveCompletedTasks:(id)sender;
+- (void)_toggleCompletion:(CDICheckboxButton *)sender;
 - (void)_editTask:(CDKTask *)task;
 @end
 
-@implementation CDIListViewController {
+@implementation CDITasksViewController {
 	NSIndexPath *_textEditingIndexPath;
 	dispatch_semaphore_t _createTaskSemaphore;
 }
@@ -321,6 +323,21 @@
 }
 
 
+- (void)_toggleCompletion:(CDICheckboxButton *)sender {
+	NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *)sender.tableViewCell];
+	if (!indexPath) {
+		return;
+	}
+
+	CDKTask *task = [self objectForViewIndexPath:indexPath];
+	if (!task) {
+		return;
+	}
+
+	[task toggleCompleted];
+}
+
+
 - (void)_editTask:(CDKTask *)task {
 	CDIRenameTaskViewController *viewController = [[CDIRenameTaskViewController alloc] init];
 	viewController.task = task;
@@ -341,6 +358,7 @@
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		cell.attributedLabel.delegate = self;
     	[cell setEditingAction:@selector(editRow:) forTarget:self];
+		[cell.checkboxButton addTarget:self action:@selector(_toggleCompletion:) forControlEvents:UIControlEventTouchUpInside];
 	}
 	
 	[self configureCell:cell atIndexPath:indexPath];

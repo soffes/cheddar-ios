@@ -8,7 +8,7 @@
 
 #import "CDISplitViewController.h"
 #import "CDIListsViewController.h"
-#import "CDIListViewController.h"
+#import "CDITasksViewController.h"
 #import "CDIAppDelegate.h"
 
 @interface CDISplitViewController () <UISplitViewControllerDelegate>
@@ -32,7 +32,7 @@
 - (id)init {
 	if ((self = [super init])) {
 		_listsViewController = [[CDIListsViewController alloc] init];
-		_listViewController = [[CDIListViewController alloc] init];
+		_listViewController = [[CDITasksViewController alloc] init];
 		
 		self.viewControllers = [[NSArray alloc] initWithObjects:
 								[[UINavigationController alloc] initWithRootViewController:_listsViewController],

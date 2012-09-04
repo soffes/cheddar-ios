@@ -8,17 +8,18 @@
 
 #import "CDITaskTableViewCell.h"
 #import "CDIAttributedLabel.h"
+#import "CDICheckboxButton.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIFont+CheddariOSAdditions.h"
 #import "CDKTask+CheddariOSAdditions.h"
 
 @implementation CDITaskTableViewCell {
-	UIImageView *_checkbox;
 	UIImageView *_checkmark;
 }
 
 @synthesize task = _task;
 @synthesize attributedLabel = _attributedLabel;
+@synthesize checkboxButton = _checkboxButton;
 
 
 - (void)setTask:(CDKTask *)task {
@@ -27,15 +28,15 @@
 	if (_task.isCompleted) {
 		_attributedLabel.textColor = [UIColor cheddarLightTextColor];
 		_checkmark.hidden = NO;
-		_attributedLabel.linkAttributes =[NSDictionary dictionaryWithObjectsAndKeys:
-										  (id)[UIColor colorWithWhite:0.45f alpha:1.0f].CGColor, (NSString *)kCTForegroundColorAttributeName,
-										  nil];
+		_attributedLabel.linkAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+										   (id)[UIColor colorWithWhite:0.45f alpha:1.0f].CGColor, (NSString *)kCTForegroundColorAttributeName,
+										   nil];
 	} else {
 		_attributedLabel.textColor = [UIColor cheddarTextColor];
 		_checkmark.hidden = YES;
-		_attributedLabel.linkAttributes =[NSDictionary dictionaryWithObjectsAndKeys:
-										  (id)[UIColor cheddarBlueColor].CGColor, (NSString *)kCTForegroundColorAttributeName,
-										  nil];
+		_attributedLabel.linkAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+										   (id)[UIColor cheddarBlueColor].CGColor, (NSString *)kCTForegroundColorAttributeName,
+										   nil];
 	}
 
 	[_attributedLabel setText:_task.displayText afterInheritingLabelAttributesAndConfiguringWithBlock:^NSMutableAttributedString *(NSMutableAttributedString *mutableAttributedString) {
@@ -90,8 +91,9 @@
 	if ((self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier])) {
 		self.textLabel.hidden = YES;
 		
-		_checkbox = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"checkbox"] stretchableImageWithLeftCapWidth:4 topCapHeight:4]];
-		[self.contentView addSubview:_checkbox];
+		_checkboxButton = [[CDICheckboxButton alloc] initWithFrame:CGRectZero];
+		_checkboxButton.tableViewCell = self;
+		[self.contentView addSubview:_checkboxButton];
 		
 		_checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"small-check"]];
 		_checkmark.hidden = YES;
@@ -117,11 +119,11 @@
 	CGSize size = self.contentView.bounds.size;
 	
 	if (self.editing) { // TODO: Only match reordering and not swipe to delete
-		_checkbox.frame = CGRectMake(-34.0f, 13.0f, 24.0f, 24.0f);
+		_checkboxButton.frame = CGRectMake(-34.0f, 13.0f, 24.0f, 24.0f);
 		_checkmark.frame = CGRectMake(-30.0f, 16.0f, 22.0f, 18.0f);
 		_attributedLabel.frame = CGRectMake(12.0f, 13.0f, size.width - 20.0f, size.height - 27.0f);
 	} else {
-		_checkbox.frame = CGRectMake(10.0f, 13.0f, 24.0f, 24.0f);
+		_checkboxButton.frame = CGRectMake(10.0f, 13.0f, 24.0f, 24.0f);
 		_checkmark.frame = CGRectMake(12.0f, 16.0f, 22.0f, 18.0f);
 		_attributedLabel.frame = CGRectMake(44.0f, 13.0f, size.width - 54.0f, size.height - 27.0f);
 	}
@@ -134,8 +136,8 @@
 	[super setEditing:editing animated:animated];
 	
 	void (^change)(void) = ^{
-		_checkbox.alpha = editing ? 0.0f : 1.0f;
-		_checkmark.alpha = _checkbox.alpha;
+		_checkboxButton.alpha = editing ? 0.0f : 1.0f;
+		_checkmark.alpha = _checkboxButton.alpha;
 	};
 	
 	if (animated) {

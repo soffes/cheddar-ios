@@ -15,7 +15,7 @@
 		B208BC2E15BF63A80080705D /* CDICreateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BB9D15BF63A80080705D /* CDICreateListViewController.m */; };
 		B208BC2F15BF63A80080705D /* CDIListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BB9F15BF63A80080705D /* CDIListsViewController.m */; };
 		B208BC3015BF63A80080705D /* CDIListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBA115BF63A80080705D /* CDIListTableViewCell.m */; };
-		B208BC3115BF63A80080705D /* CDIListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBA315BF63A80080705D /* CDIListViewController.m */; };
+		B208BC3115BF63A80080705D /* CDITasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBA315BF63A80080705D /* CDITasksViewController.m */; };
 		B208BC3215BF63A80080705D /* CDILoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBA515BF63A80080705D /* CDILoadingView.m */; };
 		B208BC3315BF63A80080705D /* CDIManagedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBA715BF63A80080705D /* CDIManagedTableViewController.m */; };
 		B208BC3515BF63A80080705D /* CDITasksPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBAB15BF63A80080705D /* CDITasksPlaceholderView.m */; };
@@ -138,6 +138,7 @@
 		B26AE9BD15C5D25E0008AB1F /* CDIGroupedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26AE9BC15C5D25E0008AB1F /* CDIGroupedTableViewController.m */; };
 		B26AE9C015C5D52D0008AB1F /* CDIPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26AE9BF15C5D52D0008AB1F /* CDIPickerViewController.m */; };
 		B2711F0F15F58398000D6C09 /* CDIHUDView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2711F0E15F58398000D6C09 /* CDIHUDView.m */; };
+		B2711F1215F58DFC000D6C09 /* CDICheckboxButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B2711F1115F58DFB000D6C09 /* CDICheckboxButton.m */; };
 		B28F84DB15C37E1D003E4595 /* SSToolkitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B208C1E315BF63E30080705D /* SSToolkitResources.bundle */; };
 		B28FD2BE15BF730100365CD6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FD2BD15BF730100365CD6 /* CFNetwork.framework */; };
 		B28FD2C015BF731100365CD6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FD2BF15BF731000365CD6 /* CoreGraphics.framework */; };
@@ -280,8 +281,8 @@
 		B208BB9F15BF63A80080705D /* CDIListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIListsViewController.m; sourceTree = "<group>"; };
 		B208BBA015BF63A80080705D /* CDIListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIListTableViewCell.h; sourceTree = "<group>"; };
 		B208BBA115BF63A80080705D /* CDIListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIListTableViewCell.m; sourceTree = "<group>"; };
-		B208BBA215BF63A80080705D /* CDIListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIListViewController.h; sourceTree = "<group>"; };
-		B208BBA315BF63A80080705D /* CDIListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIListViewController.m; sourceTree = "<group>"; };
+		B208BBA215BF63A80080705D /* CDITasksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDITasksViewController.h; sourceTree = "<group>"; };
+		B208BBA315BF63A80080705D /* CDITasksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDITasksViewController.m; sourceTree = "<group>"; };
 		B208BBA415BF63A80080705D /* CDILoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDILoadingView.h; sourceTree = "<group>"; };
 		B208BBA515BF63A80080705D /* CDILoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDILoadingView.m; sourceTree = "<group>"; };
 		B208BBA615BF63A80080705D /* CDIManagedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIManagedTableViewController.h; sourceTree = "<group>"; };
@@ -445,6 +446,8 @@
 		B26AE9BF15C5D52D0008AB1F /* CDIPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIPickerViewController.m; sourceTree = "<group>"; };
 		B2711F0D15F58398000D6C09 /* CDIHUDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIHUDView.h; sourceTree = "<group>"; };
 		B2711F0E15F58398000D6C09 /* CDIHUDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIHUDView.m; sourceTree = "<group>"; };
+		B2711F1015F58DFB000D6C09 /* CDICheckboxButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDICheckboxButton.h; sourceTree = "<group>"; };
+		B2711F1115F58DFB000D6C09 /* CDICheckboxButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDICheckboxButton.m; sourceTree = "<group>"; };
 		B28FD2BD15BF730100365CD6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B28FD2BF15BF731000365CD6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B28FD2C115BF731B00365CD6 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -863,17 +866,17 @@
 			name = Lists;
 			sourceTree = "<group>";
 		};
-		B23261A315C206F200D455EF /* List */ = {
+		B23261A315C206F200D455EF /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
-				B208BBA215BF63A80080705D /* CDIListViewController.h */,
-				B208BBA315BF63A80080705D /* CDIListViewController.m */,
+				B208BBA215BF63A80080705D /* CDITasksViewController.h */,
+				B208BBA315BF63A80080705D /* CDITasksViewController.m */,
 				B208BBB015BF63A80080705D /* CDIRenameTaskViewController.h */,
 				B208BBB115BF63A80080705D /* CDIRenameTaskViewController.m */,
 				B2AD031F15C493C100D9B909 /* CDIWebViewController.h */,
 				B2AD032015C493C100D9B909 /* CDIWebViewController.m */,
 			);
-			name = List;
+			name = Tasks;
 			sourceTree = "<group>";
 		};
 		B23261A415C206FF00D455EF /* Settings */ = {
@@ -1013,6 +1016,8 @@
 				B208BBC115BF63A80080705D /* CDITagView.m */,
 				B2711F0D15F58398000D6C09 /* CDIHUDView.h */,
 				B2711F0E15F58398000D6C09 /* CDIHUDView.m */,
+				B2711F1015F58DFB000D6C09 /* CDICheckboxButton.h */,
+				B2711F1115F58DFB000D6C09 /* CDICheckboxButton.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1021,7 +1026,7 @@
 			isa = PBXGroup;
 			children = (
 				B23261A215C206EC00D455EF /* Lists */,
-				B23261A315C206F200D455EF /* List */,
+				B23261A315C206F200D455EF /* Tasks */,
 				B23261A615C2070D00D455EF /* Abstract */,
 				B23261A515C2070600D455EF /* Sessions */,
 				B23261A415C206FF00D455EF /* Settings */,
@@ -1322,7 +1327,7 @@
 				B208BC2E15BF63A80080705D /* CDICreateListViewController.m in Sources */,
 				B208BC2F15BF63A80080705D /* CDIListsViewController.m in Sources */,
 				B208BC3015BF63A80080705D /* CDIListTableViewCell.m in Sources */,
-				B208BC3115BF63A80080705D /* CDIListViewController.m in Sources */,
+				B208BC3115BF63A80080705D /* CDITasksViewController.m in Sources */,
 				B208BC3215BF63A80080705D /* CDILoadingView.m in Sources */,
 				B208BC3315BF63A80080705D /* CDIManagedTableViewController.m in Sources */,
 				B208BC3515BF63A80080705D /* CDITasksPlaceholderView.m in Sources */,
@@ -1367,6 +1372,7 @@
 				B2AD656B15E907870073BBC5 /* CDIPlaceholderView.m in Sources */,
 				B2AD656F15E907C50073BBC5 /* CDIListsPlaceholderView.m in Sources */,
 				B2711F0F15F58398000D6C09 /* CDIHUDView.m in Sources */,
+				B2711F1215F58DFC000D6C09 /* CDICheckboxButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

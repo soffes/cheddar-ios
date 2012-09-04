@@ -7,13 +7,13 @@
 //
 
 @class CDIListsViewController;
-@class CDIListViewController;
+@class CDITasksViewController;
 
 @interface CDISplitViewController : UISplitViewController
 
 + (CDISplitViewController *)sharedSplitViewController;
 
 @property (nonatomic, strong, readonly) CDIListsViewController *listsViewController;
-@property (nonatomic, strong, readonly) CDIListViewController *listViewController;
+@property (nonatomic, strong, readonly) CDITasksViewController *listViewController;
 
 @end

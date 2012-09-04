@@ -10,6 +10,7 @@
 
 @class CDKTask;
 @class CDIAttributedLabel;
+@class CDICheckboxButton;
 
 @interface CDITaskTableViewCell : CDITableViewCell
 
@@ -17,5 +18,6 @@
 
 @property (nonatomic, strong) CDKTask *task;
 @property (nonatomic, strong, readonly) CDIAttributedLabel *attributedLabel;
+@property (nonatomic, strong, readonly) CDICheckboxButton *checkboxButton;
 
 @end

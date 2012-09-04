@@ -8,7 +8,7 @@
 
 #import "CDIListsViewController.h"
 #import "CDIListTableViewCell.h"
-#import "CDIListViewController.h"
+#import "CDITasksViewController.h"
 #import "CDICreateListViewController.h"
 #import "CDISettingsViewController.h"
 #import "CDISplitViewController.h"
@@ -361,7 +361,7 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 		[CDISplitViewController sharedSplitViewController].listViewController.managedObject = list;
 		_selectedList = list;
 	} else {		
-		CDIListViewController *viewController = [[CDIListViewController alloc] init];
+		CDITasksViewController *viewController = [[CDITasksViewController alloc] init];
 		viewController.managedObject = list;
 		viewController.focusKeyboard = newList;
 		[self.navigationController pushViewController:viewController animated:YES];
@@ -487,7 +487,7 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 	CDKList *list = [self objectForViewIndexPath:indexPath];
 	
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		CDIListViewController *listViewController = [CDISplitViewController sharedSplitViewController].listViewController;
+		CDITasksViewController *listViewController = [CDISplitViewController sharedSplitViewController].listViewController;
 		if ([listViewController.managedObject isEqual:list]) {
 			listViewController.managedObject = nil;
 		}
