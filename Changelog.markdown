@@ -12,6 +12,10 @@
 
 ★ In-app browser for links
 
+✔ Preference to make tapping a task do nothing, complete, or edit the task
+
+✔ Support for filtering with multiple tags
+
 ✔ Remembers selected list across launches
 
 ✔ Finish adding tasks by pressing Go with an empty task
