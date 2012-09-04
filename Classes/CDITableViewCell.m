@@ -7,6 +7,7 @@
 //
 
 #import "CDITableViewCell.h"
+#import "CDISettingsFontPickerViewController.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIFont+CheddariOSAdditions.h"
 
@@ -30,11 +31,11 @@
 		_textField = [[SSTextField alloc] initWithFrame:CGRectZero];
 		_textField.textColor = self.textLabel.textColor;
 		_textField.placeholderTextColor = [UIColor cheddarLightTextColor];
-		_textField.font = self.textLabel.font;
 		_textField.backgroundColor = [UIColor whiteColor];
 		_textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
 		_textField.returnKeyType = UIReturnKeyDone;
 		_textField.alpha = 0.0f;
+		[self updateFonts];
 		[self.contentView addSubview:_textField];
 	}
 	return _textField;
@@ -87,7 +88,7 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
 	if ((self = [super initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier])) {		
 		self.textLabel.textColor = [UIColor cheddarTextColor];
-		self.textLabel.font = [UIFont cheddarFontOfSize:20.0f];
+		[self updateFonts];
 				
 		SSBorderedView *background = [[SSBorderedView alloc] initWithFrame:CGRectZero];
 		background.backgroundColor = [UIColor whiteColor];
@@ -103,6 +104,8 @@
 		_editingLongPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] init];
 		_editingLongPressGestureRecognizer.delegate = self;
 		[self addGestureRecognizer:_editingLongPressGestureRecognizer];
+
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateFonts) name:kCDIFontDidChangeNotificationName object:nil];
 	}
 	return self;
 }
@@ -125,6 +128,14 @@
 - (void)prepareForReuse {
 	[super prepareForReuse];
 	[self setEditingText:NO];
+}
+
+
+#pragma mark - Font Handling
+
+- (void)updateFonts {
+	_textField.font = self.textLabel.font;
+	self.textLabel.font = [UIFont cheddarFontOfSize:20.0f];
 }
 
 

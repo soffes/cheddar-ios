@@ -13,6 +13,10 @@
 #import "UIFont+CheddariOSAdditions.h"
 #import "CDKTask+CheddariOSAdditions.h"
 
+@interface CDITaskTableViewCell ()
+- (void)_updateAttributedText;
+@end
+
 @implementation CDITaskTableViewCell {
 	UIImageView *_checkmark;
 }
@@ -39,32 +43,7 @@
 										   nil];
 	}
 
-	[_attributedLabel setText:_task.displayText afterInheritingLabelAttributesAndConfiguringWithBlock:^NSMutableAttributedString *(NSMutableAttributedString *mutableAttributedString) {
-		[task addEntitiesToAttributedString:mutableAttributedString];
-		return mutableAttributedString;
-	}];
-	
-	// Add links
-	for (NSDictionary *entity in _task.entities) {
-		NSArray *indices = [entity objectForKey:@"display_indices"];
-		NSRange range = NSMakeRange([[indices objectAtIndex:0] unsignedIntegerValue], 0);
-		range.length = [[indices objectAtIndex:1] unsignedIntegerValue] - range.location;
-		range = [_attributedLabel.text composedRangeWithRange:range];
-		
-		NSString *type = [entity objectForKey:@"type"];
-		
-		// Tag
-		if ([type isEqualToString:@"tag"]) {
-			NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"x-cheddar-tag://%@", [entity objectForKey:@"tag_name"]]];
-			[_attributedLabel addLinkToURL:url withRange:range];
-		}
-		
-		// Link
-		else if ([type isEqualToString:@"link"]) {
-			NSURL *url = [NSURL URLWithString:[entity objectForKey:@"url"]];
-			[_attributedLabel addLinkToURL:url withRange:range];
-		}
-	}
+	[self _updateAttributedText];
 }
 
 
@@ -75,9 +54,9 @@
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
 		label = [[TTTAttributedLabel alloc] initWithFrame:CGRectZero];
-		label.font = [UIFont cheddarFontOfSize:20.0f];
 		label.numberOfLines = 0;
 	});
+	label.font = [UIFont cheddarFontOfSize:20.0f];
 	label.text = task.attributedDisplayText;
 	CGSize size = [label sizeThatFits:CGSizeMake(width - 54.0f, 2000.0f)];
 	label.text = nil;
@@ -101,10 +80,10 @@
 		
 		_attributedLabel = [[CDIAttributedLabel alloc] initWithFrame:CGRectZero];
 		_attributedLabel.textColor = [UIColor cheddarTextColor];
-		_attributedLabel.font = [UIFont cheddarFontOfSize:20.0f];
 		_attributedLabel.backgroundColor = [UIColor clearColor];
 		_attributedLabel.numberOfLines = 0;
 		_attributedLabel.verticalAlignment = TTTAttributedLabelVerticalAlignmentTop;
+		[self updateFonts];
 		[self.contentView addSubview:_attributedLabel];
 		
 		self.contentView.clipsToBounds = YES;
@@ -151,6 +130,48 @@
 - (void)prepareForReuse {
 	[super prepareForReuse];
 	self.task = nil;
+}
+
+
+#pragma mark - CDITableViewCell
+
+- (void)updateFonts {
+	[super updateFonts];
+	_attributedLabel.font = [UIFont cheddarFontOfSize:20.0f];
+	[self _updateAttributedText];
+}
+
+
+#pragma Private
+
+- (void)_updateAttributedText {
+	__weak CDKTask *task = _task;
+	[_attributedLabel setText:_task.displayText afterInheritingLabelAttributesAndConfiguringWithBlock:^NSMutableAttributedString *(NSMutableAttributedString *mutableAttributedString) {
+		[task addEntitiesToAttributedString:mutableAttributedString];
+		return mutableAttributedString;
+	}];
+
+	// Add links
+	for (NSDictionary *entity in _task.entities) {
+		NSArray *indices = [entity objectForKey:@"display_indices"];
+		NSRange range = NSMakeRange([[indices objectAtIndex:0] unsignedIntegerValue], 0);
+		range.length = [[indices objectAtIndex:1] unsignedIntegerValue] - range.location;
+		range = [_attributedLabel.text composedRangeWithRange:range];
+
+		NSString *type = [entity objectForKey:@"type"];
+
+		// Tag
+		if ([type isEqualToString:@"tag"]) {
+			NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"x-cheddar-tag://%@", [entity objectForKey:@"tag_name"]]];
+			[_attributedLabel addLinkToURL:url withRange:range];
+		}
+
+		// Link
+		else if ([type isEqualToString:@"link"]) {
+			NSURL *url = [NSURL URLWithString:[entity objectForKey:@"url"]];
+			[_attributedLabel addLinkToURL:url withRange:range];
+		}
+	}
 }
 
 @end

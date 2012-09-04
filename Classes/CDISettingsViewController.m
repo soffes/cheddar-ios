@@ -94,8 +94,6 @@
 
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_updateUI) name:kCDKPlusDidChangeNotificationName object:nil];
 	[self _updateUI];
-	
-	[[NSNotificationCenter defaultCenter] addObserver:self.tableView selector:@selector(reloadData) name:kCDIFontDidChangeNotificationName object:nil];
 }
 
 

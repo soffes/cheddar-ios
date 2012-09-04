@@ -14,5 +14,6 @@
 + (CGFloat)cellHeight;
 
 - (void)setEditingAction:(SEL)editAction forTarget:(id)target;
+- (void)updateFonts;
 
 @end
