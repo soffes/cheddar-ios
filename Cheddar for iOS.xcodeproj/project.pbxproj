@@ -203,6 +203,7 @@
 		B2AD032115C493C200D9B909 /* CDIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD032015C493C100D9B909 /* CDIWebViewController.m */; };
 		B2AD656B15E907870073BBC5 /* CDIPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD656A15E907870073BBC5 /* CDIPlaceholderView.m */; };
 		B2AD656F15E907C50073BBC5 /* CDIListsPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD656E15E907C50073BBC5 /* CDIListsPlaceholderView.m */; };
+		B2DD6131160B750D00392C15 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2DD6130160B750D00392C15 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -518,6 +519,7 @@
 		B2AD656A15E907870073BBC5 /* CDIPlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIPlaceholderView.m; sourceTree = "<group>"; };
 		B2AD656D15E907C50073BBC5 /* CDIListsPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIListsPlaceholderView.h; sourceTree = "<group>"; };
 		B2AD656E15E907C50073BBC5 /* CDIListsPlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIListsPlaceholderView.m; sourceTree = "<group>"; };
+		B2DD6130160B750D00392C15 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -588,6 +590,7 @@
 		B208BBD615BF63A80080705D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B2DD6130160B750D00392C15 /* Default-568h@2x.png */,
 				B296A76B15C7B6BB006137C7 /* cell-checkmark-highlighted.png */,
 				B296A76C15C7B6BB006137C7 /* cell-checkmark-highlighted@2x.png */,
 				B296A76615C7B610006137C7 /* cell-checkmark@2x.png */,
@@ -1293,6 +1296,7 @@
 				B296A76D15C7B6BB006137C7 /* cell-checkmark-highlighted.png in Resources */,
 				B296A76E15C7B6BB006137C7 /* cell-checkmark-highlighted@2x.png in Resources */,
 				B296A77015C7B7CF006137C7 /* cell-checkmark.png in Resources */,
+				B2DD6131160B750D00392C15 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
