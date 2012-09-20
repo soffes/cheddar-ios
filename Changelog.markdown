@@ -4,6 +4,8 @@
 
 *Unreleased*
 
+★ iPhone 5 support
+
 ★ Landscape support on iPhone
 
 ★ URL scheme for use with other apps
