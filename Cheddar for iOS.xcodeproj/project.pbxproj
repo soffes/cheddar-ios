@@ -24,8 +24,6 @@
 		B208BC3815BF63A80080705D /* CDIRenameTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBB115BF63A80080705D /* CDIRenameTaskViewController.m */; };
 		B208BC3915BF63A80080705D /* CDISessionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBB315BF63A80080705D /* CDISessionsViewController.m */; };
 		B208BC3A15BF63A80080705D /* CDISettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBB515BF63A80080705D /* CDISettingsViewController.m */; };
-		B208BC3B15BF63A80080705D /* CDISignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBB715BF63A80080705D /* CDISignInViewController.m */; };
-		B208BC3C15BF63A80080705D /* CDISignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBB915BF63A80080705D /* CDISignUpViewController.m */; };
 		B208BC3D15BF63A80080705D /* CDISplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBBB15BF63A80080705D /* CDISplitViewController.m */; };
 		B208BC3E15BF63A80080705D /* CDITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBBD15BF63A80080705D /* CDITableViewCell.m */; };
 		B208BC3F15BF63A80080705D /* CDITableViewCellDeleteConfirmationControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBBF15BF63A80080705D /* CDITableViewCellDeleteConfirmationControl.m */; };
@@ -300,10 +298,6 @@
 		B208BBB315BF63A80080705D /* CDISessionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDISessionsViewController.m; sourceTree = "<group>"; };
 		B208BBB415BF63A80080705D /* CDISettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDISettingsViewController.h; sourceTree = "<group>"; };
 		B208BBB515BF63A80080705D /* CDISettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDISettingsViewController.m; sourceTree = "<group>"; };
-		B208BBB615BF63A80080705D /* CDISignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDISignInViewController.h; sourceTree = "<group>"; };
-		B208BBB715BF63A80080705D /* CDISignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDISignInViewController.m; sourceTree = "<group>"; };
-		B208BBB815BF63A80080705D /* CDISignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDISignUpViewController.h; sourceTree = "<group>"; };
-		B208BBB915BF63A80080705D /* CDISignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDISignUpViewController.m; sourceTree = "<group>"; };
 		B208BBBA15BF63A80080705D /* CDISplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDISplitViewController.h; sourceTree = "<group>"; };
 		B208BBBB15BF63A80080705D /* CDISplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDISplitViewController.m; sourceTree = "<group>"; };
 		B208BBBC15BF63A80080705D /* CDITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDITableViewCell.h; sourceTree = "<group>"; };
@@ -904,10 +898,6 @@
 			children = (
 				B208BBB215BF63A80080705D /* CDISessionsViewController.h */,
 				B208BBB315BF63A80080705D /* CDISessionsViewController.m */,
-				B208BBB615BF63A80080705D /* CDISignInViewController.h */,
-				B208BBB715BF63A80080705D /* CDISignInViewController.m */,
-				B208BBB815BF63A80080705D /* CDISignUpViewController.h */,
-				B208BBB915BF63A80080705D /* CDISignUpViewController.m */,
 				B23261A815C207FF00D455EF /* CDIWebSignInViewController.h */,
 				B23261A915C207FF00D455EF /* CDIWebSignInViewController.m */,
 			);
@@ -1340,8 +1330,6 @@
 				B208BC3815BF63A80080705D /* CDIRenameTaskViewController.m in Sources */,
 				B208BC3915BF63A80080705D /* CDISessionsViewController.m in Sources */,
 				B208BC3A15BF63A80080705D /* CDISettingsViewController.m in Sources */,
-				B208BC3B15BF63A80080705D /* CDISignInViewController.m in Sources */,
-				B208BC3C15BF63A80080705D /* CDISignUpViewController.m in Sources */,
 				B208BC3D15BF63A80080705D /* CDISplitViewController.m in Sources */,
 				B208BC3E15BF63A80080705D /* CDITableViewCell.m in Sources */,
 				B208BC3F15BF63A80080705D /* CDITableViewCellDeleteConfirmationControl.m in Sources */,

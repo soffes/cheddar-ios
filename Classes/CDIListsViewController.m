@@ -21,7 +21,7 @@
 #import <SSToolkit/UIScrollView+SSToolkitAdditions.h>
 
 #ifdef CHEDDAR_USE_PASSWORD_FLOW
-	#import "CDISignUpViewController.h"
+	#import "CDISessionsViewController.h"
 #else
 	#import "CDIWebSignInViewController.h"
 #endif
@@ -369,7 +369,7 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 - (void)_checkUser {
 	if (![CDKUser currentUser]) {
 #ifdef CHEDDAR_USE_PASSWORD_FLOW
-		UIViewController *viewController = [[CDISignUpViewController alloc] init];
+		UIViewController *viewController = [[CDISessionsViewController alloc] init];
 #else
 		UIViewController *viewController = [[CDIWebSignInViewController alloc] init];
 #endif
