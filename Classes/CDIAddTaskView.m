@@ -9,6 +9,7 @@
 #import "CDIAddTaskView.h"
 #import "CDITableViewCell.h"
 #import "CDITagView.h"
+#import "CDIKeyboardBar.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIFont+CheddariOSAdditions.h"
 #import "UIButton+CheddariOSAdditions.h"
@@ -116,6 +117,10 @@
 		_textField.placeholder = @"What do you have to do?";
 		_textField.returnKeyType = UIReturnKeyGo;
 		_textField.font = [UIFont cheddarFontOfSize:18.0f];
+
+		CDIKeyboardBar *keyboardBar = [[CDIKeyboardBar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 36.0f)];
+		keyboardBar.textField = _textField;
+		_textField.inputAccessoryView = keyboardBar;
 		[self addSubview:_textField];
 		
 		_shadowView = [[SSGradientView alloc] initWithFrame:CGRectMake(0.0f, [[self class] height], size.width, 3.0f)];

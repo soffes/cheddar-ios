@@ -18,6 +18,7 @@
 #import "CDISettingsTapPickerViewController.h"
 #import "CDIHUDView.h"
 #import "CDICheckboxButton.h"
+#import "CDIKeyboardBar.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIFont+CheddariOSAdditions.h"
 

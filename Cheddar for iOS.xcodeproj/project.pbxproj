@@ -202,6 +202,8 @@
 		B2AD656B15E907870073BBC5 /* CDIPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD656A15E907870073BBC5 /* CDIPlaceholderView.m */; };
 		B2AD656F15E907C50073BBC5 /* CDIListsPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AD656E15E907C50073BBC5 /* CDIListsPlaceholderView.m */; };
 		B2B25FDE161651F900ACFD3E /* About.html in Resources */ = {isa = PBXBuildFile; fileRef = B2B25FDD161651F900ACFD3E /* About.html */; };
+		B2B25FE1161658AD00ACFD3E /* CDIKeyboardBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B25FE0161658AD00ACFD3E /* CDIKeyboardBar.m */; };
+		B2B25FE416165B6D00ACFD3E /* CDIKeyboardButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B25FE316165B6D00ACFD3E /* CDIKeyboardButton.m */; };
 		B2DD6131160B750D00392C15 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2DD6130160B750D00392C15 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -515,6 +517,10 @@
 		B2AD656D15E907C50073BBC5 /* CDIListsPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIListsPlaceholderView.h; sourceTree = "<group>"; };
 		B2AD656E15E907C50073BBC5 /* CDIListsPlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIListsPlaceholderView.m; sourceTree = "<group>"; };
 		B2B25FDD161651F900ACFD3E /* About.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = About.html; sourceTree = "<group>"; };
+		B2B25FDF161658AD00ACFD3E /* CDIKeyboardBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIKeyboardBar.h; sourceTree = "<group>"; };
+		B2B25FE0161658AD00ACFD3E /* CDIKeyboardBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIKeyboardBar.m; sourceTree = "<group>"; };
+		B2B25FE216165B6D00ACFD3E /* CDIKeyboardButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIKeyboardButton.h; sourceTree = "<group>"; };
+		B2B25FE316165B6D00ACFD3E /* CDIKeyboardButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIKeyboardButton.m; sourceTree = "<group>"; };
 		B2DD6130160B750D00392C15 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1014,6 +1020,10 @@
 				B2711F0E15F58398000D6C09 /* CDIHUDView.m */,
 				B2711F1015F58DFB000D6C09 /* CDICheckboxButton.h */,
 				B2711F1115F58DFB000D6C09 /* CDICheckboxButton.m */,
+				B2B25FDF161658AD00ACFD3E /* CDIKeyboardBar.h */,
+				B2B25FE0161658AD00ACFD3E /* CDIKeyboardBar.m */,
+				B2B25FE216165B6D00ACFD3E /* CDIKeyboardButton.h */,
+				B2B25FE316165B6D00ACFD3E /* CDIKeyboardButton.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1369,6 +1379,8 @@
 				B2AD656F15E907C50073BBC5 /* CDIListsPlaceholderView.m in Sources */,
 				B2711F0F15F58398000D6C09 /* CDIHUDView.m in Sources */,
 				B2711F1215F58DFC000D6C09 /* CDICheckboxButton.m in Sources */,
+				B2B25FE1161658AD00ACFD3E /* CDIKeyboardBar.m in Sources */,
+				B2B25FE416165B6D00ACFD3E /* CDIKeyboardButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
