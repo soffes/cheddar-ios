@@ -339,7 +339,7 @@
 		// About
 		if (indexPath.row == 0) {
 			CDIWebViewController *viewController = [[CDIWebViewController alloc] init];
-			[viewController loadURL:[[NSBundle mainBundle] URLForResource:@"about" withExtension:@"html"]];
+			[viewController loadURL:[[NSBundle mainBundle] URLForResource:@"About" withExtension:@"html"]];
 			[self.navigationController pushViewController:viewController animated:YES];
 			return;
 		}
