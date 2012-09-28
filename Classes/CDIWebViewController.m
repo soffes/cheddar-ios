@@ -69,7 +69,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	[self.navigationController setToolbarHidden:NO animated:animated];
+
+	if (![_url isFileURL]) {
+		[self.navigationController setToolbarHidden:NO animated:animated];
+	}
 }
 
 
@@ -174,8 +177,11 @@
 #pragma mark - SSWebViewDelegate
 
 - (void)webViewDidStartLoadingPage:(SSWebView *)aWebView {
-	self.title = _webView.lastRequest.mainDocumentURL.absoluteString;
+	NSURL *url = _webView.lastRequest.mainDocumentURL;
+	self.title = url.absoluteString;
 	[self _updateBrowserUI];
+
+	[self.navigationController setToolbarHidden:[url isFileURL] animated:YES];
 }
 
 

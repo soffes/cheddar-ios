@@ -21,6 +21,7 @@
 #import "CDISettingsTextSizePickerViewController.h"
 #import "CDISettingsFontPickerViewController.h"
 #import "CDISettingsTapPickerViewController.h"
+#import "CDIWebViewController.h"
 
 @interface CDISettingsViewController () <MFMailComposeViewControllerDelegate>
 @end
@@ -337,7 +338,10 @@
 	else if (indexPath.section == 2) {
 		// About
 		if (indexPath.row == 0) {
-			// TODO: Show about
+			CDIWebViewController *viewController = [[CDIWebViewController alloc] init];
+			[viewController loadURL:[[NSBundle mainBundle] URLForResource:@"about" withExtension:@"html"]];
+			[self.navigationController pushViewController:viewController animated:YES];
+			return;
 		}
 
 		// Support
