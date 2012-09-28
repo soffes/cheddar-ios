@@ -14,8 +14,4 @@ extern NSString *const kCDITapActionCompleteKey;
 extern NSString *const kCDITapActionEditKey;
 
 @interface CDISettingsTapPickerViewController : CDIPickerViewController
-
-+ (NSDictionary *)valueMap;
-+ (NSString *)textForKey:(NSString *)key;
-
 @end

@@ -280,10 +280,10 @@
 	// Other
 	else if (indexPath.section == 2) {
 		if (indexPath.row == 0) {
-			cell.textLabel.text = @"About";
+			cell.textLabel.text = @"About Cheddar";
 			cell.detailTextLabel.text = nil;
 		} else if (indexPath.row == 1) {
-			cell.textLabel.text = @"Support";
+			cell.textLabel.text = @"Get Help";
 			cell.detailTextLabel.text = nil;
 		}
 	}
