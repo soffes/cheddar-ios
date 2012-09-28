@@ -177,7 +177,7 @@
 - (void)_toggleMode:(id)sender {
 	NSArray *email = @[[NSIndexPath indexPathForRow:1 inSection:0]];
 
-	BOOL focusUsername = [self.emailTextField isFirstResponder];
+	BOOL focusPassword = [self.emailTextField isFirstResponder];
 
 	// Switch to sign in
 	if (_signUpMode) {
@@ -192,8 +192,8 @@
 		self.usernameTextField.placeholder = @"Username or email";
 		self.passwordTextField.placeholder = @"Your password";
 
-		if (focusUsername) {
-			[self.usernameTextField becomeFirstResponder];
+		if (focusPassword) {
+			[self.passwordTextField becomeFirstResponder];
 		}
 	}
 
@@ -261,7 +261,11 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 	if (textField == self.usernameTextField) {
-		[self.emailTextField becomeFirstResponder];
+		if (_signUpMode) {
+			[self.emailTextField becomeFirstResponder];
+		} else {
+			[self.passwordTextField becomeFirstResponder];
+		}
 	} else if (textField == self.emailTextField) {
 		[self.passwordTextField becomeFirstResponder];
 	} else if (textField == self.passwordTextField) {

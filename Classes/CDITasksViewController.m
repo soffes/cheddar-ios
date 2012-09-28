@@ -132,6 +132,7 @@
 	self.pullToRefreshView.bottomBorderColor = [UIColor colorWithWhite:0.8f alpha:1.0f];
 
 	self.noContentView = [[CDITasksPlaceholderView alloc] initWithFrame:CGRectZero];
+
 }
 
 

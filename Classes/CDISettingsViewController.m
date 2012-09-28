@@ -191,6 +191,9 @@
 	
 	// Sign out
 	[CDKUser setCurrentUser:nil];
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	[userDefaults removeObjectForKey:kCDISelectedListKey];
+	[userDefaults synchronize];
 	CDIAppDelegate *appDelegate = [CDIAppDelegate sharedAppDelegate];
 
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
