@@ -222,7 +222,7 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return 3;
+	return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -231,7 +231,9 @@
 	} else if (section == 1) {
 		return 1;
 	} else if (section == 2) {
-		return 3;
+		return 2;
+	} else if (section == 3) {
+		return 1;
 	}
 	
 	return 0;
@@ -267,7 +269,7 @@
 	}
 	
 	// Tasks
-	if (indexPath.section == 1) {
+	else if (indexPath.section == 1) {
 		if (indexPath.row == 0) {
 			cell.textLabel.text = @"Tap Action";
 			cell.detailTextLabel.text = [CDISettingsTapPickerViewController textForSelectedKey];
@@ -275,19 +277,22 @@
 	}
 	
 	// Other
-	if (indexPath.section == 2) {
+	else if (indexPath.section == 2) {
 		if (indexPath.row == 0) {
 			cell.textLabel.text = @"About";
 			cell.detailTextLabel.text = nil;
 		} else if (indexPath.row == 1) {
 			cell.textLabel.text = @"Support";
 			cell.detailTextLabel.text = nil;
-		} else if (indexPath.row == 2) {
-			cell.textLabel.text = @"Sign Out";
-			cell.detailTextLabel.text = nil;
 		}
 	}
-	
+
+	// Sign out
+	else if (indexPath.section == 3) {
+		cell.textLabel.text = @"Sign Out";
+		cell.detailTextLabel.text = nil;
+	}
+
 	return cell;
 }
 
@@ -321,7 +326,7 @@
 	}
 	
 	// Tasks
-	if (indexPath.section == 1) {
+	else if (indexPath.section == 1) {
 		// Tap Action
 		if (indexPath.row == 0) {
 			viewController = [[CDISettingsTapPickerViewController alloc] init];
@@ -329,7 +334,7 @@
 	}
 	
 	// Other
-	if (indexPath.section == 2) {
+	else if (indexPath.section == 2) {
 		// About
 		if (indexPath.row == 0) {
 			// TODO: Show about
@@ -340,12 +345,13 @@
 			[self support:nil];
 			return;
 		}
+	}
 
-		// Sign out
-		else if (indexPath.row == 2) {
-			[self signOut:nil];
-			return;
-		}
+	// Sign out
+	else if (indexPath.section == 3) {
+		[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+		[self signOut:nil];
+		return;
 	}
 
 	if (viewController) {
