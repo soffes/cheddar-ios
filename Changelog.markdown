@@ -4,15 +4,17 @@
 
 *Unreleased*
 
-★ iPhone 5 support
+★ iPhone 5 & iOS 6 support
 
-★ Landscape support on iPhone
+★ Full landscape support on iPhone
 
-★ URL scheme for use with other apps
+★ URL scheme for use with other apps like LaunchCenter Pro
 
 ★ TextExpander support
 
 ★ In-app browser for links
+
+✔ Preference for font and text size
 
 ✔ Preference to make tapping a task do nothing, complete, or edit the task
 
@@ -22,7 +24,7 @@
 
 ✔ Finish adding tasks by pressing Go with an empty task
 
-☂ Bug fixes
+☂ Lots of bug fixes
 
 
 ### Version 1.0
