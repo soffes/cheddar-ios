@@ -54,7 +54,7 @@
 
 
 - (CGSize)sizeThatFits:(CGSize)size {
-	size.height = 36.0f;
+	size.height = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 54.0f : 36.0f;
 	size.width = fmaxf(size.width, 320.0f);
 	return size;
 }
@@ -66,7 +66,7 @@
 	CGFloat height = self.bounds.size.height;
 	for (NSUInteger i = 0; i < count; i++) {
 		UIButton *button = _buttons[i];
-		button.frame = CGRectMake((CGFloat)i * width, 0.0f, width, height);
+		button.frame = CGRectMake((CGFloat)i * width, 1.0f, width, height - 1.0f);
 	}
 }
 

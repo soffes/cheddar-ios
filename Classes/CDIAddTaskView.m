@@ -118,7 +118,7 @@
 		_textField.returnKeyType = UIReturnKeyGo;
 		_textField.font = [UIFont cheddarFontOfSize:18.0f];
 
-		CDIKeyboardBar *keyboardBar = [[CDIKeyboardBar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 36.0f)];
+		CDIKeyboardBar *keyboardBar = [[CDIKeyboardBar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, size.width, UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 54.0f : 36.0f)];
 		keyboardBar.textField = _textField;
 		_textField.inputAccessoryView = keyboardBar;
 		[self addSubview:_textField];
