@@ -14,4 +14,7 @@ extern NSString *const kCDITextSizeMediumKey;
 extern NSString *const kCDITextSizeSmallKey;
 
 @interface CDISettingsTextSizePickerViewController : CDIPickerViewController
+
++ (CGFloat)fontSizeAdjustment;
+
 @end

@@ -8,6 +8,7 @@
 
 #import "UIFont+CheddariOSAdditions.h"
 #import "CDISettingsFontPickerViewController.h"
+#import "CDISettingsTextSizePickerViewController.h"
 
 NSString *const kCDIFontRegularKey = @"Regular";
 NSString *const kCDIFontItalicKey = @"Italic";
@@ -92,21 +93,25 @@ NSString *const kCDIFontBoldItalicKey = @"BoldItalic";
 #pragma mark - Standard
 
 + (UIFont *)cheddarFontOfSize:(CGFloat)fontSize {
+	fontSize += [CDISettingsTextSizePickerViewController fontSizeAdjustment];
 	return [self cheddarFontOfSize:fontSize fontKey:[CDISettingsFontPickerViewController selectedKey]];
 }
 
 
 + (UIFont *)italicCheddarFontOfSize:(CGFloat)fontSize {
+	fontSize += [CDISettingsTextSizePickerViewController fontSizeAdjustment];
 	return [self italicCheddarFontOfSize:fontSize fontKey:[CDISettingsFontPickerViewController selectedKey]];
 }
 
 
 + (UIFont *)boldCheddarFontOfSize:(CGFloat)fontSize {
+	fontSize += [CDISettingsTextSizePickerViewController fontSizeAdjustment];
 	return [self boldCheddarFontOfSize:fontSize fontKey:[CDISettingsFontPickerViewController selectedKey]];
 }
 
 
 + (UIFont *)boldItalicCheddarFontOfSize:(CGFloat)fontSize {
+	fontSize += [CDISettingsTextSizePickerViewController fontSizeAdjustment];
 	return [self boldItalicCheddarFontOfSize:fontSize fontKey:[CDISettingsFontPickerViewController selectedKey]];
 }
 

@@ -20,6 +20,18 @@ NSString *const kCDITextSizeSmallKey = @"small";
 
 #pragma mark - Class Methods
 
+
++ (CGFloat)fontSizeAdjustment {
+	NSString *key = [self selectedKey];
+	if ([key isEqualToString:kCDITextSizeSmallKey]) {
+		return -4.0f;
+	} if ([key isEqualToString:kCDITextSizeLargeKey]) {
+		return 4.0f;
+	}
+	return 0.0f;
+}
+
+
 + (NSString *)defaultsKey {
 	return kCDITextSizeDefaultsKey;
 }
