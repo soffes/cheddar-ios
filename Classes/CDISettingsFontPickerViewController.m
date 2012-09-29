@@ -7,6 +7,7 @@
 //
 
 #import "CDISettingsFontPickerViewController.h"
+#import "CDISettingsViewController.h"
 #import "UIFont+CheddariOSAdditions.h"
 #import <SSToolkit/NSString+SSToolkitAdditions.h>
 
@@ -15,7 +16,6 @@ NSString *const kCDIFontGothamKey = @"Gotham";
 NSString *const kCDIFontHelveticaNeueKey = @"HelveticaNeue";
 NSString *const kCDIFontHoeflerKey = @"Hoefler";
 NSString *const kCDIFontAvenirKey = @"Avenir";
-NSString *const kCDIFontDidChangeNotificationName = @"CDIFontDidChangeNotification";
 
 @implementation CDISettingsFontPickerViewController
 

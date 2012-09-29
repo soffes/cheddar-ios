@@ -23,6 +23,8 @@
 #import "CDISettingsTapPickerViewController.h"
 #import "CDIWebViewController.h"
 
+NSString *const kCDIFontDidChangeNotificationName = @"CDIFontDidChangeNotification";
+
 @interface CDISettingsViewController () <MFMailComposeViewControllerDelegate>
 @end
 
@@ -262,7 +264,7 @@
 	if (indexPath.section == 0) {
 		if (indexPath.row == 0) {
 			cell.textLabel.text = @"Text Size";
-			cell.detailTextLabel.text = @"Large";
+			cell.detailTextLabel.text = [CDISettingsTextSizePickerViewController textForSelectedKey];
 		} else if (indexPath.row == 1) {
 			cell.textLabel.text = @"Font";
 			cell.detailTextLabel.text = [CDISettingsFontPickerViewController textForSelectedKey];

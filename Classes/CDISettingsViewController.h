@@ -8,6 +8,8 @@
 
 #import "CDIGroupedTableViewController.h"
 
+extern NSString *const kCDIFontDidChangeNotificationName;
+
 @interface CDISettingsViewController : CDIGroupedTableViewController
 
 - (void)close:(id)sender;

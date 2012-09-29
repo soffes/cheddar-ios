@@ -13,7 +13,6 @@ extern NSString *const kCDIFontGothamKey;
 extern NSString *const kCDIFontHelveticaNeueKey;
 extern NSString *const kCDIFontHoeflerKey;
 extern NSString *const kCDIFontAvenirKey;
-extern NSString *const kCDIFontDidChangeNotificationName;
 
 @interface CDISettingsFontPickerViewController : CDIPickerViewController
 

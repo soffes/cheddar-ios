@@ -13,6 +13,7 @@
 #import "CDIDefines.h"
 #import "CDISettingsTapPickerViewController.h"
 #import "CDISettingsFontPickerViewController.h"
+#import "CDISettingsTextSizePickerViewController.h"
 #import "UIFont+CheddariOSAdditions.h"
 #import "LocalyticsUtilities.h"
 #import <Crashlytics/Crashlytics.h>
@@ -49,10 +50,11 @@
 #endif
 
 	// Default defaults
-	NSDictionary *defaults = [[NSDictionary alloc] initWithObjectsAndKeys:
-							  kCDITapActionCompleteKey, kCDITapActionDefaultsKey,
-							  kCDIFontGothamKey, kCDIFontDefaultsKey,
-							  nil];
+	NSDictionary *defaults = @{
+		kCDITapActionDefaultsKey: kCDITapActionCompleteKey,
+		kCDIFontDefaultsKey: kCDIFontGothamKey,
+		kCDITextSizeDefaultsKey: kCDITextSizeMediumKey
+	};
 	[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 
 	// Initialize the window

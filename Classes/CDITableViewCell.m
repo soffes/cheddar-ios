@@ -7,7 +7,7 @@
 //
 
 #import "CDITableViewCell.h"
-#import "CDISettingsFontPickerViewController.h"
+#import "CDISettingsViewController.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIFont+CheddariOSAdditions.h"
 

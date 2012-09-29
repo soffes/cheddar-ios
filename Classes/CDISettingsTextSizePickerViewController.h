@@ -8,5 +8,10 @@
 
 #import "CDIPickerViewController.h"
 
+extern NSString *const kCDITextSizeDefaultsKey;
+extern NSString *const kCDITextSizeLargeKey;
+extern NSString *const kCDITextSizeMediumKey;
+extern NSString *const kCDITextSizeSmallKey;
+
 @interface CDISettingsTextSizePickerViewController : CDIPickerViewController
 @end
