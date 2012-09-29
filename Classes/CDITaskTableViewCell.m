@@ -12,6 +12,7 @@
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIFont+CheddariOSAdditions.h"
 #import "CDKTask+CheddariOSAdditions.h"
+#import "CDISettingsTextSizePickerViewController.h"
 
 @interface CDITaskTableViewCell ()
 - (void)_updateAttributedText;
@@ -60,7 +61,9 @@
 	label.text = task.attributedDisplayText;
 	CGSize size = [label sizeThatFits:CGSizeMake(width - 54.0f, 2000.0f)];
 	label.text = nil;
-	return fmaxf(size.height + 27.0f, [self cellHeight]);
+
+	CGFloat offset = ([CDISettingsTextSizePickerViewController fontSizeAdjustment] * 2.0f) - 1.0f;
+	return size.height + 27.0f + offset;
 }
 
 
@@ -96,15 +99,17 @@
 	[super layoutSubviews];
 	
 	CGSize size = self.contentView.bounds.size;
-	
+	CGFloat offset = ([CDISettingsTextSizePickerViewController fontSizeAdjustment] * 2.0f) - 1.0f;
+	CGFloat textYOffset = roundf(offset / 2.0f);
+
 	if (self.editing) { // TODO: Only match reordering and not swipe to delete
-		_checkboxButton.frame = CGRectMake(-34.0f, 13.0f, 24.0f, 24.0f);
-		_checkmark.frame = CGRectMake(-30.0f, 16.0f, 22.0f, 18.0f);
-		_attributedLabel.frame = CGRectMake(12.0f, 13.0f, size.width - 20.0f, size.height - 27.0f);
+		_checkboxButton.frame = CGRectMake(-34.0f, 13.0f + offset, 24.0f, 24.0f);
+		_checkmark.frame = CGRectMake(-30.0f, 16.0f + offset, 22.0f, 18.0f);
+		_attributedLabel.frame = CGRectMake(12.0f, 13.0f + textYOffset, size.width - 20.0f, size.height - 27.0f - offset);
 	} else {
-		_checkboxButton.frame = CGRectMake(10.0f, 13.0f, 24.0f, 24.0f);
-		_checkmark.frame = CGRectMake(12.0f, 16.0f, 22.0f, 18.0f);
-		_attributedLabel.frame = CGRectMake(44.0f, 13.0f, size.width - 54.0f, size.height - 27.0f);
+		_checkboxButton.frame = CGRectMake(10.0f, 13.0f + offset, 24.0f, 24.0f);
+		_checkmark.frame = CGRectMake(12.0f, 16.0f + offset, 22.0f, 18.0f);
+		_attributedLabel.frame = CGRectMake(44.0f, 13.0f + textYOffset, size.width - 54.0f, size.height - 27.0f - offset);
 	}
 }
 
