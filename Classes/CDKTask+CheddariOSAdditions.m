@@ -7,6 +7,7 @@
 //
 
 #import "CDKTask+CheddariOSAdditions.h"
+#import "CDISettingsTextSizePickerViewController.h"
 #import "UIFont+CheddariOSAdditions.h"
 #import "TTTAttributedLabel.h"
 
@@ -21,7 +22,8 @@
 	
 	NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self.displayText];
 	NSString *fontName = [UIFont cheddarFontNameForStyle:kCDIFontRegularKey];
-	CTFontRef regularFont = CTFontCreateWithName((__bridge CFStringRef)fontName, 20.0f, NULL);
+	CGFloat fontSize = 18.0f + [CDISettingsTextSizePickerViewController fontSizeAdjustment];
+	CTFontRef regularFont = CTFontCreateWithName((__bridge CFStringRef)fontName, fontSize, NULL);
 	if (regularFont) {
 		[attributedString addAttribute:(__bridge NSString *)kCTFontAttributeName value:(__bridge id)regularFont range:NSMakeRange(0, self.displayText.length)];
 	}

@@ -56,7 +56,7 @@
 		label = [[TTTAttributedLabel alloc] initWithFrame:CGRectZero];
 		label.numberOfLines = 0;
 	});
-	label.font = [UIFont cheddarFontOfSize:20.0f];
+	label.font = [UIFont cheddarFontOfSize:18.0f];
 	label.text = task.attributedDisplayText;
 	CGSize size = [label sizeThatFits:CGSizeMake(width - 54.0f, 2000.0f)];
 	label.text = nil;
@@ -137,7 +137,7 @@
 
 - (void)updateFonts {
 	[super updateFonts];
-	_attributedLabel.font = [UIFont cheddarFontOfSize:20.0f];
+	_attributedLabel.font = [UIFont cheddarFontOfSize:18.0f];
 	[self _updateAttributedText];
 }
 

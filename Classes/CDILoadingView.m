@@ -14,7 +14,7 @@
 
 - (id)initWithFrame:(CGRect)frame {
 	if ((self = [super initWithFrame:frame])) {
-		self.textLabel.font = [UIFont cheddarFontOfSize:16.0f];
+		self.textLabel.font = [UIFont cheddarInterfaceFontOfSize:16.0f];
 		self.backgroundColor = [UIColor clearColor];
 	}
 	return self;

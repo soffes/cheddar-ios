@@ -135,7 +135,7 @@
 
 - (void)updateFonts {
 	_textField.font = self.textLabel.font;
-	self.textLabel.font = [UIFont cheddarFontOfSize:20.0f];
+	self.textLabel.font = [UIFont cheddarFontOfSize:18.0f];
 }
 
 

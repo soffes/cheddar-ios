@@ -24,7 +24,7 @@ NSString *const kCDITextSizeSmallKey = @"small";
 + (CGFloat)fontSizeAdjustment {
 	NSString *key = [self selectedKey];
 	if ([key isEqualToString:kCDITextSizeSmallKey]) {
-		return -4.0f;
+		return -3.0f;
 	} if ([key isEqualToString:kCDITextSizeLargeKey]) {
 		return 4.0f;
 	}
@@ -68,8 +68,7 @@ NSString *const kCDITextSizeSmallKey = @"small";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
 
-	NSString *key = [[self keys] objectAtIndex:indexPath.row];
-	cell.textLabel.font = [UIFont cheddarFontOfSize:18.0f fontKey:key];
+	cell.textLabel.font = [UIFont cheddarInterfaceFontOfSize:18.0f];
 	cell.textLabel.textColor = [UIColor cheddarTextColor];
 
 	return cell;

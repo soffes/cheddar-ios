@@ -28,7 +28,7 @@
 		_textField = [[SSTextField alloc] initWithFrame:CGRectZero];
 		_textField.textColor = [UIColor cheddarTextColor];
 		_textField.placeholderTextColor = [UIColor cheddarLightTextColor];
-		_textField.font = [UIFont cheddarFontOfSize:20.0f];
+		_textField.font = [UIFont cheddarFontOfSize:18.0f];
 		_textField.backgroundColor = [UIColor whiteColor];
 		_textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
 		_textField.returnKeyType = UIReturnKeyDone;

@@ -89,7 +89,7 @@
 		checkbox.frame = frame;
 		
 		label.frame = CGRectMake(44.0f, 13.0f, size.width - 54.0f, 24.0f);
-		label.font = [UIFont cheddarFontOfSize:20.0f];
+		label.font = [UIFont cheddarFontOfSize:18.0f];
 		
 		frame = container.frame;
 		frame.origin.y += 20.0f;

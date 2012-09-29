@@ -22,7 +22,7 @@
 	[[image stretchableImageWithLeftCapWidth:5 topCapHeight:0] drawInRect:rect];
 
 	NSString *text = [self valueForKey:@"title"];
-	UIFont *font = [UIFont cheddarFontOfSize:15.0f];
+	UIFont *font = [UIFont cheddarInterfaceFontOfSize:15.0f];
 	UILineBreakMode lineBreakMode = UILineBreakModeClip;
 	UITextAlignment alignment = UITextAlignmentCenter;
 

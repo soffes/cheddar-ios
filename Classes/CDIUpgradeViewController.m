@@ -44,7 +44,7 @@
 	TTTAttributedLabel *label = [[TTTAttributedLabel alloc] initWithFrame:CGRectMake(20.0f, 10.0f, width - 40.0f, 300.0f)];
 	label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 	label.backgroundColor = [UIColor clearColor];
-	label.font = [UIFont cheddarFontOfSize:18.0f];
+	label.font = [UIFont cheddarInterfaceFontOfSize:18.0f];
 	label.numberOfLines = 0;
 	label.textColor = [UIColor cheddarTextColor];
 	label.verticalAlignment = TTTAttributedLabelVerticalAlignmentTop;
