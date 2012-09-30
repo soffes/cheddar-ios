@@ -811,8 +811,8 @@
 		B208C1FD15BF65490080705D /* CheddarKit */ = {
 			isa = PBXGroup;
 			children = (
-				B28FD2DF15BF755600365CD6 /* Other Sources */,
 				B208C21215BF65490080705D /* CheddarKit.xcodeproj */,
+				B28FD2DF15BF755600365CD6 /* Other Sources */,
 			);
 			path = CheddarKit;
 			sourceTree = "<group>";
