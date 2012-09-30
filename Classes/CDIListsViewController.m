@@ -21,7 +21,7 @@
 #import <SSToolkit/UIScrollView+SSToolkitAdditions.h>
 
 #ifdef CHEDDAR_USE_PASSWORD_FLOW
-	#import "CDISessionsViewController.h"
+	#import "CDISignInViewController.h"
 #else
 	#import "CDIWebSignInViewController.h"
 #endif
@@ -363,13 +363,15 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 		viewController.focusKeyboard = newList;
 		[self.navigationController pushViewController:viewController animated:YES];
 	}
+
+	_checkForOneList = NO;
 }
 
 
 - (void)_checkUser {
 	if (![CDKUser currentUser]) {
 #ifdef CHEDDAR_USE_PASSWORD_FLOW
-		UIViewController *viewController = [[CDISessionsViewController alloc] init];
+		UIViewController *viewController = [[CDISignInViewController alloc] init];
 #else
 		UIViewController *viewController = [[CDIWebSignInViewController alloc] init];
 #endif
@@ -553,10 +555,12 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 				
 				NSIndexPath *selectedIndexPath = [self viewIndexPathForFetchedIndexPath:fIndexPath];
 				[self _selectListAtIndexPath:selectedIndexPath newList:NO];
+				return;
 			}
 
 			if (self.fetchedResultsController.fetchedObjects.count == 1) {
 				[self _selectListAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] newList:NO];
+				return;
 			}
 		}
 		_checkForOneList = NO;

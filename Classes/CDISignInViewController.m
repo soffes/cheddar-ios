@@ -1,22 +1,24 @@
 //
-//  CDISessionsViewController.m
+//  CDISignInViewController.m
 //  Cheddar for iOS
 //
 //  Created by Sam Soffes on 4/23/12.
 //  Copyright (c) 2012 Nothing Magical. All rights reserved.
 //
 
-#import "CDISessionsViewController.h"
+#import "CDISignInViewController.h"
 #import "CDIHUDView.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIFont+CheddariOSAdditions.h"
 
-@interface CDISessionsViewController ()
+@interface CDISignInViewController ()
 - (void)_toggleMode:(id)sender;
+- (void)_toggleModeAnimated:(BOOL)animated;
 - (void)_configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+- (void)_validateButton;
 @end
 
-@implementation CDISessionsViewController {
+@implementation CDISignInViewController {
 	UIButton *_footerButton;
 	BOOL _signUpMode;
 }
@@ -87,8 +89,6 @@
 		UIImageView *title = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav-title"]];
 		title.frame = CGRectMake(0.0f, 0.0f, 116.0f, 21.0f);	
 		self.navigationItem.titleView = title;
-
-		_signUpMode = YES;
 	}
 	return self;
 }
@@ -104,21 +104,24 @@
 	self.tableView.backgroundView = background;
 
 	_footerButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 34.0f)];
-	[_footerButton setTitle:@"Already have an account? Sign In →" forState:UIControlStateNormal];
 	[_footerButton setTitleColor:[UIColor cheddarBlueColor] forState:UIControlStateNormal];
 	[_footerButton setTitleColor:[UIColor cheddarTextColor] forState:UIControlStateHighlighted];
 	[_footerButton addTarget:self action:@selector(_toggleMode:) forControlEvents:UIControlEventTouchUpInside];
 	_footerButton.titleLabel.font = [UIFont cheddarInterfaceFontOfSize:16.0f];
 	self.tableView.tableFooterView = _footerButton;
 
-	self.usernameTextField.placeholder = @"Choose a username";
-	self.passwordTextField.placeholder = @"Choose a password";
+	_signUpMode = NO;
+	[self _toggleModeAnimated:NO];
 }
 
 
-- (void)viewWillAppear:(BOOL)animated {
-	[super viewWillAppear:animated];
-	[self.usernameTextField becomeFirstResponder];
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+
+	// TODO: Terrible hack
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[self.usernameTextField becomeFirstResponder];
+	});
 }
 
 
@@ -134,6 +137,10 @@
 #pragma mark - Actions
 
 - (void)signIn:(id)sender {
+	if (!self.navigationItem.rightBarButtonItem.enabled) {
+		return;
+	}
+
 	CDIHUDView *hud = [[CDIHUDView alloc] initWithTitle:@"Signing in..." loading:YES];
 	[hud show];
 
@@ -151,6 +158,10 @@
 
 
 - (void)signUp:(id)sender {
+	if (!self.navigationItem.rightBarButtonItem.enabled) {
+		return;
+	}
+	
 	CDIHUDView *hud = [[CDIHUDView alloc] initWithTitle:@"Signing up..." loading:YES];
 	[hud show];
 
@@ -175,16 +186,22 @@
 #pragma mark - Private
 
 - (void)_toggleMode:(id)sender {
+	[self _toggleModeAnimated:YES];
+}
+
+
+- (void)_toggleModeAnimated:(BOOL)animated {
 	NSArray *email = @[[NSIndexPath indexPathForRow:1 inSection:0]];
 
 	BOOL focusPassword = [self.emailTextField isFirstResponder];
+	UITableViewRowAnimation animation = animated ? UITableViewRowAnimationTop : UITableViewScrollPositionNone;
 
 	// Switch to sign in
 	if (_signUpMode) {
 		_signUpMode = NO;
 
 		[self.tableView beginUpdates];
-		[self.tableView deleteRowsAtIndexPaths:email withRowAnimation:UITableViewRowAnimationTop];
+		[self.tableView deleteRowsAtIndexPaths:email withRowAnimation:animation];
 		[self.tableView endUpdates];
 
 		[_footerButton setTitle:@"Don't have an account? Sign Up →" forState:UIControlStateNormal];
@@ -195,6 +212,8 @@
 		if (focusPassword) {
 			[self.passwordTextField becomeFirstResponder];
 		}
+
+		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sign In" style:UIBarButtonItemStyleBordered target:self action:@selector(signIn:)];
 	}
 
 	// Switch to sign up
@@ -202,14 +221,18 @@
 		_signUpMode = YES;
 
 		[self.tableView beginUpdates];
-		[self.tableView insertRowsAtIndexPaths:email withRowAnimation:UITableViewRowAnimationTop];
+		[self.tableView insertRowsAtIndexPaths:email withRowAnimation:animation];
 		[self.tableView endUpdates];
 
 		[_footerButton setTitle:@"Already have an account? Sign In →" forState:UIControlStateNormal];
 
 		self.usernameTextField.placeholder = @"Choose a username";
 		self.passwordTextField.placeholder = @"Choose a password";
+
+		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sign Up" style:UIBarButtonItemStyleBordered target:self action:@selector(signUp:)];
 	}
+
+	[self _validateButton];
 }
 
 
@@ -230,6 +253,17 @@
 
 	cell.textLabel.text = @"Password";
 	cell.accessoryView = self.passwordTextField;
+}
+
+
+- (void)_validateButton {
+	BOOL valid = self.usernameTextField.text.length >= 1 && self.passwordTextField.text.length >= 6;
+
+	if (_signUpMode && valid) {
+		valid = self.emailTextField.text.length >= 5;
+	}
+
+	self.navigationItem.rightBarButtonItem.enabled = valid;
 }
 
 
@@ -258,6 +292,15 @@
 
 
 #pragma mark - UITextFieldDelegate
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+	// TODO: Terrible hack #shipit
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[self _validateButton];
+	});
+	return YES;
+}
+
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 	if (textField == self.usernameTextField) {

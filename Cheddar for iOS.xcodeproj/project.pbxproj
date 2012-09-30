@@ -22,7 +22,7 @@
 		B208BC3615BF63A80080705D /* CDIPullToRefreshContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBAD15BF63A80080705D /* CDIPullToRefreshContentView.m */; };
 		B208BC3715BF63A80080705D /* CDIPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBAF15BF63A80080705D /* CDIPullToRefreshView.m */; };
 		B208BC3815BF63A80080705D /* CDIRenameTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBB115BF63A80080705D /* CDIRenameTaskViewController.m */; };
-		B208BC3915BF63A80080705D /* CDISessionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBB315BF63A80080705D /* CDISessionsViewController.m */; };
+		B208BC3915BF63A80080705D /* CDISignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBB315BF63A80080705D /* CDISignInViewController.m */; };
 		B208BC3A15BF63A80080705D /* CDISettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBB515BF63A80080705D /* CDISettingsViewController.m */; };
 		B208BC3D15BF63A80080705D /* CDISplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBBB15BF63A80080705D /* CDISplitViewController.m */; };
 		B208BC3E15BF63A80080705D /* CDITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBBD15BF63A80080705D /* CDITableViewCell.m */; };
@@ -297,8 +297,8 @@
 		B208BBAF15BF63A80080705D /* CDIPullToRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIPullToRefreshView.m; sourceTree = "<group>"; };
 		B208BBB015BF63A80080705D /* CDIRenameTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIRenameTaskViewController.h; sourceTree = "<group>"; };
 		B208BBB115BF63A80080705D /* CDIRenameTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIRenameTaskViewController.m; sourceTree = "<group>"; };
-		B208BBB215BF63A80080705D /* CDISessionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDISessionsViewController.h; sourceTree = "<group>"; };
-		B208BBB315BF63A80080705D /* CDISessionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDISessionsViewController.m; sourceTree = "<group>"; };
+		B208BBB215BF63A80080705D /* CDISignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDISignInViewController.h; sourceTree = "<group>"; };
+		B208BBB315BF63A80080705D /* CDISignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDISignInViewController.m; sourceTree = "<group>"; };
 		B208BBB415BF63A80080705D /* CDISettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDISettingsViewController.h; sourceTree = "<group>"; };
 		B208BBB515BF63A80080705D /* CDISettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDISettingsViewController.m; sourceTree = "<group>"; };
 		B208BBBA15BF63A80080705D /* CDISplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDISplitViewController.h; sourceTree = "<group>"; };
@@ -902,15 +902,15 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
-		B23261A515C2070600D455EF /* Sessions */ = {
+		B23261A515C2070600D455EF /* Sign in */ = {
 			isa = PBXGroup;
 			children = (
-				B208BBB215BF63A80080705D /* CDISessionsViewController.h */,
-				B208BBB315BF63A80080705D /* CDISessionsViewController.m */,
+				B208BBB215BF63A80080705D /* CDISignInViewController.h */,
+				B208BBB315BF63A80080705D /* CDISignInViewController.m */,
 				B23261A815C207FF00D455EF /* CDIWebSignInViewController.h */,
 				B23261A915C207FF00D455EF /* CDIWebSignInViewController.m */,
 			);
-			name = Sessions;
+			name = "Sign in";
 			sourceTree = "<group>";
 		};
 		B23261A615C2070D00D455EF /* Abstract */ = {
@@ -1034,7 +1034,7 @@
 				B23261A215C206EC00D455EF /* Lists */,
 				B23261A315C206F200D455EF /* Tasks */,
 				B23261A615C2070D00D455EF /* Abstract */,
-				B23261A515C2070600D455EF /* Sessions */,
+				B23261A515C2070600D455EF /* Sign in */,
 				B23261A415C206FF00D455EF /* Settings */,
 				B23261A715C2071300D455EF /* iPad */,
 			);
@@ -1342,7 +1342,7 @@
 				B208BC3615BF63A80080705D /* CDIPullToRefreshContentView.m in Sources */,
 				B208BC3715BF63A80080705D /* CDIPullToRefreshView.m in Sources */,
 				B208BC3815BF63A80080705D /* CDIRenameTaskViewController.m in Sources */,
-				B208BC3915BF63A80080705D /* CDISessionsViewController.m in Sources */,
+				B208BC3915BF63A80080705D /* CDISignInViewController.m in Sources */,
 				B208BC3A15BF63A80080705D /* CDISettingsViewController.m in Sources */,
 				B208BC3D15BF63A80080705D /* CDISplitViewController.m in Sources */,
 				B208BC3E15BF63A80080705D /* CDITableViewCell.m in Sources */,

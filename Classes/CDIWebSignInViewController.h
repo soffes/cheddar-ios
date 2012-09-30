@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Nothing Magical. All rights reserved.
 //
 
-#import "CDISessionsViewController.h"
+#import "CDISignInViewController.h"
 
 @interface CDIWebSignInViewController : UIViewController <SSWebViewDelegate>
 
