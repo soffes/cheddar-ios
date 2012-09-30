@@ -8,7 +8,7 @@
 
 @interface CDIKeyboardBar : SSGradientView <UIInputViewAudioFeedback>
 
-@property (nonatomic, weak) UITextField *textField;
+@property (nonatomic, weak) id textField;
 
 + (NSArray *)characters;
 

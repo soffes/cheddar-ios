@@ -22,7 +22,7 @@
 #pragma mark - Class Methods
 
 + (NSArray *)characters {
-	return @[@"#", @"*", @"_", @"[", @"]", @"(", @")"];
+	return @[@"#", @"*", @"_", @"[", @"]", @"(", @")", @"`"];
 }
 
 
