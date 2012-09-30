@@ -8,11 +8,13 @@
 
 ★ Full landscape support on iPhone
 
-★ URL scheme for use with other apps like LaunchCenter Pro
-
-★ TextExpander support
+★ Extra keyboard keys to make typing tags and markdown easier
 
 ★ In-app browser for links
+
+✔ URL scheme for use with other apps like LaunchCenter Pro
+
+✔ TextExpander support
 
 ✔ Preference for font and text size
 
