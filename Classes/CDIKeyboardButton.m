@@ -27,16 +27,44 @@
 }
 
 
+- (void)setHighlighted:(BOOL)highlighted {
+	[super setHighlighted:highlighted];
+	[self setNeedsDisplay];
+}
+
+
 - (void)drawRect:(CGRect)rect {
 	[super drawRect:rect];
 
 	CGContextRef context = UIGraphicsGetCurrentContext();
+	NSArray *colors = nil;
+	CGGradientRef gradient = NULL;
 
-	[[UIColor colorWithRed:0.910f green:0.910f blue:0.922f alpha:1.0f] setFill];
-	CGContextFillRect(context, CGRectMake(0.0f, 0.0f, 1.0f, self.bounds.size.height));
+	if (self.highlighted) {
+		colors = @[[UIColor colorWithRed:0.788f green:0.792f blue:0.816f alpha:1.0f],
+				   [UIColor colorWithRed:0.690f green:0.694f blue:0.722f alpha:1.0f]];
+		gradient = SSCreateGradientWithColors(colors);
+		SSDrawGradientInRect(context, gradient, self.bounds);
+		CGGradientRelease(gradient);
 
-	[[UIColor colorWithRed:0.643f green:0.643f blue:0.651f alpha:1.0f] setFill];
-	CGContextFillRect(context, CGRectMake(self.bounds.size.width - 1.0f, 0.0f, 1.0f, self.bounds.size.height));
+		colors = @[[UIColor colorWithRed:0.894f green:0.894f blue:0.910f alpha:1.0f],
+				   [UIColor colorWithRed:0.843f green:0.847f blue:0.859f alpha:1.0f]];
+		gradient = SSCreateGradientWithColors(colors);
+		SSDrawGradientInRect(context, gradient, CGRectMake(0.0f, 0.0f, 1.0f, self.bounds.size.height));
+		CGGradientRelease(gradient);
+	} else {
+		colors = @[[UIColor colorWithRed:0.965f green:0.965f blue:0.973f alpha:1.0f],
+				   [UIColor colorWithRed:0.910f green:0.910f blue:0.922f alpha:1.0f]];
+		gradient = SSCreateGradientWithColors(colors);
+		SSDrawGradientInRect(context, gradient, CGRectMake(0.0f, 0.0f, 1.0f, self.bounds.size.height));
+		CGGradientRelease(gradient);
+	}
+
+	colors = @[[UIColor colorWithRed:0.651f green:0.651f blue:0.655f alpha:1.0f],
+						[UIColor colorWithRed:0.573f green:0.573f blue:0.588f alpha:1.0f]];
+	gradient = SSCreateGradientWithColors(colors);
+	SSDrawGradientInRect(context, gradient, CGRectMake(self.bounds.size.width - 1.0f, 0.0f, 1.0f, self.bounds.size.height));
+	CGGradientRelease(gradient);
 }
 
 @end

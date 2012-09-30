@@ -36,7 +36,7 @@
 		self.topInsetColor = [UIColor colorWithRed:0.965f green:0.965f blue:0.969f alpha:1.0f];
 		self.colors = @[
 			[UIColor colorWithRed:0.933f green:0.933f blue:0.941f alpha:1.0f],
-			[UIColor colorWithRed:0.824f green:0.820f blue:0.847f alpha:1.0f]
+			[UIColor colorWithRed:0.824f green:0.824f blue:0.847f alpha:1.0f]
 		];
 
 		// Setup buttons
@@ -66,7 +66,14 @@
 	CGFloat height = self.bounds.size.height;
 	for (NSUInteger i = 0; i < count; i++) {
 		UIButton *button = _buttons[i];
-		button.frame = CGRectMake((CGFloat)i * width, 1.0f, width, height - 1.0f);
+		CGFloat x = (CGFloat)i * width;
+
+		// Make sure the last one goes to the end
+		if (i == count - 1) {
+			width = self.bounds.size.width - x;
+		}
+		
+		button.frame = CGRectMake(x, 1.0f, width, height - 1.0f);
 	}
 }
 
