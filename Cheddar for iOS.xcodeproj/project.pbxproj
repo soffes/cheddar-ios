@@ -21,7 +21,7 @@
 		B208BC3515BF63A80080705D /* CDITasksPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBAB15BF63A80080705D /* CDITasksPlaceholderView.m */; };
 		B208BC3615BF63A80080705D /* CDIPullToRefreshContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBAD15BF63A80080705D /* CDIPullToRefreshContentView.m */; };
 		B208BC3715BF63A80080705D /* CDIPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBAF15BF63A80080705D /* CDIPullToRefreshView.m */; };
-		B208BC3815BF63A80080705D /* CDIRenameTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBB115BF63A80080705D /* CDIRenameTaskViewController.m */; };
+		B208BC3815BF63A80080705D /* CDIEditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBB115BF63A80080705D /* CDIEditTaskViewController.m */; };
 		B208BC3915BF63A80080705D /* CDISignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBB315BF63A80080705D /* CDISignInViewController.m */; };
 		B208BC3A15BF63A80080705D /* CDISettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBB515BF63A80080705D /* CDISettingsViewController.m */; };
 		B208BC3D15BF63A80080705D /* CDISplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BBBB15BF63A80080705D /* CDISplitViewController.m */; };
@@ -137,6 +137,9 @@
 		B26AE9C015C5D52D0008AB1F /* CDIPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26AE9BF15C5D52D0008AB1F /* CDIPickerViewController.m */; };
 		B2711F0F15F58398000D6C09 /* CDIHUDView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2711F0E15F58398000D6C09 /* CDIHUDView.m */; };
 		B2711F1215F58DFC000D6C09 /* CDICheckboxButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B2711F1115F58DFB000D6C09 /* CDICheckboxButton.m */; };
+		B2746E621618EAC8007A750B /* CDIMoveTaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2746E611618EAC8007A750B /* CDIMoveTaskView.m */; };
+		B2746E7B1618EE4A007A750B /* move_task.png in Resources */ = {isa = PBXBuildFile; fileRef = B2746E791618EE4A007A750B /* move_task.png */; };
+		B2746E7C1618EE4A007A750B /* move_task@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2746E7A1618EE4A007A750B /* move_task@2x.png */; };
 		B28F84DB15C37E1D003E4595 /* SSToolkitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B208C1E315BF63E30080705D /* SSToolkitResources.bundle */; };
 		B28FD2BE15BF730100365CD6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FD2BD15BF730100365CD6 /* CFNetwork.framework */; };
 		B28FD2C015BF731100365CD6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FD2BF15BF731000365CD6 /* CoreGraphics.framework */; };
@@ -295,8 +298,8 @@
 		B208BBAD15BF63A80080705D /* CDIPullToRefreshContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIPullToRefreshContentView.m; sourceTree = "<group>"; };
 		B208BBAE15BF63A80080705D /* CDIPullToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIPullToRefreshView.h; sourceTree = "<group>"; };
 		B208BBAF15BF63A80080705D /* CDIPullToRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIPullToRefreshView.m; sourceTree = "<group>"; };
-		B208BBB015BF63A80080705D /* CDIRenameTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIRenameTaskViewController.h; sourceTree = "<group>"; };
-		B208BBB115BF63A80080705D /* CDIRenameTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIRenameTaskViewController.m; sourceTree = "<group>"; };
+		B208BBB015BF63A80080705D /* CDIEditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIEditTaskViewController.h; sourceTree = "<group>"; };
+		B208BBB115BF63A80080705D /* CDIEditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIEditTaskViewController.m; sourceTree = "<group>"; };
 		B208BBB215BF63A80080705D /* CDISignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDISignInViewController.h; sourceTree = "<group>"; };
 		B208BBB315BF63A80080705D /* CDISignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDISignInViewController.m; sourceTree = "<group>"; };
 		B208BBB415BF63A80080705D /* CDISettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDISettingsViewController.h; sourceTree = "<group>"; };
@@ -446,6 +449,10 @@
 		B2711F0E15F58398000D6C09 /* CDIHUDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIHUDView.m; sourceTree = "<group>"; };
 		B2711F1015F58DFB000D6C09 /* CDICheckboxButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDICheckboxButton.h; sourceTree = "<group>"; };
 		B2711F1115F58DFB000D6C09 /* CDICheckboxButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDICheckboxButton.m; sourceTree = "<group>"; };
+		B2746E601618EAC8007A750B /* CDIMoveTaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIMoveTaskView.h; sourceTree = "<group>"; };
+		B2746E611618EAC8007A750B /* CDIMoveTaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIMoveTaskView.m; sourceTree = "<group>"; };
+		B2746E791618EE4A007A750B /* move_task.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = move_task.png; sourceTree = "<group>"; };
+		B2746E7A1618EE4A007A750B /* move_task@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "move_task@2x.png"; sourceTree = "<group>"; };
 		B28FD2BD15BF730100365CD6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B28FD2BF15BF731000365CD6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B28FD2C115BF731B00365CD6 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -593,6 +600,8 @@
 		B208BBD615BF63A80080705D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B2746E791618EE4A007A750B /* move_task.png */,
+				B2746E7A1618EE4A007A750B /* move_task@2x.png */,
 				B2DD6130160B750D00392C15 /* Default-568h@2x.png */,
 				B296A76B15C7B6BB006137C7 /* cell-checkmark-highlighted.png */,
 				B296A76C15C7B6BB006137C7 /* cell-checkmark-highlighted@2x.png */,
@@ -877,8 +886,8 @@
 			children = (
 				B208BBA215BF63A80080705D /* CDITasksViewController.h */,
 				B208BBA315BF63A80080705D /* CDITasksViewController.m */,
-				B208BBB015BF63A80080705D /* CDIRenameTaskViewController.h */,
-				B208BBB115BF63A80080705D /* CDIRenameTaskViewController.m */,
+				B208BBB015BF63A80080705D /* CDIEditTaskViewController.h */,
+				B208BBB115BF63A80080705D /* CDIEditTaskViewController.m */,
 				B2AD031F15C493C100D9B909 /* CDIWebViewController.h */,
 				B2AD032015C493C100D9B909 /* CDIWebViewController.m */,
 			);
@@ -1024,6 +1033,8 @@
 				B2B25FE0161658AD00ACFD3E /* CDIKeyboardBar.m */,
 				B2B25FE216165B6D00ACFD3E /* CDIKeyboardButton.h */,
 				B2B25FE316165B6D00ACFD3E /* CDIKeyboardButton.m */,
+				B2746E601618EAC8007A750B /* CDIMoveTaskView.h */,
+				B2746E611618EAC8007A750B /* CDIMoveTaskView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1301,6 +1312,8 @@
 				B296A77015C7B7CF006137C7 /* cell-checkmark.png in Resources */,
 				B2DD6131160B750D00392C15 /* Default-568h@2x.png in Resources */,
 				B2B25FDE161651F900ACFD3E /* About.html in Resources */,
+				B2746E7B1618EE4A007A750B /* move_task.png in Resources */,
+				B2746E7C1618EE4A007A750B /* move_task@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1341,7 +1354,7 @@
 				B208BC3515BF63A80080705D /* CDITasksPlaceholderView.m in Sources */,
 				B208BC3615BF63A80080705D /* CDIPullToRefreshContentView.m in Sources */,
 				B208BC3715BF63A80080705D /* CDIPullToRefreshView.m in Sources */,
-				B208BC3815BF63A80080705D /* CDIRenameTaskViewController.m in Sources */,
+				B208BC3815BF63A80080705D /* CDIEditTaskViewController.m in Sources */,
 				B208BC3915BF63A80080705D /* CDISignInViewController.m in Sources */,
 				B208BC3A15BF63A80080705D /* CDISettingsViewController.m in Sources */,
 				B208BC3D15BF63A80080705D /* CDISplitViewController.m in Sources */,
@@ -1381,6 +1394,7 @@
 				B2711F1215F58DFC000D6C09 /* CDICheckboxButton.m in Sources */,
 				B2B25FE1161658AD00ACFD3E /* CDIKeyboardBar.m in Sources */,
 				B2B25FE416165B6D00ACFD3E /* CDIKeyboardButton.m in Sources */,
+				B2746E621618EAC8007A750B /* CDIMoveTaskView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

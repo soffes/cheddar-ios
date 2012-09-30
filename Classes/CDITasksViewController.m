@@ -13,7 +13,7 @@
 #import "CDIAttributedLabel.h"
 #import "CDICreateListViewController.h"
 #import "CDITasksPlaceholderView.h"
-#import "CDIRenameTaskViewController.h"
+#import "CDIEditTaskViewController.h"
 #import "CDIWebViewController.h"
 #import "CDISettingsTapPickerViewController.h"
 #import "CDIHUDView.h"
@@ -341,7 +341,7 @@
 
 
 - (void)_editTask:(CDKTask *)task {
-	CDIRenameTaskViewController *viewController = [[CDIRenameTaskViewController alloc] init];
+	CDIEditTaskViewController *viewController = [[CDIEditTaskViewController alloc] init];
 	viewController.task = task;
 	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
 	navigationController.modalPresentationStyle = UIModalPresentationFormSheet;

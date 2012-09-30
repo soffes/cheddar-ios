@@ -1,23 +1,25 @@
 //
-//  CDIRenameTaskViewController.m
+//  CDIEditTaskViewController.m
 //  Cheddar for iOS
 //
 //  Created by Sam Soffes on 5/30/12.
 //  Copyright (c) 2012 Nothing Magical. All rights reserved.
 //
 
-#import "CDIRenameTaskViewController.h"
+#import "CDIEditTaskViewController.h"
+#import "CDIMoveTaskView.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIFont+CheddariOSAdditions.h"
 
-@interface CDIRenameTaskViewController () <UITextViewDelegate>
+@interface CDIEditTaskViewController () <UITextViewDelegate>
 - (void)_keyboardDidShow:(NSNotification *)notification;
-- (void)_keyboardDidHide:(NSNotification *)notification;
-- (void)_updateTextViewFrame;
+- (void)_layout:(NSTimeInterval)duration;
 @end
 
-@implementation CDIRenameTaskViewController {
+@implementation CDIEditTaskViewController {
 	CGRect _keyboardRect;
+	BOOL _shown;
+	CDIMoveTaskView *_moveTaskView;
 }
 
 @synthesize task = _task;
@@ -42,7 +44,7 @@
 	
 	self.view.backgroundColor = [UIColor whiteColor];
 
-	_textView = [[SSTextView alloc] initWithFrame:self.view.bounds];
+	_textView = [[SSTextView alloc] init];
 	_textView.delegate = self;
 	_textView.autocapitalizationType = UITextAutocapitalizationTypeSentences;
 	_textView.autocorrectionType = UITextAutocorrectionTypeYes;
@@ -54,20 +56,30 @@
 	_textView.text = self.task.text;
 	[self.view addSubview:_textView];
 
+	_moveTaskView = [[CDIMoveTaskView alloc] init];
+	_moveTaskView.editViewController = self;
+	[_moveTaskView.moveButton addTarget:self action:@selector(moveTask:) forControlEvents:UIControlEventTouchUpInside];
+	[self.view addSubview:_moveTaskView];
+
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
 }
 
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
+
+	// Default to avoid flash
+	CGSize size = self.view.frame.size;
+	_keyboardRect = CGRectMake(0.0f, size.height - 216.0f, size.width, 216.0f);
+	[self _layout:0.0];
+	
 	[_textView becomeFirstResponder];
 }
 
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
 	[UIView animateWithDuration:duration delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-		[self _updateTextViewFrame];
+		[self _layout:duration];
 	} completion:nil];
 }
 
@@ -96,34 +108,42 @@
 }
 
 
+- (void)moveTask:(id)sender {
+	if ([_textView isFirstResponder]) {
+		[_textView resignFirstResponder];
+	} else {
+		[_textView becomeFirstResponder];
+	}
+}
+
+
+- (void)moveTaskToList:(CDKList *)newList {
+	[self.task moveToList:newList];
+	[self.navigationController dismissModalViewControllerAnimated:YES];
+}
+
+
 #pragma mark - Private
 
-- (void)_updateTextViewFrame {
+- (void)_layout:(NSTimeInterval)duration {
 	CGSize size = self.view.bounds.size;
-	CGFloat heightAdjust = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0.0f : fminf(_keyboardRect.size.width, _keyboardRect.size.height);
-	_textView.frame = CGRectMake(0.0f, 0.0f, size.width, size.height - heightAdjust);
+	CGFloat heightAdjust = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 0.0f : _keyboardRect.size.height;
+	CGFloat textViewHeight = size.height - heightAdjust - 32.0f;
+
+	[UIView animateWithDuration:duration delay:0.0 options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveEaseInOut animations:^{
+		_textView.frame = CGRectMake(0.0f, 0.0f, size.width, textViewHeight);
+		_moveTaskView.frame = CGRectMake(0.0f, textViewHeight, size.width, size.height - textViewHeight);
+	} completion:nil];
 }
 
 
 - (void)_keyboardDidShow:(NSNotification *)notification {
 	NSDictionary *userInfo = [notification userInfo];
-	_keyboardRect = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+	_keyboardRect = [self.view convertRect:[[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue] fromView:nil];
 	
-	CGFloat duration = [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-	[UIView animateWithDuration:duration delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-		[self _updateTextViewFrame];
-	} completion:nil];
-}
-
-
-- (void)_keyboardDidHide:(NSNotification *)notification {
-	NSDictionary *userInfo = [notification userInfo];
-	_keyboardRect = CGRectZero;
-
-	CGFloat duration = [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-	[UIView animateWithDuration:duration delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-		[self _updateTextViewFrame];
-	} completion:nil];
+	CGFloat duration = _shown ? [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue] : 0.0f;
+	[self _layout:duration];
+	_shown = YES;
 }
 
 

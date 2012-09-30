@@ -10,6 +10,8 @@
 
 ★ Extra keyboard keys to make typing tags and markdown easier
 
+★ Move tasks between lists
+
 ★ In-app browser for links
 
 ✔ URL scheme for use with other apps like LaunchCenter Pro
