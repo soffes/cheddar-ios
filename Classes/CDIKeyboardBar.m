@@ -89,8 +89,7 @@
 
 - (void)_buttonPressed:(CDIKeyboardButton *)button {
 	[[UIDevice currentDevice] playInputClick];
-	// TODO: This is really dumb. It should account for a cursor that isn't at the end
-	self.textField.text = [self.textField.text stringByAppendingString:button.character];
+	[self.textField insertText:button.character];
 }
 
 @end
