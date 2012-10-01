@@ -201,8 +201,7 @@
 - (void)updateTableViewOffsets {
 	CGFloat offset = self.tableView.contentOffset.y;
 	CGFloat top = fminf(0.0f, offset);
-	CGFloat bottom = fmaxf(_keyboardRect.origin.x, _keyboardRect.origin.y);
-
+	CGFloat bottom = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? self.keyboardRect.size.height : 0.0f;
 	self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(top, 0.0f, bottom, 0.0f);
 	self.pullToRefreshView.defaultContentInset = UIEdgeInsetsMake(0.0f, 0.0f, bottom, 0.0f);
 }
@@ -210,7 +209,7 @@
 
 - (void)keyboardDidShow:(NSNotification *)notification {
 	NSDictionary *userInfo = [notification userInfo];
-	_keyboardRect = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+	_keyboardRect = [self.view convertRect:[[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue] fromView:nil];
 	
 	_allowScrolling = YES;
 	CGFloat duration = [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
