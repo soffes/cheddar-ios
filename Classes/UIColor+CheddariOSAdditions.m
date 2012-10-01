@@ -39,4 +39,9 @@
 	return [self colorWithRed:1.000f green:0.996f blue:0.792f alpha:1.0f];
 }
 
+
++ (UIColor *)cheddarOrangeColor {
+	return [self colorWithRed:1.000f green:0.447f blue:0.263f alpha:1.0f];
+}
+
 @end

@@ -107,7 +107,16 @@
 		return YES;
 	}
 	
-	return toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown;
+	return toInterfaceOrientation == UIInterfaceOrientationPortrait;
+}
+
+
+- (NSUInteger)supportedInterfaceOrientations {
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		return UIInterfaceOrientationMaskAll;
+	}
+
+	return UIInterfaceOrientationMaskPortrait;
 }
 
 

@@ -143,7 +143,6 @@
 		B28F84DB15C37E1D003E4595 /* SSToolkitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B208C1E315BF63E30080705D /* SSToolkitResources.bundle */; };
 		B28FD2BE15BF730100365CD6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FD2BD15BF730100365CD6 /* CFNetwork.framework */; };
 		B28FD2C015BF731100365CD6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FD2BF15BF731000365CD6 /* CoreGraphics.framework */; };
-		B28FD2C215BF731B00365CD6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FD2C115BF731B00365CD6 /* MessageUI.framework */; };
 		B28FD2C415BF732100365CD6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FD2C315BF732100365CD6 /* libz.dylib */; };
 		B28FD2C615BF732800365CD6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FD2C515BF732800365CD6 /* StoreKit.framework */; };
 		B28FD2C815BF732F00365CD6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FD2C715BF732F00365CD6 /* libsqlite3.dylib */; };
@@ -184,6 +183,7 @@
 		B29011BF15C4D247008FC626 /* stop-button-mini.png in Resources */ = {isa = PBXBuildFile; fileRef = B29011B315C4D247008FC626 /* stop-button-mini.png */; };
 		B29011C015C4D247008FC626 /* stop-button-mini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B29011B415C4D247008FC626 /* stop-button-mini@2x.png */; };
 		B29011CE15C505DA008FC626 /* CDIGroupedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B29011CD15C505DA008FC626 /* CDIGroupedTableViewCell.m */; };
+		B294593C16193EFE0098FFE8 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28FD2C115BF731B00365CD6 /* MessageUI.framework */; };
 		B296A76A15C7B610006137C7 /* cell-checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B296A76615C7B610006137C7 /* cell-checkmark@2x.png */; };
 		B296A76D15C7B6BB006137C7 /* cell-checkmark-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = B296A76B15C7B6BB006137C7 /* cell-checkmark-highlighted.png */; };
 		B296A76E15C7B6BB006137C7 /* cell-checkmark-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B296A76C15C7B6BB006137C7 /* cell-checkmark-highlighted@2x.png */; };
@@ -536,13 +536,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B294593C16193EFE0098FFE8 /* MessageUI.framework in Frameworks */,
 				B2AD031915C4896E00D9B909 /* AudioToolbox.framework in Frameworks */,
 				B28FD2D115BF739300365CD6 /* libicucore.dylib in Frameworks */,
 				B208C1F715BF64630080705D /* MobileCoreServices.framework in Frameworks */,
 				B28FD2C815BF732F00365CD6 /* libsqlite3.dylib in Frameworks */,
 				B28FD2C615BF732800365CD6 /* StoreKit.framework in Frameworks */,
 				B28FD2C415BF732100365CD6 /* libz.dylib in Frameworks */,
-				B28FD2C215BF731B00365CD6 /* MessageUI.framework in Frameworks */,
 				B28FD2C015BF731100365CD6 /* CoreGraphics.framework in Frameworks */,
 				B28FD2BE15BF730100365CD6 /* CFNetwork.framework in Frameworks */,
 				B208C5FC15BF658D0080705D /* libCheddarKit.a in Frameworks */,

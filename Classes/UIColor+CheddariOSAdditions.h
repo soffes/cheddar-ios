@@ -14,5 +14,6 @@
 + (UIColor *)cheddarBlueColor;
 + (UIColor *)cheddarSteelColor;
 + (UIColor *)cheddarHighlightColor;
++ (UIColor *)cheddarOrangeColor;
 
 @end

@@ -10,11 +10,9 @@
 #import "CDIUpgradeViewController.h"
 #import "CDIGroupedTableViewCell.h"
 #import "CDIHUDView.h"
-#import "TTTAttributedLabel.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIButton+CheddariOSAdditions.h"
 #import "UIFont+CheddariOSAdditions.h"
-#import <MessageUI/MessageUI.h>
 #import "CDIAppDelegate.h"
 #import "CDISplitViewController.h"
 #import "CDIListsViewController.h"
@@ -25,14 +23,42 @@
 
 NSString *const kCDIFontDidChangeNotificationName = @"CDIFontDidChangeNotification";
 
-@interface CDISettingsViewController () <MFMailComposeViewControllerDelegate>
+@interface CDISettingsViewController ()
+@property (nonatomic, strong) SSLabel *upgradeLabel;
+@property (nonatomic, strong) UIButton *upgradeButton;
 @end
 
-@implementation CDISettingsViewController {
-	TTTAttributedLabel *_label;
-	UIButton *_upgradeButton;
-	UIButton *_supportButton;
-	UIButton *_signOutButton;
+@implementation CDISettingsViewController
+
+@synthesize upgradeLabel = _upgradeLabel;
+
+- (SSLabel *)upgradeLabel {
+	if (!_upgradeLabel) {
+		_upgradeLabel = [[SSLabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.width, 60.0f)];
+		_upgradeLabel.font = [UIFont cheddarInterfaceFontOfSize:14.0f];
+		_upgradeLabel.backgroundColor = [UIColor clearColor];
+		_upgradeLabel.textAlignment = UITextAlignmentCenter;
+		_upgradeLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+		_upgradeLabel.numberOfLines = 2;
+		_upgradeLabel.textEdgeInsets = UIEdgeInsetsMake(4.0f, 10.0f, 0.0f, 10.0f);
+		_upgradeLabel.verticalTextAlignment = SSLabelVerticalTextAlignmentTop;
+		_upgradeLabel.textColor = [UIColor cheddarOrangeColor];
+		_upgradeLabel.userInteractionEnabled = YES;
+	}
+	return _upgradeLabel;
+}
+
+
+- (UIButton *)upgradeButton {
+	if (!_upgradeButton) {
+		_upgradeButton = [UIButton cheddarBigOrangeButton];
+		_upgradeButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+		_upgradeButton.frame = CGRectMake(roundf((self.view.frame.size.width - 300.0f) / 2.0f), 6.0f, 300.0f, 42.0f);
+		[_upgradeButton setTitle:@"Upgrade to Plus" forState:UIControlStateNormal];
+		[_upgradeButton addTarget:self action:@selector(upgrade:) forControlEvents:UIControlEventTouchUpInside];
+		[self.upgradeLabel addSubview:_upgradeButton];
+	}
+	return _upgradeButton;
 }
 
 
@@ -62,46 +88,13 @@ NSString *const kCDIFontDidChangeNotificationName = @"CDIFontDidChangeNotificati
 	footer.verticalTextAlignment = SSLabelVerticalTextAlignmentTop;
 	self.tableView.tableFooterView = footer;
 
-//	CGFloat width = self.view.bounds.size.width;
-//	_label = [[TTTAttributedLabel alloc] initWithFrame:CGRectMake(20.0f, 10.0f, width - 40.0f, 240.0f)];
-//	_label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-//	_label.backgroundColor = [UIColor clearColor];
-//	_label.font = [UIFont cheddarFontOfSize:18.0f];
-//	_label.numberOfLines = 0;
-//	_label.textColor = [UIColor cheddarTextColor];
-//	_label.verticalAlignment = TTTAttributedLabelVerticalAlignmentTop;
-//	_label.userInteractionEnabled = YES;
-//	[self.view addSubview:_label];
-//
-//	_upgradeButton = [UIButton cheddarBigOrangeButton];
-//	_upgradeButton.frame = CGRectMake(roundf((width - 280.0f) / 2.0f), 238.0f, 280.0f, 45.0f);
-//	_upgradeButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-//	[_upgradeButton setTitle:@"Upgrade to Cheddar Plus" forState:UIControlStateNormal];
-//	[_upgradeButton addTarget:self action:@selector(upgrade:) forControlEvents:UIControlEventTouchUpInside];
-//	_upgradeButton.alpha = 0.0f;
-//	[self.view addSubview:_upgradeButton];
-//
-//	_supportButton = [UIButton cheddarBigGrayButton];
-//	_supportButton.frame = CGRectMake(roundf((width - 280.0f) / 2.0f), 292.0f, 280.0f, 45.0f);
-//	_supportButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-//	[_supportButton setTitle:@"Support" forState:UIControlStateNormal];
-//	[_supportButton addTarget:self action:@selector(support:) forControlEvents:UIControlEventTouchUpInside];
-//	[self.view addSubview:_supportButton];
-//
-//	_signOutButton = [UIButton cheddarBigGrayButton];
-//	_signOutButton.frame = CGRectMake(roundf((width - 280.0f) / 2.0f), 346.0f, 280.0f, 45.0f);
-//	_signOutButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-//	[_signOutButton setTitle:@"Sign Out" forState:UIControlStateNormal];
-//	[_signOutButton addTarget:self action:@selector(signOut:) forControlEvents:UIControlEventTouchUpInside];
-//	[self.view addSubview:_signOutButton];
-
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_updateUI) name:kCDKPlusDidChangeNotificationName object:nil];
-	[self _updateUI];
 }
 
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
+	[self _updateUI];
 	[self.tableView reloadData];
 }
 
@@ -121,20 +114,6 @@ NSString *const kCDIFontDidChangeNotificationName = @"CDIFontDidChangeNotificati
 }
 
 
-- (void)support:(id)sender {
-	if ([MFMailComposeViewController canSendMail] == NO) {
-		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://cheddarapp.com/support"]];
-		return;
-	}
-
-	MFMailComposeViewController *viewController = [[MFMailComposeViewController alloc] init];
-	viewController.toRecipients = [NSArray arrayWithObject:@"support@cheddarapp.com"];
-	viewController.subject = @"Cheddar for iOS Help";
-	viewController.mailComposeDelegate = self;
-	[self.navigationController presentModalViewController:viewController animated:YES];
-}
-
-
 - (void)signOut:(id)sender {
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sign Out" message:@"Are you sure you want to sign out of Cheddar?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Sign Out", nil];
 	[alert show];
@@ -146,41 +125,11 @@ NSString *const kCDIFontDidChangeNotificationName = @"CDIFontDidChangeNotificati
 - (void)_updateUI {
 	CDKUser *user = [CDKUser currentUser];
 	if (user.hasPlus.boolValue) {
-		NSString *text = @"You currently have a Plus account. You're awesome! You can create unlimited lists!";
-		[_label setText:text afterInheritingLabelAttributesAndConfiguringWithBlock:^NSMutableAttributedString *(NSMutableAttributedString *mutableAttributedString) {
-			CTFontRef boldFont = CTFontCreateWithName((__bridge CFStringRef)kCDIBoldFontName, 20.0f, NULL);
-			if (boldFont) {
-				[mutableAttributedString addAttribute:(__bridge NSString *)kCTFontAttributeName value:(__bridge id)boldFont range:NSMakeRange(51, 31)];
-				CFRelease(boldFont);
-			}		
-			return mutableAttributedString;
-		}];
-		_upgradeButton.enabled = NO;
+		self.upgradeLabel.text = @"You have Cheddar Plus and we really love you for that.";
 		_upgradeButton.alpha = 0.0f;
 	} else {
-		NSString *text = @"You currently have a free account.\n\nWith a plus account, you can create unlimited lists. You only get two lists with a free account.";
-		[_label setText:text afterInheritingLabelAttributesAndConfiguringWithBlock:^NSMutableAttributedString *(NSMutableAttributedString *mutableAttributedString) {
-			CTFontRef boldFont = CTFontCreateWithName((__bridge CFStringRef)kCDIBoldFontName, 20.0f, NULL);
-			if (boldFont) {
-				[mutableAttributedString addAttribute:(__bridge NSString *)kCTFontAttributeName value:(__bridge id)boldFont range:NSMakeRange(36, 52)];
-				CFRelease(boldFont);
-			}		
-			return mutableAttributedString;
-		}];
-		_upgradeButton.enabled = YES;
-		_upgradeButton.alpha = 1.0f;
-	}
-}
-
-
-#pragma mark - MFMailComposeViewControllerDelegate
-
-- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
-	[controller dismissModalViewControllerAnimated:YES];
-
-	if (result == MFMailComposeResultSent) {
-		CDIHUDView *hud = [[CDIHUDView alloc] init];
-		[hud completeQuicklyWithTitle:@"Sent!"];
+		self.upgradeLabel.text = @"";
+		self.upgradeButton.alpha = 1.0f;
 	}
 }
 
@@ -208,34 +157,36 @@ NSString *const kCDIFontDidChangeNotificationName = @"CDIFontDidChangeNotificati
 }
 
 
-#pragma mark - NSKeyValueObserving
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-	if (context != (__bridge void *)self) {
-		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-		return;
-	}
-
-	if ([keyPath isEqualToString:@"hasPlus"]) {
-		[self _updateUI];
-	}
-}
-
-
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return 4;
+	return 5;
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	// Account
 	if (section == 0) {
-		return 2;
-	} else if (section == 1) {
 		return 1;
-	} else if (section == 2) {
+	}
+
+	// Display
+	else if (section == 1) {
 		return 2;
-	} else if (section == 3) {
+	}
+
+	// Tasks
+	else if (section == 2) {
+		return 1;
+	}
+
+	// About and Support
+	else if (section == 3) {
+		return 2;
+	}
+
+	// Sign out
+	else if (section == 4) {
 		return 1;
 	}
 	
@@ -259,9 +210,15 @@ NSString *const kCDIFontDidChangeNotificationName = @"CDIFontDidChangeNotificati
 		cell = [[CDIGroupedTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
-	
-	// Display
+
+	// Account
 	if (indexPath.section == 0) {
+		cell.textLabel.text = @"Manage Account";
+		cell.detailTextLabel.text = nil;
+	}
+
+	// Display
+	else if (indexPath.section == 1) {
 		if (indexPath.row == 0) {
 			cell.textLabel.text = @"Text Size";
 			cell.detailTextLabel.text = [CDISettingsTextSizePickerViewController textForSelectedKey];
@@ -272,15 +229,15 @@ NSString *const kCDIFontDidChangeNotificationName = @"CDIFontDidChangeNotificati
 	}
 	
 	// Tasks
-	else if (indexPath.section == 1) {
+	else if (indexPath.section == 2) {
 		if (indexPath.row == 0) {
 			cell.textLabel.text = @"Tap Action";
 			cell.detailTextLabel.text = [CDISettingsTapPickerViewController textForSelectedKey];
 		}
 	}
 	
-	// Other
-	else if (indexPath.section == 2) {
+	// About and Support
+	else if (indexPath.section == 3) {
 		if (indexPath.row == 0) {
 			cell.textLabel.text = @"About Cheddar";
 			cell.detailTextLabel.text = nil;
@@ -291,7 +248,7 @@ NSString *const kCDIFontDidChangeNotificationName = @"CDIFontDidChangeNotificati
 	}
 
 	// Sign out
-	else if (indexPath.section == 3) {
+	else if (indexPath.section == 4) {
 		cell.textLabel.text = @"Sign Out";
 		cell.detailTextLabel.text = nil;
 	}
@@ -300,12 +257,32 @@ NSString *const kCDIFontDidChangeNotificationName = @"CDIFontDidChangeNotificati
 }
 
 
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+	if (section != 0) {
+		return nil;
+	}
+
+	return self.upgradeLabel;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+	if (section != 0) {
+		return 0.0f;
+	}
+
+	return 60.0f;
+}
+
+
 #pragma mark - UITableViewDelegate
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 	if (section == 0) {
-		return @"Display";
+		return @"Account";
 	} else if (section == 1) {
+		return @"Display";
+	} else if (section == 2) {
 		return @"Tasks";
 	}
 	return nil;
@@ -314,9 +291,17 @@ NSString *const kCDIFontDidChangeNotificationName = @"CDIFontDidChangeNotificati
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	UIViewController *viewController = nil;
-	
-	// Display
+
+	// Account
 	if (indexPath.section == 0) {
+		CDIWebViewController *viewController = [[CDIWebViewController alloc] init];
+		[viewController loadURL:[NSURL URLWithString:@"https://cheddarapp.com/account"]];
+		[self.navigationController pushViewController:viewController animated:YES];
+		return;
+	}
+
+	// Display
+	else if (indexPath.section == 1) {
 		// Text Size
 		if (indexPath.row == 0) {
 			viewController = [[CDISettingsTextSizePickerViewController alloc] init];
@@ -329,15 +314,15 @@ NSString *const kCDIFontDidChangeNotificationName = @"CDIFontDidChangeNotificati
 	}
 	
 	// Tasks
-	else if (indexPath.section == 1) {
+	else if (indexPath.section == 2) {
 		// Tap Action
 		if (indexPath.row == 0) {
 			viewController = [[CDISettingsTapPickerViewController alloc] init];
 		}
 	}
 	
-	// Other
-	else if (indexPath.section == 2) {
+	// Support and About
+	else if (indexPath.section == 3) {
 		// About
 		if (indexPath.row == 0) {
 			CDIWebViewController *viewController = [[CDIWebViewController alloc] init];
@@ -348,13 +333,15 @@ NSString *const kCDIFontDidChangeNotificationName = @"CDIFontDidChangeNotificati
 
 		// Support
 		else if (indexPath.row == 1) {
-			[self support:nil];
+			CDIWebViewController *viewController = [[CDIWebViewController alloc] init];
+			[viewController loadURL:[NSURL URLWithString:@"https://cheddarapp.com/support"]];
+			[self.navigationController pushViewController:viewController animated:YES];
 			return;
 		}
 	}
 
 	// Sign out
-	else if (indexPath.section == 3) {
+	else if (indexPath.section == 4) {
 		[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 		[self signOut:nil];
 		return;
