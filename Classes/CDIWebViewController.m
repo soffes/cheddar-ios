@@ -44,7 +44,8 @@
 	_forwardBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"forward-button"] landscapeImagePhone:[UIImage imageNamed:@"forward-button-mini"] style:UIBarButtonItemStylePlain target:_webView action:@selector(goForward)];
 	
 	UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-	
+
+	self.navigationController.toolbar.tintColor = [UIColor colorWithRed:0.369f green:0.392f blue:0.447f alpha:1.0f];
 	self.toolbarItems = [NSArray arrayWithObjects:
 						 _backBarButton,
 						 flexibleSpace,
