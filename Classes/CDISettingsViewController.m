@@ -8,7 +8,7 @@
 
 #import "CDISettingsViewController.h"
 #import "CDIUpgradeViewController.h"
-#import "CDISettingsTableViewCell.h"
+#import "CDIGroupedTableViewCell.h"
 #import "CDIHUDView.h"
 #import "TTTAttributedLabel.h"
 #import "UIColor+CheddariOSAdditions.h"
@@ -256,7 +256,7 @@ NSString *const kCDIFontDidChangeNotificationName = @"CDIFontDidChangeNotificati
 	
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 	if (!cell) {
-		cell = [[CDISettingsTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
+		cell = [[CDIGroupedTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
 	

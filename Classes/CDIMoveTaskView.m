@@ -8,6 +8,8 @@
 
 #import "CDIMoveTaskView.h"
 #import "CDIEditTaskViewController.h"
+#import "CDIGroupedTableViewCell.h"
+#import "UIFont+CheddariOSAdditions.h"
 #import "UIColor+CheddariOSAdditions.h"
 
 @interface CDIMoveTaskView () <UITableViewDataSource, UITableViewDelegate>
@@ -21,6 +23,7 @@
 
 @synthesize editViewController = _editViewController;
 @synthesize moveButton = _moveButton;
+@synthesize tableView = _tableView;
 
 - (void)setEditViewController:(CDIEditTaskViewController *)editViewController {
 	_editViewController = editViewController;
@@ -32,6 +35,11 @@
 	fetchRequest.sortDescriptors = [CDKList defaultSortDescriptors];
 	fetchRequest.predicate = [NSPredicate predicateWithFormat:@"remoteID != %@ AND archivedAt = nil AND user = %@", currentList.remoteID, [CDKUser currentUser]];
 	_lists = [[CDKList mainContext] executeFetchRequest:fetchRequest error:nil];
+
+	if (_lists.count == 0) {
+		UILabel *instructionsLabel = (UILabel *)_tableView.tableHeaderView;
+		instructionsLabel.text = @"You don't have any other lists.";
+	}
 }
 
 
@@ -47,6 +55,16 @@
 		_tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
 		_tableView.dataSource = self;
 		_tableView.delegate = self;
+
+		SSLabel *instructionsLabel = [[SSLabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, frame.size.width, 38.0f)];
+		instructionsLabel.text = @"Select a list to move this task to";
+		instructionsLabel.font = [UIFont cheddarInterfaceFontOfSize:14.0f];
+		instructionsLabel.textColor = [UIColor cheddarLightTextColor];
+		instructionsLabel.backgroundColor = [UIColor clearColor];
+		instructionsLabel.textAlignment = UITextAlignmentCenter;
+		instructionsLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+		instructionsLabel.textEdgeInsets = UIEdgeInsetsMake(10.0f, 0.0f, 0.0f, 0.0f);
+		_tableView.tableHeaderView = instructionsLabel;
 
 		UIView *backgroundView = [[UIView alloc] init];
 		backgroundView.backgroundColor = [UIColor cheddarArchesColor];
@@ -83,11 +101,19 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	static NSString *cellIdentifier = @"cellIdentifier";
+	NSString *cellIdentifier = @"None";
+	NSUInteger numberOfRows = [tableView numberOfRowsInSection:indexPath.section];
+	if (numberOfRows == 1) {
+		cellIdentifier = @"Both";
+	} else if (indexPath.row == 0) {
+		cellIdentifier = @"Top";
+	} else if (indexPath.row == numberOfRows - 1) {
+		cellIdentifier = @"Bottom";
+	}
 
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 	if (!cell) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+		cell = [[CDIGroupedTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
 	}
 
 	cell.textLabel.text = [[_lists objectAtIndex:indexPath.row] title];

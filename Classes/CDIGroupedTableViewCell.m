@@ -1,5 +1,5 @@
 //
-//  CDISettingsTableViewCell.m
+//  CDIGroupedTableViewCell.m
 //  Cheddar for iOS
 //
 //  Created by Sam Soffes on 7/28/12.
@@ -7,15 +7,15 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-#import "CDISettingsTableViewCell.h"
+#import "CDIGroupedTableViewCell.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIFont+CheddariOSAdditions.h"
 
-@interface CDISettingsTableViewCell ()
+@interface CDIGroupedTableViewCell ()
 - (void)_setupSelectedBackgroundView;
 @end
 
-@implementation CDISettingsTableViewCell
+@implementation CDIGroupedTableViewCell
 
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {

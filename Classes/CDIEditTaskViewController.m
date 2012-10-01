@@ -111,6 +111,7 @@
 - (void)moveTask:(id)sender {
 	if ([_textView isFirstResponder]) {
 		[_textView resignFirstResponder];
+		[_moveTaskView.tableView flashScrollIndicators];
 	} else {
 		[_textView becomeFirstResponder];
 	}

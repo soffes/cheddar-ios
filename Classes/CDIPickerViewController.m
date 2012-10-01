@@ -7,7 +7,7 @@
 //
 
 #import "CDIPickerViewController.h"
-#import "CDISettingsTableViewCell.h"
+#import "CDIGroupedTableViewCell.h"
 
 @implementation CDIPickerViewController
 
@@ -107,9 +107,9 @@
 		cellIdentifier = @"Bottom";
 	}
 	
-    CDISettingsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    CDIGroupedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[CDISettingsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[CDIGroupedTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
 	id key = [self.keys objectAtIndex:indexPath.row];
 	cell.textLabel.text = [self cellTextForKey:key];

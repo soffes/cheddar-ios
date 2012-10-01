@@ -12,5 +12,6 @@
 
 @property (nonatomic, weak) CDIEditTaskViewController *editViewController;
 @property (nonatomic, strong, readonly) UIButton *moveButton;
+@property (nonatomic, strong, readonly) UITableView *tableView;
 
 @end
