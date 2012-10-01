@@ -150,8 +150,13 @@
 			[self.navigationController dismissModalViewControllerAnimated:YES];
 		});
 	} failure:^(AFJSONRequestOperation *operation, NSError *error) {
+		NSString *message = [[operation responseJSON] objectForKey:@"error_description"];
+
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[hud failAndDismissWithTitle:[[operation response] statusCode] == 401 ? @"Invalid" : @"Failed"];
+
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+			[alert show];
 		});
 	}];
 }
@@ -171,8 +176,13 @@
 			[self.navigationController dismissModalViewControllerAnimated:YES];
 		});
 	} failure:^(AFJSONRequestOperation *operation, NSError *error) {
+		NSString *message = [[operation responseJSON] objectForKey:@"error_description"];
+
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[hud failAndDismissWithTitle:@"Failed"];
+
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+			[alert show];
 		});
 	}];
 }
