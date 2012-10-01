@@ -139,17 +139,11 @@
 	
 	// Setup new buttons
 	UIButton *threeMonthsButton = [UIButton cheddarBigGrayButton];
-	threeMonthsButton.frame = CGRectMake(-280.0f, 238.0f + offset, 280.0f, 45.0f);
+	threeMonthsButton.frame = CGRectMake(-280.0f, 292.0f + offset, 280.0f, 45.0f);
 	[threeMonthsButton setTitle:@"3 months for $5.99" forState:UIControlStateNormal];
 	[threeMonthsButton addTarget:self action:@selector(buyThreeMonths:) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:threeMonthsButton];
-	
-	UIButton *sixMonthsButton = [UIButton cheddarBigGrayButton];
-	sixMonthsButton.frame = CGRectMake(-280.0f, 292.0f + offset, 280.0f, 45.0f);
-	[sixMonthsButton setTitle:@"6 months for $9.99" forState:UIControlStateNormal];
-	[sixMonthsButton addTarget:self action:@selector(buySixMonths:) forControlEvents:UIControlEventTouchUpInside];
-	[self.view addSubview:sixMonthsButton];
-	
+
 	UIButton *yearButton = [UIButton cheddarBigOrangeButton];
 	yearButton.frame = CGRectMake(-280.0f, 346.0f + offset, 280.0f, 45.0f);
 	[yearButton setTitle:@"1 year for $19.99" forState:UIControlStateNormal];
@@ -171,20 +165,14 @@
 	[self _animateView:_laterButton xDisplacement:displacement delay:0.0];
 	[self _animateView:_upgradeButton xDisplacement:displacement delay:step];
 	[self _animateView:threeMonthsButton xDisplacement:displacement delay:(step * 2.0)];
-	[self _animateView:sixMonthsButton xDisplacement:displacement delay:(step * 3.0)];
-	[self _animateView:yearButton xDisplacement:displacement delay:(step * 4.0)];
-	[self _animateView:cancelButton xDisplacement:cancelDisplacement delay:(step * 4.0)];
+	[self _animateView:yearButton xDisplacement:displacement delay:(step * 3.0)];
+	[self _animateView:cancelButton xDisplacement:cancelDisplacement delay:(step * 3.0)];
 	[self _animateView:_restoreButton xDisplacement:restoreDisplacement delay:0.0];
 }
 
 
 - (void)buyThreeMonths:(id)sender {
 	[self _purchaseProductIdentifier:@"cheddar_plus_3mo"];
-}
-
-
-- (void)buySixMonths:(id)sender {
-	[self _purchaseProductIdentifier:@"cheddar_plus_6mo"];
 }
 
 

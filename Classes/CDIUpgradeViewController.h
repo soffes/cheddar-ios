@@ -12,7 +12,6 @@
 - (void)upgrade:(id)sender;
 
 - (void)buyThreeMonths:(id)sender;
-- (void)buySixMonths:(id)sender;
 - (void)buyOneYear:(id)sender;
 - (void)restore:(id)sender;
 
