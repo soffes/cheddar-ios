@@ -8,6 +8,7 @@
 
 #import "CDIEditTaskViewController.h"
 #import "CDIMoveTaskView.h"
+#import "CDIKeyboardBar.h"
 #import "UIColor+CheddariOSAdditions.h"
 #import "UIFont+CheddariOSAdditions.h"
 
@@ -54,6 +55,10 @@
 	_textView.returnKeyType = UIReturnKeyGo;
 	_textView.font = [UIFont cheddarFontOfSize:18.0f];
 	_textView.text = self.task.text;
+	
+	CDIKeyboardBar *keyboardBar = [[CDIKeyboardBar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.bounds.size.width, UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? 54.0f : 36.0f)];
+	keyboardBar.keyInputView = _textView;
+	_textView.inputAccessoryView = keyboardBar;
 	[self.view addSubview:_textView];
 
 	_moveTaskView = [[CDIMoveTaskView alloc] init];

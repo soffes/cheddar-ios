@@ -14,6 +14,8 @@
 
 - (id)initWithCharacter:(NSString *)character {
 	if ((self = [super init])) {
+		self.contentMode = UIViewContentModeRedraw;
+		
 		_character = character;
 		
 		[self setTitle:character forState:UIControlStateNormal];

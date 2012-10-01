@@ -17,12 +17,12 @@
 	NSArray *_buttons;
 }
 
-@synthesize textField = _textField;
+@synthesize keyInputView = _keyInputView;
 
 #pragma mark - Class Methods
 
 + (NSArray *)characters {
-	return @[@"#", @"*", @"_", @"[", @"]", @"(", @")"];
+	return @[@"#", @"*", @"_", @"[", @"]", @"(", @")", @"`"];
 }
 
 
@@ -89,7 +89,7 @@
 
 - (void)_buttonPressed:(CDIKeyboardButton *)button {
 	[[UIDevice currentDevice] playInputClick];
-	[self.textField insertText:button.character];
+	[self.keyInputView insertText:button.character];
 }
 
 @end
