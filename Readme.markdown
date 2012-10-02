@@ -34,9 +34,9 @@ While it is not strictly forbidden by the license, I would greatly appreciate it
 
 ## Contributing
 
-If you want to fix bugs, I'll love you forever! If you want to add some features, I may not merge it. I'm sure it will be awesome, but defending Cheddar's simplicity is my upmost duty. If you're feeling like implementing a feature, check out the [issues](https://github.com/nothingmagical/cheddar-ios/issues) for things tagged with "feature".
+If you want to fix bugs, I'll love you forever! If you want to add some features, I may not merge it. I'm sure it will be awesome, but defending Cheddar's simplicity is my utmost duty. If you're feeling like implementing a feature, check out the [issues](https://github.com/nothingmagical/cheddar-ios/issues) for things tagged with "feature".
 
 
 ## Give Back
 
-If you want to give back in ways other than pull requests, you can [buy a Cheddar shirt](http://cheddarapp.com/store), [Gittip](https://www.gittip.com/samsoffes/), or [spread the word about @cheddar on Twitter](http://twitter.com/cheddar). Of course, pull requests are grealy appreciated. I'll love you forever.
+If you want to give back in ways other than pull requests, you can [buy a Cheddar shirt](http://cheddarapp.com/store), [Gittip](https://www.gittip.com/samsoffes/), or [spread the word about @cheddar on Twitter](http://twitter.com/cheddar). Of course, pull requests are greatly appreciated. I'll love you forever.
