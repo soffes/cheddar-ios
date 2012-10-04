@@ -10,9 +10,9 @@
 
 ★ Extra keyboard keys to make typing tags and markdown easier
 
-★ Move tasks between lists
-
 ★ In-app browser for links
+
+✔ Move tasks between lists (currently only on iPhone)
 
 ✔ URL scheme for use with other apps like LaunchCenter Pro
 
@@ -29,6 +29,8 @@
 ✔ Finish adding tasks by pressing Go with an empty task
 
 ☂ Lots of bug fixes
+
+Offline support and other great features will be coming in the next update!
 
 
 ### Version 1.0

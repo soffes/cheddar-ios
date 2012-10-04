@@ -26,9 +26,9 @@
  *
  **/
 #ifdef DEBUG
-	#define CLS_LOG(__FORMAT__, ...) CLSNSLog((@"%s line %d $ " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+	#define CLS_LOG(__FORMAT__, ...) CLSNSLog((@"%s line %d $ " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 #else
-	#define CLS_LOG(__FORMAT__, ...) CLSLog((@"%s line %d $ " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+	#define CLS_LOG(__FORMAT__, ...) CLSLog((@"%s line %d $ " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 #endif
 
 /**
@@ -37,15 +37,15 @@
  * and will only be visible in your Crashlytics dashboard.
  *
  **/
-void CLSLog(NSString *format, ...);
+OBJC_EXTERN void CLSLog(NSString *format, ...);
 
 /**
  *
  * Add logging that will be sent with your crash data. This logging will show up in the system.log
- * and your Crashlytics dashboard. It is not reccomended for Release builds.
+ * and your Crashlytics dashboard. It is not recommended for Release builds.
  *
  **/
-void CLSNSLog(NSString *format, ...);
+OBJC_EXTERN void CLSNSLog(NSString *format, ...);
 
 @protocol CrashlyticsDelegate;
 
@@ -149,6 +149,26 @@ void CLSNSLog(NSString *format, ...);
 @end
 
 /**
+ * The CLSCrashReport protocol exposes methods that you can call on crash report objects passed 
+ * to delegate methods. If you want these values or the entire object to stay in memory retain 
+ * them or copy them.
+ **/
+@protocol CLSCrashReport <NSObject>
+@optional
+
+/**
+ * Returns the session identifier for the crash report.
+ **/
+- (NSString *)identifier;
+
+/**
+ * Returns the custom key value data for the crash report.
+ **/
+- (NSDictionary *)customKeys;
+
+@end
+
+/**
  *
  * The CrashlyticsDelegate protocol provides a mechanism for your application to take
  * action on events that occur in the Crashlytics crash reporting system.  You can make 
@@ -168,5 +188,16 @@ void CLSNSLog(NSString *format, ...);
  *
  **/
 - (void)crashlyticsDidDetectCrashDuringPreviousExecution:(Crashlytics *)crashlytics;
+
+/**
+ *
+ * Just like crashlyticsDidDetectCrashDuringPreviousExecution this delegate method is 
+ * called once a Crashlytics instance has determined that the last execution of the
+ * application ended in a crash. A CLSCrashReport is passed back that contains data about
+ * the last crash report that was generated. See the CLSCrashReport protocol for method details.
+ * This method is called after crashlyticsDidDetectCrashDuringPreviousExecution.
+ *
+ **/
+- (void)crashlytics:(Crashlytics *)crashlytics didDetectCrashDuringPreviousExecution:(id <CLSCrashReport>)crash;
 
 @end

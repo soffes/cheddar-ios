@@ -61,10 +61,12 @@
 	_textView.inputAccessoryView = keyboardBar;
 	[self.view addSubview:_textView];
 
-	_moveTaskView = [[CDIMoveTaskView alloc] init];
-	_moveTaskView.editViewController = self;
-	[_moveTaskView.moveButton addTarget:self action:@selector(moveTask:) forControlEvents:UIControlEventTouchUpInside];
-	[self.view addSubview:_moveTaskView];
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+		_moveTaskView = [[CDIMoveTaskView alloc] init];
+		_moveTaskView.editViewController = self;
+		[_moveTaskView.moveButton addTarget:self action:@selector(moveTask:) forControlEvents:UIControlEventTouchUpInside];
+		[self.view addSubview:_moveTaskView];
+	}
 
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
 }
