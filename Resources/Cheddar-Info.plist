@@ -14,21 +14,21 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>Icon-29.png</string>
-				<string>Icon-50.png</string>
-				<string>Icon-57.png</string>
-				<string>Icon-58.png</string>
-				<string>Icon-72.png</string>
-				<string>Icon-100.png</string>
-				<string>Icon-114.png</string>
-				<string>Icon-144.png</string>
+				<string>${ICON_29}</string>
+				<string>${ICON_50}</string>
+				<string>${ICON_57}</string>
+				<string>${ICON_58}</string>
+				<string>${ICON_72}</string>
+				<string>${ICON_100}</string>
+				<string>${ICON_114}</string>
+				<string>${ICON_144}</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>com.nothingmagical.cheddar-ios</string>
+	<string>${BUNDLE_ID}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
