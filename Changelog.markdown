@@ -2,7 +2,7 @@
 
 ### Version 1.1
 
-*Unreleased*
+*Released on October 11, 2012*
 
 ★ iPhone 5 & iOS 6 support
 
