@@ -3,13 +3,13 @@
 	url = https://github.com/nothingmagical/cheddarkit.git
 [submodule "Vendor/Localytics"]
 	path = Vendor/Localytics
-	url = https://github.com/samsoffes/localytics-ios.git
+	url = https://github.com/soffes/localytics-ios.git
 [submodule "Vendor/SSToolkit"]
 	path = Vendor/SSToolkit
-	url = https://github.com/samsoffes/sstoolkit.git
+	url = https://github.com/soffes/sstoolkit.git
 [submodule "Vendor/TTTAttributedLabel"]
 	path = Vendor/TTTAttributedLabel
 	url = https://github.com/mattt/TTTAttributedLabel.git
 [submodule "Vendor/SSPullToRefresh"]
 	path = Vendor/SSPullToRefresh
-	url = https://github.com/samsoffes/sspulltorefresh.git
+	url = https://github.com/soffes/sspulltorefresh.git
