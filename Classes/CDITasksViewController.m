@@ -417,25 +417,25 @@
 
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
-	if (sourceIndexPath.row == destinationIndexPath.row) {
-		return;
-	}
-	
-	self.ignoreChange = YES;
-	NSMutableArray *tasks = [self.fetchedResultsController.fetchedObjects mutableCopy];
-	CDKTask *task = [self objectForViewIndexPath:sourceIndexPath];
-	[tasks removeObject:task];
-	[tasks insertObject:task atIndex:destinationIndexPath.row];
-	
-	NSInteger i = 0;
-	for (task in tasks) {
-		task.position = [NSNumber numberWithInteger:i++];
-	}
-	
-	[self.managedObjectContext save:nil];
-	self.ignoreChange = NO;
-	
-	[CDKTask sortWithObjects:tasks];
+	if (sourceIndexPath.row != destinationIndexPath.row) {
+        self.ignoreChange = YES;
+        NSMutableArray *tasks = [self.fetchedResultsController.fetchedObjects mutableCopy];
+        CDKTask *task = [self objectForViewIndexPath:sourceIndexPath];
+        [tasks removeObject:task];
+        [tasks insertObject:task atIndex:destinationIndexPath.row];
+        
+        NSInteger i = 0;
+        for (task in tasks) {
+            task.position = [NSNumber numberWithInteger:i++];
+        }
+        
+        [self.managedObjectContext save:nil];
+        self.ignoreChange = NO;
+        
+        [CDKTask sortWithObjects:tasks];
+    }
+
+    [self.tableView reloadData];
 }
 
 
