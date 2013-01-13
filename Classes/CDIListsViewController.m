@@ -247,7 +247,7 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(_cancelAddingList:)];
 	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Create" style:UIBarButtonItemStyleDone target:self action:@selector(_createList:)];
 	[UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-		[self.tableView scrollToTopAnimated:NO];
+		[self.tableView scrollToTopAnimated:NO]; // Not animated since the outer animation block will animate it
 		coverView.alpha = 1.0f;
 
 		_adding = YES;
@@ -418,7 +418,6 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 			
 			[cell.closeButton addTarget:self action:@selector(_cancelAddingList:) forControlEvents:UIControlEventTouchUpInside];
 		}
-		[cell.textField becomeFirstResponder];
 
 		return cell;
 	}
@@ -500,6 +499,15 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
 	return YES;
+}
+
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+	if ([cell isKindOfClass:[CDIAddListTableViewCell class]]) {
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[[(CDIAddListTableViewCell *)cell textField] becomeFirstResponder];
+		});
+	}
 }
 
 
