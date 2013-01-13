@@ -12,19 +12,13 @@
 
 @implementation CDIPlaceholderView
 
-@synthesize iconImageView = _iconImageView;
-@synthesize arrowImageView = _arrowImageView;
-@synthesize arrowLabel = _arrowLabel;
-@synthesize titleLabel = _titleLabel;
-@synthesize arrowAligment = _arrowAligment;
-
 #pragma mark - UIView
 
 - (id)initWithFrame:(CGRect)frame {
 	if ((self = [super initWithFrame:frame])) {
 		self.userInteractionEnabled = NO;
 		self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        self.backgroundColor = [UIColor clearColor];
+		self.backgroundColor = [UIColor clearColor];
 
 		_iconImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
 		_iconImageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
@@ -35,7 +29,6 @@
 
 		_arrowLabel = [[UILabel alloc] initWithFrame:CGRectZero];
 		_arrowLabel.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
-		_arrowLabel.text = @"Add a task";
 		_arrowLabel.textAlignment = UITextAlignmentCenter;
 		_arrowLabel.backgroundColor = [UIColor clearColor];
 		_arrowLabel.font = [UIFont fontWithName:@"Noteworthy" size:19.0f];

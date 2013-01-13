@@ -1362,8 +1362,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Release\" ]; then\n    ./Vendor/Crashlytics.framework/run d719996ce2f7809259d6b116a1e5b1cf5d0f316d\nfi";
+			shellPath = "/usr/bin/env ruby";
+			shellScript = "if ENV[\"CONFIGURATION\"] == \"Release\" || ENV[\"CONFIGURATION\"] == \"Beta\"\n    system \"./Vendor/Crashlytics.framework/run d719996ce2f7809259d6b116a1e5b1cf5d0f316d\"\nend";
 		};
 /* End PBXShellScriptBuildPhase section */
 
