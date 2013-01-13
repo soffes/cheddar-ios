@@ -374,7 +374,7 @@
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.coverView.alpha == 1.0f) {
+    if ([self.addTaskView.textField isFirstResponder]) {
         return NO;
     }
     
