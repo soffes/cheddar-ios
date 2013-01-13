@@ -435,7 +435,7 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (_adding && indexPath.row == 0) {
+    if (_adding) {
         return NO;
     }
     

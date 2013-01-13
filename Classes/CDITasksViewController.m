@@ -373,6 +373,13 @@
 	return self.addTaskView;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.coverView.alpha == 1.0f) {
+        return NO;
+    }
+    
+    return YES;
+}
 
 #pragma mark - UITableViewDelegate
 
