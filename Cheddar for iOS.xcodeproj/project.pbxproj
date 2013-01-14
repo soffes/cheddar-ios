@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2187851B16A3281A00198F31 /* MPCJSONDataSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 218784F116A3281A00198F31 /* MPCJSONDataSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2187851C16A3281A00198F31 /* MPCJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 218784F316A3281A00198F31 /* MPCJSONSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2187851D16A3281A00198F31 /* MPCSerializedJSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = 218784F516A3281A00198F31 /* MPCSerializedJSONData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2187851E16A3281A00198F31 /* NSData+MPBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 218784F816A3281A00198F31 /* NSData+MPBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2187851F16A3281A00198F31 /* Mixpanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 218784FA16A3281A00198F31 /* Mixpanel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2187852816A3288300198F31 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2187852716A3288300198F31 /* CoreTelephony.framework */; };
 		B208BC2915BF63A80080705D /* CDIAddListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BB9315BF63A80080705D /* CDIAddListTableViewCell.m */; };
 		B208BC2A15BF63A80080705D /* CDIAddTaskAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BB9515BF63A80080705D /* CDIAddTaskAnimationView.m */; };
 		B208BC2B15BF63A80080705D /* CDIAddTaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BB9715BF63A80080705D /* CDIAddTaskView.m */; };
@@ -278,6 +284,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		218784F016A3281A00198F31 /* MPCJSONDataSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPCJSONDataSerializer.h; sourceTree = "<group>"; };
+		218784F116A3281A00198F31 /* MPCJSONDataSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPCJSONDataSerializer.m; sourceTree = "<group>"; };
+		218784F216A3281A00198F31 /* MPCJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPCJSONSerializer.h; sourceTree = "<group>"; };
+		218784F316A3281A00198F31 /* MPCJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPCJSONSerializer.m; sourceTree = "<group>"; };
+		218784F416A3281A00198F31 /* MPCSerializedJSONData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPCSerializedJSONData.h; sourceTree = "<group>"; };
+		218784F516A3281A00198F31 /* MPCSerializedJSONData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPCSerializedJSONData.m; sourceTree = "<group>"; };
+		218784F716A3281A00198F31 /* NSData+MPBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MPBase64.h"; sourceTree = "<group>"; };
+		218784F816A3281A00198F31 /* NSData+MPBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MPBase64.m"; sourceTree = "<group>"; };
+		218784F916A3281A00198F31 /* Mixpanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mixpanel.h; sourceTree = "<group>"; };
+		218784FA16A3281A00198F31 /* Mixpanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mixpanel.m; sourceTree = "<group>"; };
+		2187852716A3288300198F31 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		B208BB9215BF63A80080705D /* CDIAddListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIAddListTableViewCell.h; sourceTree = "<group>"; };
 		B208BB9315BF63A80080705D /* CDIAddListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIAddListTableViewCell.m; sourceTree = "<group>"; };
 		B208BB9415BF63A80080705D /* CDIAddTaskAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIAddTaskAnimationView.h; sourceTree = "<group>"; };
@@ -552,6 +569,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2187852816A3288300198F31 /* CoreTelephony.framework in Frameworks */,
 				B294593C16193EFE0098FFE8 /* MessageUI.framework in Frameworks */,
 				B2AD031915C4896E00D9B909 /* AudioToolbox.framework in Frameworks */,
 				B28FD2D115BF739300365CD6 /* libicucore.dylib in Frameworks */,
@@ -578,6 +596,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		218784BC16A3281A00198F31 /* Mixpanel */ = {
+			isa = PBXGroup;
+			children = (
+				218784ED16A3281A00198F31 /* Mixpanel */,
+			);
+			path = Mixpanel;
+			sourceTree = "<group>";
+		};
+		218784ED16A3281A00198F31 /* Mixpanel */ = {
+			isa = PBXGroup;
+			children = (
+				218784EE16A3281A00198F31 /* Library */,
+				218784F916A3281A00198F31 /* Mixpanel.h */,
+				218784FA16A3281A00198F31 /* Mixpanel.m */,
+			);
+			path = Mixpanel;
+			sourceTree = "<group>";
+		};
+		218784EE16A3281A00198F31 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				218784EF16A3281A00198F31 /* JSON */,
+				218784F616A3281A00198F31 /* NSData_Base64 */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		218784EF16A3281A00198F31 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				218784F016A3281A00198F31 /* MPCJSONDataSerializer.h */,
+				218784F116A3281A00198F31 /* MPCJSONDataSerializer.m */,
+				218784F216A3281A00198F31 /* MPCJSONSerializer.h */,
+				218784F316A3281A00198F31 /* MPCJSONSerializer.m */,
+				218784F416A3281A00198F31 /* MPCSerializedJSONData.h */,
+				218784F516A3281A00198F31 /* MPCSerializedJSONData.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		218784F616A3281A00198F31 /* NSData_Base64 */ = {
+			isa = PBXGroup;
+			children = (
+				218784F716A3281A00198F31 /* NSData+MPBase64.h */,
+				218784F816A3281A00198F31 /* NSData+MPBase64.m */,
+			);
+			path = NSData_Base64;
+			sourceTree = "<group>";
+		};
 		B208BB9115BF63A80080705D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -750,6 +817,7 @@
 		B208BC9D15BF63E00080705D /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				218784BC16A3281A00198F31 /* Mixpanel */,
 				B208C1FD15BF65490080705D /* CheddarKit */,
 				B208BE5E15BF63E00080705D /* Localytics */,
 				B208BEBF15BF63E00080705D /* SSPullToRefresh */,
@@ -757,6 +825,7 @@
 				B208BF7915BF63E00080705D /* TTTAttributedLabel */,
 				B208BE4315BF63E00080705D /* Crashlytics.framework */,
 				B2AD02F315C482B200D9B909 /* TextExpander.framework */,
+				2187852716A3288300198F31 /* CoreTelephony.framework */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -1427,6 +1496,11 @@
 				B2B25FE1161658AD00ACFD3E /* CDIKeyboardBar.m in Sources */,
 				B2B25FE416165B6D00ACFD3E /* CDIKeyboardButton.m in Sources */,
 				B2746E621618EAC8007A750B /* CDIMoveTaskView.m in Sources */,
+				2187851B16A3281A00198F31 /* MPCJSONDataSerializer.m in Sources */,
+				2187851C16A3281A00198F31 /* MPCJSONSerializer.m in Sources */,
+				2187851D16A3281A00198F31 /* MPCSerializedJSONData.m in Sources */,
+				2187851E16A3281A00198F31 /* NSData+MPBase64.m in Sources */,
+				2187851F16A3281A00198F31 /* Mixpanel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,6 +19,10 @@
 #import <Crashlytics/Crashlytics.h>
 #import <StoreKit/StoreKit.h>
 
+#if CHEDDAR_MIXPANEL_TOKEN
+	#import "Mixpanel.h"
+#endif
+
 @implementation CDIAppDelegate
 
 @synthesize window = _window;
@@ -40,6 +44,10 @@
 	#ifdef CHEDDAR_LOCALYTICS_KEY
 	LLStartSession(CHEDDAR_LOCALYTICS_KEY);
 	#endif
+#endif
+
+#if CHEDDAR_MIXPANEL_TOKEN
+	[Mixpanel sharedInstanceWithToken:CHEDDAR_MIXPANEL_TOKEN];
 #endif
 	
 	// Optionally enable development mode

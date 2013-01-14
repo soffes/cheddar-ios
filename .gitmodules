@@ -13,3 +13,6 @@
 [submodule "Vendor/SSPullToRefresh"]
 	path = Vendor/SSPullToRefresh
 	url = https://github.com/soffes/sspulltorefresh.git
+[submodule "Vendor/Mixpanel"]
+	path = Vendor/Mixpanel
+	url = https://github.com/mixpanel/mixpanel-iphone.git
