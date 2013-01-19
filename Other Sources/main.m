@@ -15,8 +15,8 @@ int main(int argc, char *argv[]) {
 		// Swizzle archive button
 		Class deleteControl = NSClassFromString([NSString stringWithFormat:@"_%@DeleteConfirmationControl", @"UITableViewCell"]);
 		if (deleteControl) {
-			Method drawRectCustom = class_getInstanceMethod(deleteControl, @selector(drawRect:));
-			Method drawRect = class_getInstanceMethod([CDITableViewCellDeleteConfirmationControl class], @selector(drawRectCustom:));
+			Method drawRect = class_getInstanceMethod(deleteControl, @selector(drawRect:));
+			Method drawRectCustom = class_getInstanceMethod([CDITableViewCellDeleteConfirmationControl class], @selector(drawRectCustom:));
 			method_exchangeImplementations(drawRect, drawRectCustom);
 		}
 
