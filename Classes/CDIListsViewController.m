@@ -425,7 +425,7 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 
 	CDIListTableViewCell *cell = (CDIListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 	if (!cell) {
-		cell = [[CDIListTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+		cell = [[CDIListTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     	[cell setEditingAction:@selector(_beginEditingWithGesture:) forTarget:self];
 	}
 	
