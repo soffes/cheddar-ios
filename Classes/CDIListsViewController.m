@@ -17,8 +17,10 @@
 #import "CDIListsPlaceholderView.h"
 #import "CDIAddListTableViewCell.h"
 #import "CDIHUDView.h"
-#import "SMTEDelegateController.h"
+#import "CDIViewArchiveButton.h"
+
 #import <SSToolkit/UIScrollView+SSToolkitAdditions.h>
+#import "SMTEDelegateController.h"
 
 #ifdef CHEDDAR_USE_PASSWORD_FLOW
 	#import "CDISignInViewController.h"
@@ -29,7 +31,11 @@
 NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 
 @interface CDIListsViewController ()
+@property (nonatomic, strong) CDKList *selectedList;
+@property (nonatomic, assign) BOOL adding;
+@property (nonatomic, assign) BOOL checkForOneList;
 @property (nonatomic, strong) SMTEDelegateController *textExpander;
+@property (nonatomic, strong) CDIViewArchiveButton *archiveButton;
 - (void)_listUpdated:(NSNotification *)notification;
 - (void)_currentUserDidChange:(NSNotification *)notification;
 - (void)_createList:(id)sender;
@@ -40,15 +46,7 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 - (BOOL)_shouldEditRowForGesture:(UIGestureRecognizer *)gestureRecognizer;
 @end
 
-@implementation CDIListsViewController {
-	CDKList *_selectedList;
-	BOOL _adding;
-	BOOL _checkForOneList;
-}
-
-
-@synthesize textExpander = _textExpander;
-
+@implementation CDIListsViewController
 
 #pragma mark - NSObject
 
@@ -86,6 +84,18 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 		self.textExpander.nextDelegate = self;
 		[[NSNotificationCenter defaultCenter] addObserver:self.textExpander selector:@selector(willEnterForeground) name:UIApplicationWillEnterForegroundNotification object:nil];
 	}
+
+	UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 50.0f)];
+	footer.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+
+	UIView *shadow = self.tableView.tableFooterView;
+	self.tableView.tableFooterView = footer;
+	shadow.frame = CGRectMake(0.0f, 0.0f, 320.0f, 3.0f);
+	[footer addSubview:shadow];
+
+	_archiveButton = [[CDIViewArchiveButton alloc] initWithFrame:CGRectMake(20.0f, 12.0f, 280.0f, 32.0)];
+	_archiveButton.alpha = 0.0f;
+	[footer addSubview:_archiveButton];
 }
 
 
@@ -209,6 +219,13 @@ NSString *const kCDISelectedListKey = @"CDISelectedListKey";
 	[[CDKHTTPClient sharedClient] getListsWithSuccess:^(AFJSONRequestOperation *operation, id responseObject) {
 		dispatch_async(dispatch_get_main_queue(), ^{
 			self.loading = NO;
+
+			[_archiveButton setTitle:@"19 Archived Lists" forState:UIControlStateNormal];
+			if (_archiveButton.alpha < 1.0f) {
+				[UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+					_archiveButton.alpha = 1.0f;
+				} completion:nil];
+			}
 		});
 	} failure:^(AFJSONRequestOperation *operation, NSError *error) {
 		dispatch_async(dispatch_get_main_queue(), ^{

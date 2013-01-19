@@ -76,8 +76,8 @@
 	// Defer some stuff to make launching faster
 	dispatch_async(dispatch_get_main_queue(), ^{
 		// Setup status bar network indicator
-//		[AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
-		
+		[AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+
 		// Set the OAuth client
 		[[CDKHTTPClient sharedClient] setClientID:kCDIAPIClientID secret:kCDIAPIClientSecret];
 		
