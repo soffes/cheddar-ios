@@ -204,7 +204,7 @@
 	NSArray *email = @[[NSIndexPath indexPathForRow:1 inSection:0]];
 
 	BOOL focusPassword = [self.emailTextField isFirstResponder];
-	UITableViewRowAnimation animation = animated ? UITableViewRowAnimationTop : UITableViewScrollPositionNone;
+	UITableViewRowAnimation animation = animated ? UITableViewRowAnimationTop : UITableViewRowAnimationNone;
 
 	// Switch to sign in
 	if (_signUpMode) {
