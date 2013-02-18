@@ -12,12 +12,14 @@ class String
   end
 end
 
-desc 'Setup with example files and dummy fonts'
-task :setup do
-  # Update and initialize the submodules in case they forget
+desc 'Update and initialize the submodules'
+task :update_submodules do
   puts 'Updating submodules...'.cyan
   `git submodule update --init --recursive`
+end
 
+desc 'Setup with example files and dummy fonts'
+task :setup => :update_submodules do
   # Copy examples defines
   puts 'Copying example CDIDefines into place...'.cyan
   `cp Other\\ Sources/CDIDefinesExample.h Other\\ Sources/CDIDefines.h`
@@ -38,13 +40,8 @@ end
 # Run setup by default
 task :default => :setup
 
-
 desc 'Setup with private files'
-task :'setup:private' do
-  # Update and initialize the submodules in case they forget
-  puts 'Updating submodules...'.cyan
-  `git submodule update --init --recursive`
-
+task :'setup:private' => :update_submodules do
   # Copy defines
   puts 'Copying example CDIDefines into place...'.cyan
   `cp ../cheddar-private/iOS/CDIDefines.* Other\\ Sources/`
