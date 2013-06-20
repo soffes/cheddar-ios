@@ -11,6 +11,8 @@
 #import "UIColor+CheddariOSAdditions.h"
 #import "CDILoadingView.h"
 
+#import "Reachability.h"
+
 @implementation CDIManagedTableViewController {
 	UITapGestureRecognizer *_tableViewTapGestureRecognizer;
 	BOOL _allowScrolling;

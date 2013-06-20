@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21396B6617728AF70040FCA2 /* SSPullToRefreshDefaultContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21396B6117728AE50040FCA2 /* SSPullToRefreshDefaultContentView.m */; };
+		21396B6717728AF70040FCA2 /* SSPullToRefreshSimpleContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21396B6317728AE50040FCA2 /* SSPullToRefreshSimpleContentView.m */; };
+		21396B6817728AF70040FCA2 /* SSPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21396B6517728AE50040FCA2 /* SSPullToRefreshView.m */; };
 		21E0A67A16AAE0BA002479F9 /* CDIViewArchiveButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E0A67916AAE0BA002479F9 /* CDIViewArchiveButton.m */; };
 		B208BC2915BF63A80080705D /* CDIAddListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BB9315BF63A80080705D /* CDIAddListTableViewCell.m */; };
 		B208BC2A15BF63A80080705D /* CDIAddTaskAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BB9515BF63A80080705D /* CDIAddTaskAnimationView.m */; };
@@ -116,9 +119,6 @@
 		B208C11015BF63E20080705D /* LocalyticsSession.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BE6215BF63E00080705D /* LocalyticsSession.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B208C11115BF63E20080705D /* LocalyticsUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BE6415BF63E00080705D /* LocalyticsUploader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B208C11215BF63E20080705D /* LocalyticsUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BE6615BF63E00080705D /* LocalyticsUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B208C14015BF63E20080705D /* SSPullToRefreshDefaultContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BEC515BF63E00080705D /* SSPullToRefreshDefaultContentView.m */; };
-		B208C14115BF63E20080705D /* SSPullToRefreshSimpleContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BEC715BF63E00080705D /* SSPullToRefreshSimpleContentView.m */; };
-		B208C14215BF63E20080705D /* SSPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BEC915BF63E00080705D /* SSPullToRefreshView.m */; };
 		B208C1A515BF63E20080705D /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B208BF7E15BF63E00080705D /* TTTAttributedLabel.m */; };
 		B208C1EB15BF64630080705D /* libSSToolkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B208C1DF15BF63E30080705D /* libSSToolkit.a */; };
 		B208C1F415BF64630080705D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B208C1EC15BF64630080705D /* CoreData.framework */; };
@@ -279,6 +279,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21396B5F17728AE50040FCA2 /* SSPullToRefresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSPullToRefresh.h; sourceTree = "<group>"; };
+		21396B6017728AE50040FCA2 /* SSPullToRefreshDefaultContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSPullToRefreshDefaultContentView.h; sourceTree = "<group>"; };
+		21396B6117728AE50040FCA2 /* SSPullToRefreshDefaultContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSPullToRefreshDefaultContentView.m; sourceTree = "<group>"; };
+		21396B6217728AE50040FCA2 /* SSPullToRefreshSimpleContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSPullToRefreshSimpleContentView.h; sourceTree = "<group>"; };
+		21396B6317728AE50040FCA2 /* SSPullToRefreshSimpleContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSPullToRefreshSimpleContentView.m; sourceTree = "<group>"; };
+		21396B6417728AE50040FCA2 /* SSPullToRefreshView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSPullToRefreshView.h; sourceTree = "<group>"; };
+		21396B6517728AE50040FCA2 /* SSPullToRefreshView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSPullToRefreshView.m; sourceTree = "<group>"; };
 		21E0A67816AAE0BA002479F9 /* CDIViewArchiveButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIViewArchiveButton.h; sourceTree = "<group>"; };
 		21E0A67916AAE0BA002479F9 /* CDIViewArchiveButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDIViewArchiveButton.m; sourceTree = "<group>"; };
 		B208BB9215BF63A80080705D /* CDIAddListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDIAddListTableViewCell.h; sourceTree = "<group>"; };
@@ -424,13 +431,6 @@
 		B208BE6515BF63E00080705D /* LocalyticsUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalyticsUtilities.h; sourceTree = "<group>"; };
 		B208BE6615BF63E00080705D /* LocalyticsUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalyticsUtilities.m; sourceTree = "<group>"; };
 		B208BE6815BF63E00080705D /* WebserviceConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebserviceConstants.h; sourceTree = "<group>"; };
-		B208BEC215BF63E00080705D /* SSPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSPullToRefresh.h; sourceTree = "<group>"; };
-		B208BEC415BF63E00080705D /* SSPullToRefreshDefaultContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSPullToRefreshDefaultContentView.h; sourceTree = "<group>"; };
-		B208BEC515BF63E00080705D /* SSPullToRefreshDefaultContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSPullToRefreshDefaultContentView.m; sourceTree = "<group>"; };
-		B208BEC615BF63E00080705D /* SSPullToRefreshSimpleContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSPullToRefreshSimpleContentView.h; sourceTree = "<group>"; };
-		B208BEC715BF63E00080705D /* SSPullToRefreshSimpleContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSPullToRefreshSimpleContentView.m; sourceTree = "<group>"; };
-		B208BEC815BF63E00080705D /* SSPullToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSPullToRefreshView.h; sourceTree = "<group>"; };
-		B208BEC915BF63E00080705D /* SSPullToRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSPullToRefreshView.m; sourceTree = "<group>"; };
 		B208BF6715BF63E00080705D /* SSToolkit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SSToolkit.xcodeproj; sourceTree = "<group>"; };
 		B208BF7D15BF63E00080705D /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
 		B208BF7E15BF63E00080705D /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
@@ -581,6 +581,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21396B5E17728AE50040FCA2 /* SSPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				21396B5F17728AE50040FCA2 /* SSPullToRefresh.h */,
+				21396B6017728AE50040FCA2 /* SSPullToRefreshDefaultContentView.h */,
+				21396B6117728AE50040FCA2 /* SSPullToRefreshDefaultContentView.m */,
+				21396B6217728AE50040FCA2 /* SSPullToRefreshSimpleContentView.h */,
+				21396B6317728AE50040FCA2 /* SSPullToRefreshSimpleContentView.m */,
+				21396B6417728AE50040FCA2 /* SSPullToRefreshView.h */,
+				21396B6517728AE50040FCA2 /* SSPullToRefreshView.m */,
+			);
+			path = SSPullToRefresh;
+			sourceTree = "<group>";
+		};
 		B208BB9115BF63A80080705D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -783,13 +797,7 @@
 		B208BEBF15BF63E00080705D /* SSPullToRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				B208BEC215BF63E00080705D /* SSPullToRefresh.h */,
-				B208BEC415BF63E00080705D /* SSPullToRefreshDefaultContentView.h */,
-				B208BEC515BF63E00080705D /* SSPullToRefreshDefaultContentView.m */,
-				B208BEC615BF63E00080705D /* SSPullToRefreshSimpleContentView.h */,
-				B208BEC715BF63E00080705D /* SSPullToRefreshSimpleContentView.m */,
-				B208BEC815BF63E00080705D /* SSPullToRefreshView.h */,
-				B208BEC915BF63E00080705D /* SSPullToRefreshView.m */,
+				21396B5E17728AE50040FCA2 /* SSPullToRefresh */,
 			);
 			path = SSPullToRefresh;
 			sourceTree = "<group>";
@@ -857,7 +865,7 @@
 			isa = PBXGroup;
 			children = (
 				B208C5BF15BF654B0080705D /* libCheddarKit.a */,
-				B2A2B05D15C0B64700772CF6 /* CheddarKit.framework */,
+				B2A2B05D15C0B64700772CF6 /* libCheddarKitMac.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1203,10 +1211,10 @@
 			remoteRef = B208C5BE15BF654B0080705D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B2A2B05D15C0B64700772CF6 /* CheddarKit.framework */ = {
+		B2A2B05D15C0B64700772CF6 /* libCheddarKitMac.a */ = {
 			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CheddarKit.framework;
+			fileType = archive.ar;
+			path = libCheddarKitMac.a;
 			remoteRef = B2A2B05C15C0B64700772CF6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -1405,14 +1413,13 @@
 				B208BC4515BF63A80080705D /* UIButton+CheddariOSAdditions.m in Sources */,
 				B208BC4615BF63A80080705D /* UIColor+CheddariOSAdditions.m in Sources */,
 				B208BC4715BF63A80080705D /* UIFont+CheddariOSAdditions.m in Sources */,
+				21396B6717728AF70040FCA2 /* SSPullToRefreshSimpleContentView.m in Sources */,
 				B208BC4815BF63A80080705D /* main.m in Sources */,
 				B208C10F15BF63E20080705D /* LocalyticsDatabase.m in Sources */,
 				B208C11015BF63E20080705D /* LocalyticsSession.m in Sources */,
+				21396B6817728AF70040FCA2 /* SSPullToRefreshView.m in Sources */,
 				B208C11115BF63E20080705D /* LocalyticsUploader.m in Sources */,
 				B208C11215BF63E20080705D /* LocalyticsUtilities.m in Sources */,
-				B208C14015BF63E20080705D /* SSPullToRefreshDefaultContentView.m in Sources */,
-				B208C14115BF63E20080705D /* SSPullToRefreshSimpleContentView.m in Sources */,
-				B208C14215BF63E20080705D /* SSPullToRefreshView.m in Sources */,
 				B208C1A515BF63E20080705D /* TTTAttributedLabel.m in Sources */,
 				B28FD2E215BF755600365CD6 /* Cheddar.xcdatamodeld in Sources */,
 				B28FD2E815BF774D00365CD6 /* CDIDefines.m in Sources */,
@@ -1422,6 +1429,7 @@
 				B29011CE15C505DA008FC626 /* CDIGroupedTableViewCell.m in Sources */,
 				B26AE9B415C5CF2B0008AB1F /* CDISettingsTapPickerViewController.m in Sources */,
 				B26AE9B715C5D0040008AB1F /* CDISettingsTextSizePickerViewController.m in Sources */,
+				21396B6617728AF70040FCA2 /* SSPullToRefreshDefaultContentView.m in Sources */,
 				B26AE9BA15C5D0100008AB1F /* CDISettingsFontPickerViewController.m in Sources */,
 				B26AE9BD15C5D25E0008AB1F /* CDIGroupedTableViewController.m in Sources */,
 				B26AE9C015C5D52D0008AB1F /* CDIPickerViewController.m in Sources */,
