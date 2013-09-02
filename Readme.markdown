@@ -1,5 +1,9 @@
 # Cheddar for iOS
 
+**Important:** Cheddar for iOS is no longer maintained by Nothing Magical. It has been [sold](http://sam.roon.io/parting-ways-with-cheddar). Going forward, Cheddar is no longe open source since the new owner has choosen to keep it private. This will remain as an archive of the previous version that was open source. Everything should still work. Thank you to everyone for your support as I built Cheddar. Seriously. Thank you.
+
+---
+
 [Cheddar for iOS](http://cheddarapp.com/apps) is the universal iPhone and iPad application for [Cheddar](http://cheddarapp.com), a simple & instant task manager.
 
 **You can download Cheddar for iOS [free on the App Store](http://itunes.apple.com/app/id524382948?partnerId=30&siteID=gCug0Bwa2R0).**
