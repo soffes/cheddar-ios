@@ -17,6 +17,9 @@
 	_list = list;
 	
 	self.textLabel.text = list.title;
+    NSUInteger listCount = [list.tasks count];
+    if (listCount > 1) self.detailTextLabel.text = [NSString stringWithFormat:@"%u tasks", listCount];
+    else self.detailTextLabel.text = [NSString stringWithFormat:@"%u task", listCount];
 	[self setNeedsLayout];
 }
 
